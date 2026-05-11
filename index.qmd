@@ -1,0 +1,28 @@
+---
+title: "GIS für Landschaftsökologie"
+format: html
+---
+
+Herzlich Willkommen
+
+** Hier schönes Bild **
+
+
+# Warm Up: Geographische Daten
+
+Wozu geographische Daten und woher kommen die Überhaupt?
+
+
+
+
+:::{.callout-tip}
+## Aufgabe: Räumliche Daten
+Geht um das Geo1 Gebäude und nehmt die Koordinaten von 10 Bäumen auf. Notiert auch die Baumart.
+:::
+
+
+
+::: {.callout-caution}
+## Diskussion
+Wie bekommen wir die Daten jetzt in ein GIS?
+:::

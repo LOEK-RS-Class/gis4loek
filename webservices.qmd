@@ -1,0 +1,122 @@
+# Webdienste für Karten und Geodaten
+
+Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stell dir einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / **Server** der die Karten und Daten bereitstellt, und ein **Client** der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als **Standards des OGC (Open Geospatial Consortium)** veröffentlicht. Dabei gibt es mehrere zur Auswahl:
+
+
+## Web Map Service - WMS
+
+Beim Web Map Service [(ogc.org/standards/wms/)](https://www.ogc.org/standards/wms/){.target-blank} liefert der Server Bildausschnitte, in der Regel PNG, für die vom Clienten angefragte Koordinaten und Auflösungen. 
+Folgende Anfragen sind das Minimum was ein WMS Standard liefern muss: 
+
+- `getCapabilities` zur Anfrage von Metadaten
+- `getMap` zur Anfrage von Karten
+
+Ein Beispiel für `getCapabilities`: 
+```
+https://sgx.geodatenzentrum.de/wms_basemapde_schummerung?request=GetCapabilities&service=WMS
+```
+Die `getMap` URLs sind etwas Umfangreicher und setzen sich zusammen aus Serveradresse, Koordinaten, Bildgröße und Format:
+```
+https://sgx.geodatenzentrum.de/wms_basemapde_schummerung?service=wms&version=1.3.0&request=GetMap&Layers=de_basemapde_web_raster_combshade&STYLES=default&CRS=EPSG:25832&bbox=500000,5700000,500200,5700200&width=150&Height=150&Format=image/png
+```
+
+::: {.column-margin}
+![bbox=500000,5700000,500200,5700200](https://sgx.geodatenzentrum.de/wms_basemapde_schummerung?service=wms&version=1.3.0&request=GetMap&Layers=de_basemapde_web_raster_combshade&STYLES=default&CRS=EPSG:25832&bbox=500000,5700000,500200,5700200&width=150&Height=150&Format=image/png)
+
+:::
+
+
+
+
+## Web Map Tile Service - WMTS
+
+Der Web Map Tile Service ist eine Variante des WMS bei dem die Daten vorprozessiert gekachelt (_tiles_) auf dem Server geordnet sind. Dadurch wird die Anfrage performanter, benötigt aber auch mehr Speicherplatz.
+[https://www.ogc.org/standards/wmts/](https://www.ogc.org/standards/wmts/)
+
+
+```
+https://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapde_web_raster_combshade/default/DE_EPSG_3857_ADV/06/662/1082.png
+```
+
+::: {.column-margin}
+
+![DE_EPSG_3857_ADV/06/662/1082.png](https://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapde_web_raster_combshade/default/DE_EPSG_3857_ADV/06/662/1082.png)
+
+
+:::
+
+
+
+
+
+## Web Feature Service - WFS
+
+Im Gegensatz zu WM(T)S werden beim [Web Feature Service](https://www.ogc.org/standards/wfs/) tatsächliche Geodaten im Vektorformat übertragen. Auch hier werden die Daten nur nach und nach, je nach Kartenausschnitt heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:
+
+- `getCapabilities` zur Anfrage von allgemeinen Metadaten
+- `DescribeFeatureType` zur Anfrage von Metadaten spezifischer Vektoren 
+- `getFeature` zur Anfrage der Vektor Objekte, also die tatsächlichen Daten
+
+
+Beispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen) 
+
+```
+https://www.stadt-muenster.de/ows/mapserv706/odgruenserv?REQUEST=GetFeature&SERVICE=WFS&VERSION=2.0.0&TYPENAME=ms:Gruenflaechen&EXCEPTIONS=XML&MAXFEATURES=1
+```
+
+
+## Beispiel und Übung
+
+Das [Bundesamt für Kartographie](https://www.bkg.bund.de/DE/Home/home.html) bietet eine Vielzahl von Basiskarten via Online Services an. Unter folgendem Link sind WMTS Service für Geländemodelldaten zu finden: [WMTS Geländekarte des BKG](https://gdz.bkg.bund.de/index.php/default/wmts-basemapde-schummerung-wmts-basemapde-schummerung.html)
+
+
+::: {.callout-tip}
+## Aufgabe: Web Services Informationen
+
+- Schau in die Dokumentation der WMTS Geländedaten des BKG.
+- Welche drei Produkte werden von dem Geländedaten-Dienst bereitgestellt?
+- Welche Datenbasis nutzt der Geländedaten-Dienst zur Berechnung der Produkte? Wie hoch ist die räumliche Auflösung?
+:::
+
+
+Hier noch ein Beispiel zu WMS: [eine Deutschlandweite Hintergrundkarte des BKG](https://gdz.bkg.bund.de/index.php/default/wms-basemapde-webraster-wms-basemapde-webraster.html)
+
+
+::: {.callout-tip}
+## Aufgabe: Web Service URLs
+- In der Dokumentation der Grundkarte ist ein Beispiellink zum Abruf der Dienste angegeben. Öffne die URL zur GetMap (GET) in einem Web Browser.
+- Modifiziere die URL so, dass ein Ausschnitt Münsters gezeigt wird. Das Geo1 hat ungefähr die Koordinaten (403500, 5758500 - in UTM32N)
+
+:::
+
+
+
+::: {.callout-tip}
+## Aufgabe: Web Services in QGIS Einrichten
+
+- Richte die WMS Grundkarte und die WMTS Geländedienste in QGIS ein. (z.B. über den Data Source Manager)
+- Schau dir eine der Layer Eigenschaften an. Welche Anfrage wurde da gerade gestellt?
+- Visualisiere ein paar der Layer. Bemerkst du einen Unterschied zwischen WFS und WFTS?
+:::
+
+
+Zuletzt noch ein Beispiel für den Web Feature Service: Die Stadt Münster stellt u.a. die Städtischen Grünflächen und das Baumkataster als WFS zur verfügung.
+
+
+::: {.callout-tip}
+## Aufgabe: Web Feature Service Abfragen
+
+- Richte den WFS Service https://www.stadt-muenster.de/ows/mapserv706/odgruenserv in QGIS ein.
+- Visualisiere die Grünflächen so, dass jeder Flächentyp (obj_art) eine andere Farbe bekommt.
+- Wie viele Spielplätze gibt es in Münster?
+:::
+
+
+
+:::{.callout-caution}
+## Diskussion
+Welche Vor- und Nachteile bringt der Einsatz von Webdiensten in einem GIS Projekt mit sich?
+:::
+
+
+

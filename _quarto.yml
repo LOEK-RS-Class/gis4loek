@@ -1,0 +1,32 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "!readme.md"
+
+
+
+website:
+  title: "GIS4LOEK"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: raster-vector-basics.qmd
+        text: GIS Basics
+      - href: webservices.qmd
+        text: Webdienste
+      - href: topography.qmd
+        text: Geländeanalysen
+      - href: kostenanalyse.qmd
+        text: Kostenanalyse
+
+
+
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css

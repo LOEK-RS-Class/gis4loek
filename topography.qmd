@@ -1,0 +1,61 @@
+# Topographische Analysen
+
+
+
+## Warm Up: Daten Vorverarbeiten
+
+Geländeanalyse, Viewshed (zb vom kahlen asten), Höhenprofile (wanderweg hoch), Hydrologie etc mit SRTM für ganz NRW.
+
+
+:::{.callout-tip}
+## Wiederholung: Daten, Daten, Daten
+- SRTM für NRW runterladen.
+- Erstelle ein Mosaik der SRTM Kacheln.
+- Binde den WFS Dienst für die Natura 2000 Daten ein.
+:::
+
+
+
+
+## Geländeanalyse, Viewshed
+
+
+Hydrologie etc mit SRTM für ganz NRW. Potenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)
+
+
+
+
+:::{.callout-tip}
+## Aufgabe: Schöne Wege am Kahlen Asten
+Viewshed (zb vom kahlen asten)
+
+
+
+:::
+
+
+
+## Topographic Wetness Index
+
+
+
+![Kopecy et al. 2020](https://ars.els-cdn.com/content/image/1-s2.0-S0048969720373162-ga1_lrg.jpg)
+
+
+https://www.sciencedirect.com/science/article/abs/pii/S0048969720373162
+
+
+
+
+### SAGA und GRASS GIS Module
+
+
+
+
+
+## Aufgabe
+
+:::{.callout-tip}
+## Aufgabe: Ökosystemanalyse
+Potenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)
+:::

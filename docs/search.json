@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "webservices.html",
+    "href": "webservices.html",
+    "title": "Webdienste für Karten und Geodaten",
+    "section": "",
+    "text": "Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stell dir einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / Server der die Karten und Daten bereitstellt, und ein Client der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als Standards des OGC (Open Geospatial Consortium) veröffentlicht. Dabei gibt es mehrere zur Auswahl:\n\n\nBeim Web Map Service (ogc.org/standards/wms/) liefert der Server Bildausschnitte, in der Regel PNG, für die vom Clienten angefragte Koordinaten und Auflösungen. Folgende Anfragen sind das Minimum was ein WMS Standard liefern muss:\n\ngetCapabilities zur Anfrage von Metadaten\ngetMap zur Anfrage von Karten\n\nEin Beispiel für getCapabilities:\nhttps://sgx.geodatenzentrum.de/wms_basemapde_schummerung?request=GetCapabilities&service=WMS\nDie getMap URLs sind etwas Umfangreicher und setzen sich zusammen aus Serveradresse, Koordinaten, Bildgröße und Format:\nhttps://sgx.geodatenzentrum.de/wms_basemapde_schummerung?service=wms&version=1.3.0&request=GetMap&Layers=de_basemapde_web_raster_combshade&STYLES=default&CRS=EPSG:25832&bbox=500000,5700000,500200,5700200&width=150&Height=150&Format=image/png\n\n\n\n\n\nbbox=500000,5700000,500200,5700200\n\n\n\n\n\nDer Web Map Tile Service ist eine Variante des WMS bei dem die Daten vorprozessiert gekachelt (tiles) auf dem Server geordnet sind. Dadurch wird die Anfrage performanter, benötigt aber auch mehr Speicherplatz. https://www.ogc.org/standards/wmts/\nhttps://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapde_web_raster_combshade/default/DE_EPSG_3857_ADV/06/662/1082.png\n\n\n\n\n\nDE_EPSG_3857_ADV/06/662/1082.png\n\n\n\n\n\nIm Gegensatz zu WM(T)S werden beim Web Feature Service tatsächliche Geodaten im Vektorformat übertragen. Auch hier werden die Daten nur nach und nach, je nach Kartenausschnitt heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:\n\ngetCapabilities zur Anfrage von allgemeinen Metadaten\nDescribeFeatureType zur Anfrage von Metadaten spezifischer Vektoren\ngetFeature zur Anfrage der Vektor Objekte, also die tatsächlichen Daten\n\nBeispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen)\nhttps://www.stadt-muenster.de/ows/mapserv706/odgruenserv?REQUEST=GetFeature&SERVICE=WFS&VERSION=2.0.0&TYPENAME=ms:Gruenflaechen&EXCEPTIONS=XML&MAXFEATURES=1\n\n\n\nDas Bundesamt für Kartographie bietet eine Vielzahl von Basiskarten via Online Services an. Unter folgendem Link sind WMTS Service für Geländemodelldaten zu finden: WMTS Geländekarte des BKG\n\n\n\n\n\n\nTipAufgabe: Web Services Informationen\n\n\n\n\nSchau in die Dokumentation der WMTS Geländedaten des BKG.\nWelche drei Produkte werden von dem Geländedaten-Dienst bereitgestellt?\nWelche Datenbasis nutzt der Geländedaten-Dienst zur Berechnung der Produkte? Wie hoch ist die räumliche Auflösung?\n\n\n\nHier noch ein Beispiel zu WMS: eine Deutschlandweite Hintergrundkarte des BKG\n\n\n\n\n\n\nTipAufgabe: Web Service URLs\n\n\n\n\nIn der Dokumentation der Grundkarte ist ein Beispiellink zum Abruf der Dienste angegeben. Öffne die URL zur GetMap (GET) in einem Web Browser.\nModifiziere die URL so, dass ein Ausschnitt Münsters gezeigt wird. Das Geo1 hat ungefähr die Koordinaten (403500, 5758500 - in UTM32N)\n\n\n\n\n\n\n\n\n\nTipAufgabe: Web Services in QGIS Einrichten\n\n\n\n\nRichte die WMS Grundkarte und die WMTS Geländedienste in QGIS ein. (z.B. über den Data Source Manager)\nSchau dir eine der Layer Eigenschaften an. Welche Anfrage wurde da gerade gestellt?\nVisualisiere ein paar der Layer. Bemerkst du einen Unterschied zwischen WFS und WFTS?\n\n\n\nZuletzt noch ein Beispiel für den Web Feature Service: Die Stadt Münster stellt u.a. die Städtischen Grünflächen und das Baumkataster als WFS zur verfügung.\n\n\n\n\n\n\nTipAufgabe: Web Feature Service Abfragen\n\n\n\n\nRichte den WFS Service https://www.stadt-muenster.de/ows/mapserv706/odgruenserv in QGIS ein.\nVisualisiere die Grünflächen so, dass jeder Flächentyp (obj_art) eine andere Farbe bekommt.\nWie viele Spielplätze gibt es in Münster?\n\n\n\n\n\n\n\n\n\nCautionDiskussion\n\n\n\nWelche Vor- und Nachteile bringt der Einsatz von Webdiensten in einem GIS Projekt mit sich?"
+  },
+  {
+    "objectID": "webservices.html#web-map-service---wms",
+    "href": "webservices.html#web-map-service---wms",
+    "title": "Webdienste für Karten und Geodaten",
+    "section": "",
+    "text": "Beim Web Map Service (ogc.org/standards/wms/) liefert der Server Bildausschnitte, in der Regel PNG, für die vom Clienten angefragte Koordinaten und Auflösungen. Folgende Anfragen sind das Minimum was ein WMS Standard liefern muss:\n\ngetCapabilities zur Anfrage von Metadaten\ngetMap zur Anfrage von Karten\n\nEin Beispiel für getCapabilities:\nhttps://sgx.geodatenzentrum.de/wms_basemapde_schummerung?request=GetCapabilities&service=WMS\nDie getMap URLs sind etwas Umfangreicher und setzen sich zusammen aus Serveradresse, Koordinaten, Bildgröße und Format:\nhttps://sgx.geodatenzentrum.de/wms_basemapde_schummerung?service=wms&version=1.3.0&request=GetMap&Layers=de_basemapde_web_raster_combshade&STYLES=default&CRS=EPSG:25832&bbox=500000,5700000,500200,5700200&width=150&Height=150&Format=image/png\n\n\n\n\n\nbbox=500000,5700000,500200,5700200"
+  },
+  {
+    "objectID": "webservices.html#web-map-tile-service---wmts",
+    "href": "webservices.html#web-map-tile-service---wmts",
+    "title": "Webdienste für Karten und Geodaten",
+    "section": "",
+    "text": "Der Web Map Tile Service ist eine Variante des WMS bei dem die Daten vorprozessiert gekachelt (tiles) auf dem Server geordnet sind. Dadurch wird die Anfrage performanter, benötigt aber auch mehr Speicherplatz. https://www.ogc.org/standards/wmts/\nhttps://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapde_web_raster_combshade/default/DE_EPSG_3857_ADV/06/662/1082.png\n\n\n\n\n\nDE_EPSG_3857_ADV/06/662/1082.png"
+  },
+  {
+    "objectID": "webservices.html#web-feature-service---wfs",
+    "href": "webservices.html#web-feature-service---wfs",
+    "title": "Webdienste für Karten und Geodaten",
+    "section": "",
+    "text": "Im Gegensatz zu WM(T)S werden beim Web Feature Service tatsächliche Geodaten im Vektorformat übertragen. Auch hier werden die Daten nur nach und nach, je nach Kartenausschnitt heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:\n\ngetCapabilities zur Anfrage von allgemeinen Metadaten\nDescribeFeatureType zur Anfrage von Metadaten spezifischer Vektoren\ngetFeature zur Anfrage der Vektor Objekte, also die tatsächlichen Daten\n\nBeispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen)\nhttps://www.stadt-muenster.de/ows/mapserv706/odgruenserv?REQUEST=GetFeature&SERVICE=WFS&VERSION=2.0.0&TYPENAME=ms:Gruenflaechen&EXCEPTIONS=XML&MAXFEATURES=1"
+  },
+  {
+    "objectID": "webservices.html#beispiel-und-übung",
+    "href": "webservices.html#beispiel-und-übung",
+    "title": "Webdienste für Karten und Geodaten",
+    "section": "",
+    "text": "Das Bundesamt für Kartographie bietet eine Vielzahl von Basiskarten via Online Services an. Unter folgendem Link sind WMTS Service für Geländemodelldaten zu finden: WMTS Geländekarte des BKG\n\n\n\n\n\n\nTipAufgabe: Web Services Informationen\n\n\n\n\nSchau in die Dokumentation der WMTS Geländedaten des BKG.\nWelche drei Produkte werden von dem Geländedaten-Dienst bereitgestellt?\nWelche Datenbasis nutzt der Geländedaten-Dienst zur Berechnung der Produkte? Wie hoch ist die räumliche Auflösung?\n\n\n\nHier noch ein Beispiel zu WMS: eine Deutschlandweite Hintergrundkarte des BKG\n\n\n\n\n\n\nTipAufgabe: Web Service URLs\n\n\n\n\nIn der Dokumentation der Grundkarte ist ein Beispiellink zum Abruf der Dienste angegeben. Öffne die URL zur GetMap (GET) in einem Web Browser.\nModifiziere die URL so, dass ein Ausschnitt Münsters gezeigt wird. Das Geo1 hat ungefähr die Koordinaten (403500, 5758500 - in UTM32N)\n\n\n\n\n\n\n\n\n\nTipAufgabe: Web Services in QGIS Einrichten\n\n\n\n\nRichte die WMS Grundkarte und die WMTS Geländedienste in QGIS ein. (z.B. über den Data Source Manager)\nSchau dir eine der Layer Eigenschaften an. Welche Anfrage wurde da gerade gestellt?\nVisualisiere ein paar der Layer. Bemerkst du einen Unterschied zwischen WFS und WFTS?\n\n\n\nZuletzt noch ein Beispiel für den Web Feature Service: Die Stadt Münster stellt u.a. die Städtischen Grünflächen und das Baumkataster als WFS zur verfügung.\n\n\n\n\n\n\nTipAufgabe: Web Feature Service Abfragen\n\n\n\n\nRichte den WFS Service https://www.stadt-muenster.de/ows/mapserv706/odgruenserv in QGIS ein.\nVisualisiere die Grünflächen so, dass jeder Flächentyp (obj_art) eine andere Farbe bekommt.\nWie viele Spielplätze gibt es in Münster?\n\n\n\n\n\n\n\n\n\nCautionDiskussion\n\n\n\nWelche Vor- und Nachteile bringt der Einsatz von Webdiensten in einem GIS Projekt mit sich?"
+  },
+  {
+    "objectID": "raster-vector-basics.html",
+    "href": "raster-vector-basics.html",
+    "title": "Grundlegende Funktionen geographischer Daten",
+    "section": "",
+    "text": "Grundlegende Funktionen geographischer Daten\n• Vektorbasics: Clip, Intersection, Flächen und Distanzberechnungen, Arbeiten mit Attributtabellen (→ Hanna) • Rasterbasics: Geländemodell: Crop, Aus dgm und dom vegetationshöhe berechnen. (→ Hanna) • Raster-vector-basics. Wie hoch sind die Bäume? (Baum puffern und ergebnis davor für zonal statistcs verwenden), Höhenstatistiken auf Grünflächen (→ Hanna)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "GIS für Landschaftsökologie",
+    "section": "",
+    "text": "Herzlich Willkommen\n** Hier schönes Bild **\n\nWarm Up: Geographische Daten\nWozu geographische Daten und woher kommen die Überhaupt?\n\n\n\n\n\n\nTipAufgabe: Räumliche Daten\n\n\n\nGeht um das Geo1 Gebäude und nehmt die Koordinaten von 10 Bäumen auf. Notiert auch die Baumart.\n\n\n\n\n\n\n\n\nCautionDiskussion\n\n\n\nWie bekommen wir die Daten jetzt in ein GIS?"
+  },
+  {
+    "objectID": "kostenanalyse.html",
+    "href": "kostenanalyse.html",
+    "title": "Kostenanalyse",
+    "section": "",
+    "text": "Kostenanalyse\nTag 3: Eignungsanalyse zb potezielle Naturscvhutzgebietsplanung. Teil 2: Korridorplanung bzw Kostenpfadanalyse (→ Hanna)"
+  },
+  {
+    "objectID": "topography.html",
+    "href": "topography.html",
+    "title": "Topographische Analysen",
+    "section": "",
+    "text": "Geländeanalyse, Viewshed (zb vom kahlen asten), Höhenprofile (wanderweg hoch), Hydrologie etc mit SRTM für ganz NRW.\n\n\n\n\n\n\nTipWiederholung: Daten, Daten, Daten\n\n\n\n\nSRTM für NRW runterladen.\nErstelle ein Mosaik der SRTM Kacheln.\nBinde den WFS Dienst für die Natura 2000 Daten ein.\n\n\n\n\n\n\nHydrologie etc mit SRTM für ganz NRW. Potenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)\n\n\n\n\n\n\nTipAufgabe: Schöne Wege am Kahlen Asten\n\n\n\nViewshed (zb vom kahlen asten)\n\n\n\n\n\n\n\n\nKopecy et al. 2020\n\n\nhttps://www.sciencedirect.com/science/article/abs/pii/S0048969720373162\n\n\n\n\n\n\n\n\n\n\n\n\nTipAufgabe: Ökosystemanalyse\n\n\n\nPotenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)"
+  },
+  {
+    "objectID": "topography.html#warm-up-daten-vorverarbeiten",
+    "href": "topography.html#warm-up-daten-vorverarbeiten",
+    "title": "Topographische Analysen",
+    "section": "",
+    "text": "Geländeanalyse, Viewshed (zb vom kahlen asten), Höhenprofile (wanderweg hoch), Hydrologie etc mit SRTM für ganz NRW.\n\n\n\n\n\n\nTipWiederholung: Daten, Daten, Daten\n\n\n\n\nSRTM für NRW runterladen.\nErstelle ein Mosaik der SRTM Kacheln.\nBinde den WFS Dienst für die Natura 2000 Daten ein."
+  },
+  {
+    "objectID": "topography.html#geländeanalyse-viewshed",
+    "href": "topography.html#geländeanalyse-viewshed",
+    "title": "Topographische Analysen",
+    "section": "",
+    "text": "Hydrologie etc mit SRTM für ganz NRW. Potenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)\n\n\n\n\n\n\nTipAufgabe: Schöne Wege am Kahlen Asten\n\n\n\nViewshed (zb vom kahlen asten)"
+  },
+  {
+    "objectID": "topography.html#topographic-wetness-index",
+    "href": "topography.html#topographic-wetness-index",
+    "title": "Topographische Analysen",
+    "section": "",
+    "text": "Kopecy et al. 2020\n\n\nhttps://www.sciencedirect.com/science/article/abs/pii/S0048969720373162"
+  },
+  {
+    "objectID": "topography.html#aufgabe",
+    "href": "topography.html#aufgabe",
+    "title": "Topographische Analysen",
+    "section": "",
+    "text": "TipAufgabe: Ökosystemanalyse\n\n\n\nPotenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)"
+  }
+]
