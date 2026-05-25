@@ -1,4 +1,47 @@
 # Kostenanalyse
+Die Kostenanalyse im GIS beschreibt, wie „Aufwand“ für die Bewegung durch eine Landschaft räumlich dargestellt und bewertet werden kann. Dabei werden Faktoren wie Gelände, Landnutzung oder Barrieren in sogenannten Kostenoberflächen (Cost Surfaces) abgebildet, die zeigen, wie leicht oder schwer bestimmte Bereiche zu durchqueren sind. Auf dieser Grundlage lassen sich z. B. die günstigsten Wege (Least-Cost Paths) oder mögliche Ausbreitungskorridore für Arten berechnen. In der Landschaftsökologie hilft diese Methode, räumliche Verbindungen und Barrieren besser zu verstehen und ökologische Prozesse im Raum zu analysieren.
+
+## Vorlesung
+[📄 Kursfolien als PDF öffnen](slides/03_Kostenanalyse.pdf)
+
+## Übung
+### Beispieldaten
+Für diese Übung werden Beispieldaten aus der Region des Siebengebirges verwendet. Diese Daten wurden bereits in den vorherigen Folien zur Übung vorgestellt. Sie dienen als gemeinsame Grundlage für die weiteren Analysen im GIS. 
+
+:::{.callout-tip}
+## Aufgabe
+Lade die Daten vom Siebengebirge herunter. Die Daten beinhalten ein Geländemodell (SRTM) sowie die Landbedeckung (Corine) inkl. Brücken über den Rhein. Zudem ist einen Startpunkt und einen Zielpunkt gegeben. Du kannst aber gerne andere/weitere Start- und Zielpunkte definieren.
+:::
 
 
-Tag 3: Eignungsanalyse zb potezielle Naturscvhutzgebietsplanung. Teil 2: Korridorplanung bzw Kostenpfadanalyse (→ Hanna)
+### Kriterien definieren
+Als nächstes geht es darum, die für eine Art relevanten Umweltfaktoren als Kriterien für eine Kostenanalyse im GIS zu definieren. Diese Kriterien bestimmen, wie „leicht“ oder „schwer“ bestimmte Landschaftsbereiche für die Art zu durchqueren oder zu nutzen sind. Die Auswahl geeigneter Faktoren ist dabei entscheidend, da sie die Grundlage für alle weiteren Analysen wie Kostenoberflächen oder Ausbreitungskorridore bildet.
+
+:::{.callout-tip}
+## Aufgabe
+Für eine Art deiner Wahl: Überlege und berechne erforderliche Kriterien (z.B Entfernung zu Straßen, Exposition, ...) die "Kosten" verursachen.
+:::
+
+### Kostenoberfläche erstellen
+Die Erstellung einer Kostenoberfläche ist der zentrale Schritt, um die zuvor definierten Kriterien räumlich zusammenzuführen. Sie ermöglicht es, die einzelnen Umweltfaktoren in ein gemeinsames Raster zu überführen, das die „Durchlässigkeit“ der Landschaft für die gewählte Art abbildet. Bereiche mit niedrigen Werten stehen dabei für geringe Kosten und somit günstige Bedingungen, während hohe Werte schwer passierbare oder ungünstige Bereiche darstellen. Auf dieser Grundlage können später räumliche Ausbreitungswege und ökologische Verbindungen im GIS analysiert werden.
+
+:::{.callout-tip}
+## Aufgabe
+Kombiniere deine Kriterien zu einem Kostenraster welches durch niedrige Werte geringe "Kosten" und durch hohe Werte hohe "Kosten" widerspiegelt
+:::
+
+### Kostendistanz und Bewegungsrichtung berechnen
+Die Berechnung von Kostendistanz und Bewegungsrichtung erweitert die Kostenanalyse um die räumliche Dimension der Erreichbarkeit. Dabei wird ermittelt, wie hoch der kumulative Aufwand ist, um von einem Startpunkt aus durch die Kostenoberfläche zu jedem anderen Rasterzellenpunkt zu gelangen. Zusätzlich zeigt die Bewegungsrichtung, aus welcher Richtung die geringsten Kosten für die Fortbewegung stammen. Diese Informationen sind die Grundlage, um später optimale Wander- oder Ausbreitungswege innerhalb der Landschaft zu bestimmen.
+
+:::{.callout-tip}
+## Aufgabe
+Berechne die Kostendistanz und die Bewegungsrichtung auf Basis des Kostenrasters. Wenn du QGIS nutzt, wähle dazu das GRASS GIS Tool r.cost.
+:::
+
+### Pfad der geringsten Kosten berechnen
+Die Berechnung des Pfads der geringsten Kosten (Least-Cost Path) nutzt die zuvor ermittelten Kostendistanzen und Bewegungsrichtungen, um den optimalen Weg zwischen zwei Punkten zu bestimmen. Dabei wird derjenige Pfad ausgewählt, der die geringstmöglichen kumulativen „Kosten“ über die Kostenoberfläche verursacht. So lassen sich potenzielle Wanderkorridore oder Ausbreitungswege einer Art in der Landschaft identifizieren. 
+
+:::{.callout-tip}
+## Aufgabe
+Erstelle auf Basis der Bewegungsrichtung den Pfad der geringsten Kosten. Wenn du QGIS nutzt, wähle dazu das GRASS GIS Tool r.path.
+:::
