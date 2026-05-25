@@ -3,10 +3,9 @@ title: "GIS für Landschaftsökologie"
 format: html
 ---
 
+![](images/giskurs_header_s.png)
+
 Herzlich Willkommen
-
-** Hier schönes Bild **
-
 
 # Warm Up: Geographische Daten
 
