@@ -1,18 +1,47 @@
 # Topographische Analysen
 
+Topographische Daten sind für eine Vielzahl von Anwendungen und wissenschaftlichen Fragestellungen nützlich.
+Wie hoch ist die Lawinengefahr? Wie verändert sich die Vegetation mit der Geländehöhe? Wohin wandern Dünen?
+Bei all diesen Fragen kann die Analyse eines Geländemodell hinzugezogen werden.
+
+::: {.callout-warning}
+## Diskussion
+Sammelt landschaftsökologische Fragestellungen für die ein Geländemodell nützlich sein könnte. 
+
+:::
+
+```{=html}
+<iframe width="780" height="500" src="https://opentopomap.org/#map=12/-3.0865/37.3710" title="Topographische Karte"></iframe>
+```
+
+Die Datengrundlage für so ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe messen und gerastert ablegen. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Jedes Pixel des Raster"bilds" enthält die Geländehöhe über NN an dieser Position.
 
 
-## Warm Up: Daten Vorverarbeiten
 
-Geländeanalyse, Viewshed (zb vom kahlen asten), Höhenprofile (wanderweg hoch), Hydrologie etc mit SRTM für ganz NRW.
+
+## Warm Up: Daten Vorverarbeiten und Visualisieren
+
+Unter dem Link ... könnt ihr SRTM Daten in 90m Auflösung für Deutschland und benachbarte Staaten herunterladen.
 
 
 :::{.callout-tip}
-## Wiederholung: Daten, Daten, Daten
-- SRTM für NRW runterladen.
-- Erstelle ein Mosaik der SRTM Kacheln.
-- Binde den WFS Dienst für die Natura 2000 Daten ein.
+## Aufgabe: SRTM
+- Lade die SRTM Daten für Deutschland herunter.
+- Berechne die Hangneigung (slope), die Exposition (aspect) und eine Schummerung (Hillshade) aus den Geländedaten.
+- Visualisiere eine Topographische Karte aus der Schummerung und den Geländehöhen.
+- Finde eine sinnvolle Visualisierung zur Darstellung der Exposition
+- Berechne und Visualisiere Isohypsen, also Linien gleicher Höhe (contour).
 :::
+
+
+
+
+## Hangneigung und -richtung
+
+Die Algorithmen zur Berechnung der Hangneigung und Exposition nutzen eine 3x3 Pixelumgebung. Die Werte jedes Pixels werden also mit seinen 8 Nachbarpixeln verglichen und entsprechende Gradienten in Z und XY Richtung berechnet.
+
+In der Publikation von Horn (1981) wird das Verfahren beschrieben:
+https://ieeexplore.ieee.org/document/1456186
 
 
 
@@ -27,13 +56,17 @@ Hydrologie etc mit SRTM für ganz NRW. Potenzielle feuchtgebeiete und welche lan
 
 :::{.callout-tip}
 ## Aufgabe: Schöne Wege am Kahlen Asten
-Viewshed (zb vom kahlen asten)
-
-
-
+- Berechne eine Viewshed vom Sauerland.
+- Hier ist ein Wanderweg. Wie viele Höhenmeter werden Zurückgelegt?
+- Welche Abschnitte sind besonders Steil?
 :::
 
 
+
+
+## Hydrologische Analyse
+
+Eng verkünpft mit der Topographie einer Landschaft ist dessen Hydrologie. Auf Basis des Geländemodells lassen sich viele Hydrologische Ableitungen treffen und berechnen, beispielsweise die Einzugsgebiete von Gewässern, Abflüsse, oder Ganglinien.
 
 ## Topographic Wetness Index
 
