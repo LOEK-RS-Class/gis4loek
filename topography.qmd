@@ -1,4 +1,3 @@
-# Topographische Analysen
 
 Topographische Daten sind für eine Vielzahl von Anwendungen und wissenschaftlichen Fragestellungen nützlich.
 Wie hoch ist die Lawinengefahr? Wie verändert sich die Vegetation mit der Geländehöhe? Wohin wandern Dünen?
@@ -15,6 +14,10 @@ Sammelt landschaftsökologische Fragestellungen für die ein Geländemodell nüt
 ```
 
 Die Datengrundlage für so ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe messen und gerastert ablegen. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Jedes Pixel des Raster"bilds" enthält die Geländehöhe über NN an dieser Position.
+=======
+# Topographische Analysen
+![](images/giskurs_header_s.png)
+
 
 
 

@@ -1,4 +1,5 @@
 # Webdienste für Karten und Geodaten
+![](images/giskurs_header_s.png)
 
 Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stell dir einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / **Server** der die Karten und Daten bereitstellt, und ein **Client** der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als **Standards des OGC (Open Geospatial Consortium)** veröffentlicht. Dabei gibt es mehrere zur Auswahl:
 

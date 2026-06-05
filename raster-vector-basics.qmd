@@ -1,4 +1,5 @@
 # Grundlegende Funktionen geographischer Daten
+![](images/giskurs_header_s.png)
 
 • Vektorbasics: Clip, Intersection, Flächen und Distanzberechnungen, Arbeiten mit Attributtabellen (→ Hanna)
 • Rasterbasics: Geländemodell: Crop, Aus dgm und dom vegetationshöhe berechnen. (→ Hanna)
