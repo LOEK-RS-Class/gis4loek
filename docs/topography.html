@@ -92,14 +92,36 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./raster-vector-basics.html"> 
-<span class="menu-text">GIS Basics</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datenerfassung" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datenerfassung</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datenerfassung">    
+        <li>
+    <a class="dropdown-item" href="./webservices.html">
+ <span class="dropdown-text">Webdienste</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./webservices.html"> 
-<span class="menu-text">Webdienste</span></a>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-gis-basics" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">GIS Basics</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-gis-basics">    
+        <li>
+    <a class="dropdown-item" href="./vector-basics.html">
+ <span class="dropdown-text">Vektor Basics</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./raster-basics.html">
+ <span class="dropdown-text">Raster Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./raster-vector-basics.html">
+ <span class="dropdown-text">Raster-Vektor Basics</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link active" href="./topography.html" aria-current="page"> 
 <span class="menu-text">Geländeanalysen</span></a>
@@ -126,29 +148,54 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<p>Topographische Daten sind für eine Vielzahl von Anwendungen und wissenschaftlichen Fragestellungen nützlich. Wie hoch ist die Lawinengefahr? Wie verändert sich die Vegetation mit der Geländehöhe? Wohin wandern Dünen? Bei all diesen Fragen kann die Analyse eines Geländemodell hinzugezogen werden.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Diskussion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sammelt landschaftsökologische Fragestellungen für die ein Geländemodell nützlich sein könnte.</p>
+</div>
+</div>
+<iframe width="780" height="500" src="https://opentopomap.org/#map=12/-3.0865/37.3710" title="Topographische Karte"></iframe>
+<section id="die-datengrundlage-für-so-ein-geländemodell-sind-meist-radarbefliegungen-die-die-geländehöhe-messen-und-gerastert-ablegen.-für-großflächige-analysen-bietet-es-sich-an-auf-satellitenbasierte-aufnahmen-zurückzugreifen.-die-shuttle-radar-topographic-mission-srtm-der-nasa-bietet-beispielsweise-geländedaten-in-30-bis-90-m-räumlicher-auflösung.-jedes-pixel-des-rasterbilds-enthält-die-geländehöhe-über-nn-an-dieser-position." class="level1">
+<h1>Die Datengrundlage für so ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe messen und gerastert ablegen. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Jedes Pixel des Raster”bilds” enthält die Geländehöhe über NN an dieser Position.</h1>
+</section>
 <section id="topographische-analysen" class="level1">
 <h1>Topographische Analysen</h1>
 <p><img src="images/giskurs_header_s.png" class="img-fluid"></p>
-<section id="warm-up-daten-vorverarbeiten" class="level2">
-<h2 class="anchored" data-anchor-id="warm-up-daten-vorverarbeiten">Warm Up: Daten Vorverarbeiten</h2>
-<p>Geländeanalyse, Viewshed (zb vom kahlen asten), Höhenprofile (wanderweg hoch), Hydrologie etc mit SRTM für ganz NRW.</p>
+<section id="warm-up-daten-vorverarbeiten-und-visualisieren" class="level2">
+<h2 class="anchored" data-anchor-id="warm-up-daten-vorverarbeiten-und-visualisieren">Warm Up: Daten Vorverarbeiten und Visualisieren</h2>
+<p>Unter dem Link … könnt ihr SRTM Daten in 90m Auflösung für Deutschland und benachbarte Staaten herunterladen.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Wiederholung: Daten, Daten, Daten
+Aufgabe: SRTM
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>SRTM für NRW runterladen.</li>
-<li>Erstelle ein Mosaik der SRTM Kacheln.</li>
-<li>Binde den WFS Dienst für die Natura 2000 Daten ein.</li>
+<li>Lade die SRTM Daten für Deutschland herunter.</li>
+<li>Berechne die Hangneigung (slope), die Exposition (aspect) und eine Schummerung (Hillshade) aus den Geländedaten.</li>
+<li>Visualisiere eine Topographische Karte aus der Schummerung und den Geländehöhen.</li>
+<li>Finde eine sinnvolle Visualisierung zur Darstellung der Exposition</li>
+<li>Berechne und Visualisiere Isohypsen, also Linien gleicher Höhe (contour).</li>
 </ul>
 </div>
 </div>
+</section>
+<section id="hangneigung-und--richtung" class="level2">
+<h2 class="anchored" data-anchor-id="hangneigung-und--richtung">Hangneigung und -richtung</h2>
+<p>Die Algorithmen zur Berechnung der Hangneigung und Exposition nutzen eine 3x3 Pixelumgebung. Die Werte jedes Pixels werden also mit seinen 8 Nachbarpixeln verglichen und entsprechende Gradienten in Z und XY Richtung berechnet.</p>
+<p>In der Publikation von Horn (1981) wird das Verfahren beschrieben: https://ieeexplore.ieee.org/document/1456186</p>
 </section>
 <section id="geländeanalyse-viewshed" class="level2">
 <h2 class="anchored" data-anchor-id="geländeanalyse-viewshed">Geländeanalyse, Viewshed</h2>
@@ -163,9 +210,17 @@ Aufgabe: Schöne Wege am Kahlen Asten
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Viewshed (zb vom kahlen asten)</p>
+<ul>
+<li>Berechne eine Viewshed vom Sauerland.</li>
+<li>Hier ist ein Wanderweg. Wie viele Höhenmeter werden Zurückgelegt?</li>
+<li>Welche Abschnitte sind besonders Steil?</li>
+</ul>
 </div>
 </div>
+</section>
+<section id="hydrologische-analyse" class="level2">
+<h2 class="anchored" data-anchor-id="hydrologische-analyse">Hydrologische Analyse</h2>
+<p>Eng verkünpft mit der Topographie einer Landschaft ist dessen Hydrologie. Auf Basis des Geländemodells lassen sich viele Hydrologische Ableitungen treffen und berechnen, beispielsweise die Einzugsgebiete von Gewässern, Abflüsse, oder Ganglinien.</p>
 </section>
 <section id="topographic-wetness-index" class="level2">
 <h2 class="anchored" data-anchor-id="topographic-wetness-index">Topographic Wetness Index</h2>

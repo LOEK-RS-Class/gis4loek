@@ -37,9 +37,9 @@
   {
     "objectID": "raster-vector-basics.html",
     "href": "raster-vector-basics.html",
-    "title": "Grundlegende Funktionen geographischer Daten",
+    "title": "Raster-Vektor-Basics",
     "section": "",
-    "text": "Grundlegende Funktionen geographischer Daten\n\n• Vektorbasics: Clip, Intersection, Flächen und Distanzberechnungen, Arbeiten mit Attributtabellen (→ Hanna) • Rasterbasics: Geländemodell: Crop, Aus dgm und dom vegetationshöhe berechnen. (→ Hanna) • Raster-vector-basics. Wie hoch sind die Bäume? (Baum puffern und ergebnis davor für zonal statistcs verwenden), Höhenstatistiken auf Grünflächen (→ Hanna)"
+    "text": "Aufgabe 1:\n\n\n\nWie hoch sind die Bäume? (Baum puffern und ergebnis davor für zonal statistcs verwenden), Höhenstatistiken auf Grünflächen (→ Hanna)"
   },
   {
     "objectID": "index.html",
@@ -58,9 +58,9 @@
   {
     "objectID": "topography.html",
     "href": "topography.html",
-    "title": "Topographische Analysen",
+    "title": "Die Datengrundlage für so ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe messen und gerastert ablegen. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Jedes Pixel des Raster”bilds” enthält die Geländehöhe über NN an dieser Position.",
     "section": "",
-    "text": "Geländeanalyse, Viewshed (zb vom kahlen asten), Höhenprofile (wanderweg hoch), Hydrologie etc mit SRTM für ganz NRW.\n\n\n\n\n\n\nWiederholung: Daten, Daten, Daten\n\n\n\n\nSRTM für NRW runterladen.\nErstelle ein Mosaik der SRTM Kacheln.\nBinde den WFS Dienst für die Natura 2000 Daten ein.\n\n\n\n\n\n\nHydrologie etc mit SRTM für ganz NRW. Potenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)\n\n\n\n\n\n\nAufgabe: Schöne Wege am Kahlen Asten\n\n\n\nViewshed (zb vom kahlen asten)\n\n\n\n\n\n\n\n\nKopecy et al. 2020\n\n\nhttps://www.sciencedirect.com/science/article/abs/pii/S0048969720373162\n\n\n\n\n\n\n\n\n\n\n\n\nAufgabe: Ökosystemanalyse\n\n\n\nPotenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)"
+    "text": "Topographische Daten sind für eine Vielzahl von Anwendungen und wissenschaftlichen Fragestellungen nützlich. Wie hoch ist die Lawinengefahr? Wie verändert sich die Vegetation mit der Geländehöhe? Wohin wandern Dünen? Bei all diesen Fragen kann die Analyse eines Geländemodell hinzugezogen werden."
   },
   {
     "objectID": "topography.html#warm-up-daten-vorverarbeiten",
@@ -72,23 +72,23 @@
   {
     "objectID": "topography.html#geländeanalyse-viewshed",
     "href": "topography.html#geländeanalyse-viewshed",
-    "title": "Topographische Analysen",
-    "section": "",
-    "text": "Hydrologie etc mit SRTM für ganz NRW. Potenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)\n\n\n\n\n\n\nAufgabe: Schöne Wege am Kahlen Asten\n\n\n\nViewshed (zb vom kahlen asten)"
+    "title": "Die Datengrundlage für so ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe messen und gerastert ablegen. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Jedes Pixel des Raster”bilds” enthält die Geländehöhe über NN an dieser Position.",
+    "section": "Geländeanalyse, Viewshed",
+    "text": "Geländeanalyse, Viewshed\nHydrologie etc mit SRTM für ganz NRW. Potenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)\n\n\n\n\n\n\nAufgabe: Schöne Wege am Kahlen Asten\n\n\n\n\nBerechne eine Viewshed vom Sauerland.\nHier ist ein Wanderweg. Wie viele Höhenmeter werden Zurückgelegt?\nWelche Abschnitte sind besonders Steil?"
   },
   {
     "objectID": "topography.html#topographic-wetness-index",
     "href": "topography.html#topographic-wetness-index",
-    "title": "Topographische Analysen",
-    "section": "",
-    "text": "Kopecy et al. 2020\n\n\nhttps://www.sciencedirect.com/science/article/abs/pii/S0048969720373162"
+    "title": "Die Datengrundlage für so ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe messen und gerastert ablegen. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Jedes Pixel des Raster”bilds” enthält die Geländehöhe über NN an dieser Position.",
+    "section": "Topographic Wetness Index",
+    "text": "Topographic Wetness Index\n\n\n\nKopecy et al. 2020\n\n\nhttps://www.sciencedirect.com/science/article/abs/pii/S0048969720373162\n\nSAGA und GRASS GIS Module"
   },
   {
     "objectID": "topography.html#aufgabe",
     "href": "topography.html#aufgabe",
-    "title": "Topographische Analysen",
-    "section": "",
-    "text": "Aufgabe: Ökosystemanalyse\n\n\n\nPotenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)"
+    "title": "Die Datengrundlage für so ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe messen und gerastert ablegen. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Jedes Pixel des Raster”bilds” enthält die Geländehöhe über NN an dieser Position.",
+    "section": "Aufgabe",
+    "text": "Aufgabe\n\n\n\n\n\n\nAufgabe: Ökosystemanalyse\n\n\n\nPotenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)"
   },
   {
     "objectID": "kostenanalyse.html#beispieldaten",
@@ -180,5 +180,33 @@
     "title": "Raster-Basics",
     "section": "",
     "text": "Aufgabe:\n\n\n\nLade das Digatel Geländemodell und das digitale Oberflächenmodell. Berechnet die Vegetationshöhe.\n\n\n\n\n\n\n\n\nZusatzaufgabe:\n\n\n\nWo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen &lt;50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen."
+  },
+  {
+    "objectID": "topography.html#warm-up-daten-vorverarbeiten-und-visualisieren",
+    "href": "topography.html#warm-up-daten-vorverarbeiten-und-visualisieren",
+    "title": "Die Datengrundlage für so ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe messen und gerastert ablegen. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Jedes Pixel des Raster”bilds” enthält die Geländehöhe über NN an dieser Position.",
+    "section": "Warm Up: Daten Vorverarbeiten und Visualisieren",
+    "text": "Warm Up: Daten Vorverarbeiten und Visualisieren\nUnter dem Link … könnt ihr SRTM Daten in 90m Auflösung für Deutschland und benachbarte Staaten herunterladen.\n\n\n\n\n\n\nAufgabe: SRTM\n\n\n\n\nLade die SRTM Daten für Deutschland herunter.\nBerechne die Hangneigung (slope), die Exposition (aspect) und eine Schummerung (Hillshade) aus den Geländedaten.\nVisualisiere eine Topographische Karte aus der Schummerung und den Geländehöhen.\nFinde eine sinnvolle Visualisierung zur Darstellung der Exposition\nBerechne und Visualisiere Isohypsen, also Linien gleicher Höhe (contour)."
+  },
+  {
+    "objectID": "topography.html#hangneigung-und--richtung",
+    "href": "topography.html#hangneigung-und--richtung",
+    "title": "Die Datengrundlage für so ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe messen und gerastert ablegen. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Jedes Pixel des Raster”bilds” enthält die Geländehöhe über NN an dieser Position.",
+    "section": "Hangneigung und -richtung",
+    "text": "Hangneigung und -richtung\nDie Algorithmen zur Berechnung der Hangneigung und Exposition nutzen eine 3x3 Pixelumgebung. Die Werte jedes Pixels werden also mit seinen 8 Nachbarpixeln verglichen und entsprechende Gradienten in Z und XY Richtung berechnet.\nIn der Publikation von Horn (1981) wird das Verfahren beschrieben: https://ieeexplore.ieee.org/document/1456186"
+  },
+  {
+    "objectID": "topography.html#hydrologische-analyse",
+    "href": "topography.html#hydrologische-analyse",
+    "title": "Die Datengrundlage für so ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe messen und gerastert ablegen. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Jedes Pixel des Raster”bilds” enthält die Geländehöhe über NN an dieser Position.",
+    "section": "Hydrologische Analyse",
+    "text": "Hydrologische Analyse\nEng verkünpft mit der Topographie einer Landschaft ist dessen Hydrologie. Auf Basis des Geländemodells lassen sich viele Hydrologische Ableitungen treffen und berechnen, beispielsweise die Einzugsgebiete von Gewässern, Abflüsse, oder Ganglinien."
+  },
+  {
+    "objectID": "raster-vector-basics.html#übung",
+    "href": "raster-vector-basics.html#übung",
+    "title": "Raster-Vektor-Basics",
+    "section": "",
+    "text": "Aufgabe 1:\n\n\n\nWie hoch sind die Bäume? (Baum puffern und ergebnis davor für zonal statistcs verwenden), Höhenstatistiken auf Grünflächen (→ Hanna)"
   }
 ]
