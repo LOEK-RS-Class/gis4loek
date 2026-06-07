@@ -13,10 +13,18 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: raster-vector-basics.qmd
-        text: GIS Basics
-      - href: webservices.qmd
-        text: Webdienste
+      - text: Datenerfassung
+        menu:
+          - text: Webdienste
+            href: webservices.qmd
+      - text: GIS Basics
+        menu:
+          - text: Vektor Basics
+            href: vector-basics.qmd
+          - text: Raster Basics
+            href: raster-basics.qmd
+          - text: Raster-Vektor Basics
+            href: raster-vector-basics.qmd
       - href: topography.qmd
         text: Geländeanalysen
       - href: kostenanalyse.qmd

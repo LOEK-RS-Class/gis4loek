@@ -1,6 +1,11 @@
-# Grundlegende Funktionen geographischer Daten
+# Raster-Vektor-Basics
 ![](images/giskurs_header_s.png)
 
-• Vektorbasics: Clip, Intersection, Flächen und Distanzberechnungen, Arbeiten mit Attributtabellen (→ Hanna)
-• Rasterbasics: Geländemodell: Crop, Aus dgm und dom vegetationshöhe berechnen. (→ Hanna)
-• Raster-vector-basics. Wie hoch sind die Bäume? (Baum puffern und ergebnis davor für zonal statistcs verwenden), Höhenstatistiken auf Grünflächen (→ Hanna)
+
+
+## Übung
+
+:::{.callout-tip}
+## Aufgabe 1:
+Wie hoch sind die Bäume? (Baum puffern und ergebnis davor für zonal statistcs verwenden), Höhenstatistiken auf Grünflächen (→ Hanna)
+:::

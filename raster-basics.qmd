@@ -1,0 +1,24 @@
+# Raster-Basics
+![](images/giskurs_header_s.png)
+
+
+
+## Vorlesung
+[📄 Kursfolien als PDF öffnen](slides/02b_Rasterbasics.pdf)
+
+
+## Übung
+
+:::{.callout-tip}
+## Aufgabe:
+Lade das Digatel Geländemodell und das digitale Oberflächenmodell.
+Berechnet die Vegetationshöhe.
+:::
+
+:::{.callout-tip}
+## Zusatzaufgabe:
+Wo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen <50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen.
+:::
+
+
+
