@@ -1,7 +1,6 @@
-# Grundlegende Funktionen geographischer Daten
-![](assets/giskurs_header_s.png)
-
-
+---
+title: Grundlegende Funktionen geographischer Daten
+---
 
 
 ## Übung

@@ -1,17 +1,19 @@
-# Raster-Basics
-![](images/giskurs_header_s.png)
-
+---
+title: Raster Basics
+---
 
 
 ## Vorlesung
-[📄 Kursfolien als PDF öffnen](slides/02b_Rasterbasics.pdf)
+
+<embed src="slides/02b_Rasterbasics.pdf" type="application/pdf" width="100%" height="500">
+
 
 
 ## Übung
 
 :::{.callout-tip}
 ## Aufgabe:
-Lade das Digatel Geländemodell und das digitale Oberflächenmodell.
+Lade das digitale Geländemodell und das digitale Oberflächenmodell.
 Berechnet die Vegetationshöhe.
 :::
 

@@ -1,13 +1,6 @@
 ---
-title: "Topographie & Hydrologie"
-title-block-banner: assets/giskurs_header_s_t.png
-title-block-banner-color: black
-title-block-style: default
+title: "Topographische Analysen"
 ---
-
-
-
-# Topographische Analysen
 
 Topographische Daten sind für eine Vielzahl von Anwendungen und wissenschaftlichen Fragestellungen nützlich.
 Wie hoch ist die Lawinengefahr? Wie verändert sich die Vegetation mit der Geländehöhe? Wohin wandern Dünen?

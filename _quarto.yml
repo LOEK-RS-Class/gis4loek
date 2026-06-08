@@ -5,7 +5,9 @@ project:
     - "*.qmd"
     - "!readme.md"
 
-
+title-block-banner: assets/giskurs_header_s_t.png
+title-block-banner-color: black
+title-block-style: default
 
 website:
   title: "GIS4LOEK"
@@ -13,8 +15,10 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: Datenerfassung
+      - text: Datenquellen
         menu:
+          - text: Daten erheben
+            href: daten-erheben.qmd
           - text: Webdienste
             href: webservices.qmd
       - text: GIS Basics

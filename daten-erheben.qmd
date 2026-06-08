@@ -1,0 +1,23 @@
+---
+title: "Daten selbst erheben"
+format: html
+---
+
+# Warm Up: Geographische Daten erheben
+
+Wozu geographische Daten und woher kommen die Überhaupt?
+
+
+
+
+:::{.callout-tip}
+## Aufgabe: Räumliche Daten
+Geht um das Geo1 Gebäude und nehmt die Koordinaten von 10 Bäumen auf. Notiert auch die Baumart.
+:::
+
+
+
+::: {.callout-caution}
+## Diskussion
+Wie bekommen wir die Daten jetzt in ein GIS?
+:::
