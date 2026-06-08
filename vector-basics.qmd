@@ -1,0 +1,21 @@
+# Vektor-Basics
+![](images/giskurs_header_s.png)
+
+## Vorlesung
+[📄 Kursfolien als PDF öffnen](slides/02a_Vektorbasics.pdf)
+
+
+## Übung
+
+:::{.callout-tip}
+## Aufgabe
+Lade das Baumkataster, das Geo1 und die Stadtgrenzen von Münster herunter. Beantworte folgende Fragen:
+
+1. Wieviele Eichen stehen im Münster Mitte?
+
+2. Wo steht die nächstgelegende Birke vom Geo1 (Tip: z.B. Distance Matrix)
+
+:::
+
+
+
