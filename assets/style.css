@@ -1,0 +1,12 @@
+.title {
+  color: blue;
+}
+
+.h1 {
+    color: blue;
+}
+
+.h1.title{
+    color:aqua;
+
+}

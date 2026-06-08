@@ -1,3 +1,13 @@
+---
+title: "Topographie & Hydrologie"
+title-block-banner: assets/giskurs_header_s_t.png
+title-block-banner-color: black
+title-block-style: default
+---
+
+
+
+# Topographische Analysen
 
 Topographische Daten sind für eine Vielzahl von Anwendungen und wissenschaftlichen Fragestellungen nützlich.
 Wie hoch ist die Lawinengefahr? Wie verändert sich die Vegetation mit der Geländehöhe? Wohin wandern Dünen?
@@ -6,6 +16,7 @@ Bei all diesen Fragen kann die Analyse eines Geländemodell hinzugezogen werden.
 ::: {.callout-warning}
 ## Diskussion
 Sammelt landschaftsökologische Fragestellungen für die ein Geländemodell nützlich sein könnte. 
+Versucht dabei so konkret wie mögliche zu werden.
 
 :::
 
@@ -13,13 +24,8 @@ Sammelt landschaftsökologische Fragestellungen für die ein Geländemodell nüt
 <iframe width="780" height="500" src="https://opentopomap.org/#map=12/-3.0865/37.3710" title="Topographische Karte"></iframe>
 ```
 
-Die Datengrundlage für so ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe messen und gerastert ablegen. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Jedes Pixel des Raster"bilds" enthält die Geländehöhe über NN an dieser Position.
-=======
-# Topographische Analysen
-![](images/giskurs_header_s.png)
-
-
-
+Die Datengrundlage für ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe in einem Regelmäßigen Abstand messen und gerastert abspeichern. 
+Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Ein Digitales Geländemodell im .tif Format ist technisch gesehen eine georeferenzierte Bilddatei, aber in dieser stehen keine Farbwerte, sondern die Geländehöhe an dieser Position. Jedes Pixel des Raster"bilds" enthält die Geländehöhe über NN an dieser Position. Digitale Geländemodelle können wir uns auch als 3-Dimensionales Netz vorstellen (Mesh, Netzwerk) da der Mittelpunkt jedes Pixels einen X, Y, und Z-Wert definiert.
 
 
 ## Warm Up: Daten Vorverarbeiten und Visualisieren
@@ -66,12 +72,12 @@ Hydrologie etc mit SRTM für ganz NRW. Potenzielle feuchtgebeiete und welche lan
 
 
 
-
-## Hydrologische Analyse
-
-Eng verkünpft mit der Topographie einer Landschaft ist dessen Hydrologie. Auf Basis des Geländemodells lassen sich viele Hydrologische Ableitungen treffen und berechnen, beispielsweise die Einzugsgebiete von Gewässern, Abflüsse, oder Ganglinien.
-
 ## Topographic Wetness Index
+
+
+Auf Basis des Geländemodells lassen sich Hydrologische Ableitungen treffen, beispielsweise die Einzugsgebiete von Gewässern, Abflüsse, oder Ganglinien.
+Diese können auch als ökologische Indikatoren dienen um z.B. potentiell feuchtere Gebiete zu beschreiben oder zu identifizieren.
+Der Topografic Wetness Index beschreibt ...
 
 
 
@@ -83,9 +89,13 @@ https://www.sciencedirect.com/science/article/abs/pii/S0048969720373162
 
 
 
-### SAGA und GRASS GIS Module
+## SAGA und GRASS GIS
 
+Neben QGIS gibt es im OSGeo Kosmos weitere GIS Programme die andere Schwerpunkte und Zielgruppen bedienen.
+SAGA ist das System for Automated Geoscientific Analysis [saga-gis.org](https://saga-gis.sourceforge.io/en/index.html) und implementiert u.a. Fernerkundungsalgorithmen, komplexe Simulationen (z.B. Erosion) und Hydrologische Analysewerkzeuge. 
+GRASS GIS ist das Geographic Resources Analysis Support System [grass.osgeo.org](https://grass.osgeo.org/) und legt den Fokus auf Verarbeitungsketten. Auch in GRASS sind spezialisierte Werkzeuge zu vielen Teilbereichen der Landschaftsökologie implementiert. Die [Dokumentation von GRASS ist hervoragend](https://grass.osgeo.org/grass85/manuals/d.rast.html) und gibt einen guten Überblick der Möglichkeiten.
 
+QGIS kann über die Werkzeugkiste auf die SAGA und GRASS Algortihmen zugreifen und diese Ausführen. 
 
 
 
@@ -93,5 +103,8 @@ https://www.sciencedirect.com/science/article/abs/pii/S0048969720373162
 
 :::{.callout-tip}
 ## Aufgabe: Ökosystemanalyse
-Potenzielle feuchtgebeiete und welche landnutzung dort aktuell ist. Deckt sich das mit aktuellen feuchtgebeieten (→ Marvin)
+- Identifiziere potentielle Feuchtgebiete in Nordrhein-Westfalen.
+- Nutze dazu den Topografic Wetness Index.
+- Vergleiche den TWI in verschiedenen Natura 2000 Lebensraumtypen aus dem Datensatz.
+
 :::

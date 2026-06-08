@@ -1,10 +1,16 @@
-# Kostenanalyse
-![](images/giskurs_header_s.png)
+---
+title: "Kostenanalyse"
+title-block-banner: assets/giskurs_header_s_t.png
+title-block-banner-color: black
+title-block-style: default
+---
+
 
 Die Kostenanalyse im GIS beschreibt, wie „Aufwand“ für die Bewegung durch eine Landschaft räumlich dargestellt und bewertet werden kann. Dabei werden Faktoren wie Gelände, Landnutzung oder Barrieren in sogenannten Kostenoberflächen (Cost Surfaces) abgebildet, die zeigen, wie leicht oder schwer bestimmte Bereiche zu durchqueren sind. Auf dieser Grundlage lassen sich z. B. die günstigsten Wege (Least-Cost Paths) oder mögliche Ausbreitungskorridore für Arten berechnen. In der Landschaftsökologie hilft diese Methode, räumliche Verbindungen und Barrieren besser zu verstehen und ökologische Prozesse im Raum zu analysieren.
 
 ## Vorlesung
-[📄 Kursfolien als PDF öffnen](slides/03_Kostenanalyse.pdf)
+
+<embed src="slides/03_Kostenanalyse.pdf" type="application/pdf" width="100%" height="500">
 
 ## Übung
 ### Beispieldaten
