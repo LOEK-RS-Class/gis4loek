@@ -88,7 +88,7 @@
     "href": "raster-basics.html#übung",
     "title": "Raster Basics",
     "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nAufgabe:\n\n\n\nLade das digitale Geländemodell und das digitale Oberflächenmodell. Berechnet die Vegetationshöhe.\n\n\n\n\n\n\n\n\nZusatzaufgabe:\n\n\n\nWo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen &lt;50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen."
+    "text": "Übung\n\n\n\n\n\n\nAufgabe:\n\n\n\nLade das digitale Geländemodell und das digitale Oberflächenmodell von Münster. Berechnet die Vegetationshöhe.\n\n\n\n\n\n\n\n\nZusatzaufgabe:\n\n\n\nWo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen &lt;50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen."
   },
   {
     "objectID": "index.html#willkommen",
@@ -130,34 +130,34 @@
     "href": "kostenanalyse.html#übung",
     "title": "Kostenanalyse",
     "section": "Übung",
-    "text": "Übung\n\nBeispieldaten\nFür diese Übung werden Beispieldaten aus der Region des Siebengebirges verwendet. Diese Daten wurden bereits in den vorherigen Folien zur Übung vorgestellt. Sie dienen als gemeinsame Grundlage für die weiteren Analysen im GIS.\n\n\n\n\n\n\nAufgabe\n\n\n\nLade die Daten vom Siebengebirge herunter. Die Daten beinhalten ein Geländemodell (SRTM) sowie die Landbedeckung (Corine) inkl. Brücken über den Rhein. Zudem ist einen Startpunkt und einen Zielpunkt gegeben. Du kannst aber gerne andere/weitere Start- und Zielpunkte definieren.\n\n\n\n\nKriterien definieren\nAls nächstes geht es darum, die für eine Art relevanten Umweltfaktoren als Kriterien für eine Kostenanalyse im GIS zu definieren. Diese Kriterien bestimmen, wie „leicht“ oder „schwer“ bestimmte Landschaftsbereiche für die Art zu durchqueren oder zu nutzen sind. Die Auswahl geeigneter Faktoren ist dabei entscheidend, da sie die Grundlage für alle weiteren Analysen wie Kostenoberflächen oder Ausbreitungskorridore bildet.\n\n\n\n\n\n\nAufgabe\n\n\n\nFür eine Art deiner Wahl: Überlege und berechne erforderliche Kriterien (z.B Entfernung zu Straßen, Exposition, …) die “Kosten” verursachen.\n\n\n\n\nKostenoberfläche erstellen\nDie Erstellung einer Kostenoberfläche ist der zentrale Schritt, um die zuvor definierten Kriterien räumlich zusammenzuführen. Sie ermöglicht es, die einzelnen Umweltfaktoren in ein gemeinsames Raster zu überführen, das die „Durchlässigkeit“ der Landschaft für die gewählte Art abbildet. Bereiche mit niedrigen Werten stehen dabei für geringe Kosten und somit günstige Bedingungen, während hohe Werte schwer passierbare oder ungünstige Bereiche darstellen. Auf dieser Grundlage können später räumliche Ausbreitungswege und ökologische Verbindungen im GIS analysiert werden.\n\n\n\n\n\n\nAufgabe\n\n\n\nKombiniere deine Kriterien zu einem Kostenraster welches durch niedrige Werte geringe “Kosten” und durch hohe Werte hohe “Kosten” widerspiegelt\n\n\n\n\nKostendistanz und Bewegungsrichtung berechnen\nDie Berechnung von Kostendistanz und Bewegungsrichtung erweitert die Kostenanalyse um die räumliche Dimension der Erreichbarkeit. Dabei wird ermittelt, wie hoch der kumulative Aufwand ist, um von einem Startpunkt aus durch die Kostenoberfläche zu jedem anderen Rasterzellenpunkt zu gelangen. Zusätzlich zeigt die Bewegungsrichtung, aus welcher Richtung die geringsten Kosten für die Fortbewegung stammen. Diese Informationen sind die Grundlage, um später optimale Wander- oder Ausbreitungswege innerhalb der Landschaft zu bestimmen.\n\n\n\n\n\n\nAufgabe\n\n\n\nBerechne die Kostendistanz und die Bewegungsrichtung auf Basis des Kostenrasters. Wenn du QGIS nutzt, wähle dazu das GRASS GIS Tool r.cost.\n\n\n\n\nPfad der geringsten Kosten berechnen\nDie Berechnung des Pfads der geringsten Kosten (Least-Cost Path) nutzt die zuvor ermittelten Kostendistanzen und Bewegungsrichtungen, um den optimalen Weg zwischen zwei Punkten zu bestimmen. Dabei wird derjenige Pfad ausgewählt, der die geringstmöglichen kumulativen „Kosten“ über die Kostenoberfläche verursacht. So lassen sich potenzielle Wanderkorridore oder Ausbreitungswege einer Art in der Landschaft identifizieren.\n\n\n\n\n\n\nAufgabe\n\n\n\nErstelle auf Basis der Bewegungsrichtung den Pfad der geringsten Kosten. Wenn du QGIS nutzt, wähle dazu das GRASS GIS Tool r.path."
-  },
-  {
-    "objectID": "raster-vector-basics.html",
-    "href": "raster-vector-basics.html",
-    "title": "Raster-Vektor-Basics",
-    "section": "",
-    "text": "Aufgabe 1:\n\n\n\n\nWie hoch sind die Bäume im Baumkataster? Beachtet, dass die Bäume einen gewissen Kronendurchmesser haben (sagen wir mal 10m)."
+    "text": "Übung\n\nBeispieldaten\nFür diese Übung werden Beispieldaten aus der Region des Siebengebirges verwendet. Diese Daten wurden bereits in den vorherigen Folien zur Übung vorgestellt. Sie dienen als gemeinsame Grundlage für die weiteren Analysen im GIS.\n\n\n\n\n\n\nAufgabe\n\n\n\nLade die Daten vom Siebengebirge herunter (https://uni-muenster.sciebo.de/s/dwzzsNBSAs5xBW9). Die Daten beinhalten ein Geländemodell (SRTM) sowie die Landbedeckung (Corine) inkl. Brücken über den Rhein. Zudem ist einen Startpunkt und einen Zielpunkt gegeben. Du kannst aber gerne andere/weitere Start- und Zielpunkte definieren.\n\n\n\n\nKriterien definieren\nAls nächstes geht es darum, die für eine Art relevanten Umweltfaktoren als Kriterien für eine Kostenanalyse im GIS zu definieren. Diese Kriterien bestimmen, wie „leicht“ oder „schwer“ bestimmte Landschaftsbereiche für die Art zu durchqueren oder zu nutzen sind. Die Auswahl geeigneter Faktoren ist dabei entscheidend, da sie die Grundlage für alle weiteren Analysen wie Kostenoberflächen oder Ausbreitungskorridore bildet.\n\n\n\n\n\n\nAufgabe\n\n\n\nFür eine Art deiner Wahl: Überlege und berechne erforderliche Kriterien (z.B Entfernung zu Straßen, Exposition, …) die “Kosten” verursachen.\n\n\n\n\nKostenoberfläche erstellen\nDie Erstellung einer Kostenoberfläche ist der zentrale Schritt, um die zuvor definierten Kriterien räumlich zusammenzuführen. Sie ermöglicht es, die einzelnen Umweltfaktoren in ein gemeinsames Raster zu überführen, das die „Durchlässigkeit“ der Landschaft für die gewählte Art abbildet. Bereiche mit niedrigen Werten stehen dabei für geringe Kosten und somit günstige Bedingungen, während hohe Werte schwer passierbare oder ungünstige Bereiche darstellen. Auf dieser Grundlage können später räumliche Ausbreitungswege und ökologische Verbindungen im GIS analysiert werden.\n\n\n\n\n\n\nAufgabe\n\n\n\nKombiniere deine Kriterien zu einem Kostenraster welches durch niedrige Werte geringe “Kosten” und durch hohe Werte hohe “Kosten” widerspiegelt\n\n\n\n\nKostendistanz und Bewegungsrichtung berechnen\nDie Berechnung von Kostendistanz und Bewegungsrichtung erweitert die Kostenanalyse um die räumliche Dimension der Erreichbarkeit. Dabei wird ermittelt, wie hoch der kumulative Aufwand ist, um von einem Startpunkt aus durch die Kostenoberfläche zu jedem anderen Rasterzellenpunkt zu gelangen. Zusätzlich zeigt die Bewegungsrichtung, aus welcher Richtung die geringsten Kosten für die Fortbewegung stammen. Diese Informationen sind die Grundlage, um später optimale Wander- oder Ausbreitungswege innerhalb der Landschaft zu bestimmen.\n\n\n\n\n\n\nAufgabe\n\n\n\nBerechne die Kostendistanz und die Bewegungsrichtung auf Basis des Kostenrasters. Wenn du QGIS nutzt, wähle dazu das GRASS GIS Tool r.cost.\n\n\n\n\nPfad der geringsten Kosten berechnen\nDie Berechnung des Pfads der geringsten Kosten (Least-Cost Path) nutzt die zuvor ermittelten Kostendistanzen und Bewegungsrichtungen, um den optimalen Weg zwischen zwei Punkten zu bestimmen. Dabei wird derjenige Pfad ausgewählt, der die geringstmöglichen kumulativen „Kosten“ über die Kostenoberfläche verursacht. So lassen sich potenzielle Wanderkorridore oder Ausbreitungswege einer Art in der Landschaft identifizieren.\n\n\n\n\n\n\nAufgabe\n\n\n\nErstelle auf Basis der Bewegungsrichtung den Pfad der geringsten Kosten. Wenn du QGIS nutzt, wähle dazu das GRASS GIS Tool r.path."
   },
   {
     "objectID": "raster-vector-basics.html#übung",
     "href": "raster-vector-basics.html#übung",
     "title": "Raster-Vektor-Basics",
-    "section": "",
-    "text": "Aufgabe 1:\n\n\n\n\nWie hoch sind die Bäume im Baumkataster? Beachtet, dass die Bäume einen gewissen Kronendurchmesser haben (sagen wir mal 10m)."
+    "section": "Übung",
+    "text": "Übung\n\n\n\n\n\n\nAufgabe 1:\n\n\n\n\nWie hoch sind die Bäume im Baumkataster? Beachtet, dass die Bäume einen gewissen Kronendurchmesser haben (sagen wir mal 10m)."
   },
   {
-    "objectID": "vector-basics.html#daten-runterladen",
-    "href": "vector-basics.html#daten-runterladen",
-    "title": "Vektor Basics",
-    "section": "Daten runterladen",
-    "text": "Daten runterladen\nBaumkataster der Stadt Münster\nStädtische Grünflächen in Münster"
+    "objectID": "vector-basics.html",
+    "href": "vector-basics.html",
+    "title": "Vektor-Basics",
+    "section": "",
+    "text": "📄 Kursfolien als PDF öffnen\n\n\n\n\n\n\n\n\n\nAufgabe\n\n\n\nLade das Baumkataster, das Geo1 und die Stadtgrenzen von Münster herunter. Beantworte folgende Fragen:\n\nWieviele Eichen stehen im Münster Mitte?\nWo steht die nächstgelegende Birke vom Geo1 (Tip: z.B. Distance Matrix)"
+  },
+  {
+    "objectID": "vector-basics.html#vorlesung",
+    "href": "vector-basics.html#vorlesung",
+    "title": "Vektor-Basics",
+    "section": "",
+    "text": "📄 Kursfolien als PDF öffnen"
   },
   {
     "objectID": "vector-basics.html#übung",
     "href": "vector-basics.html#übung",
-    "title": "Vektor Basics",
-    "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nAufgabe\n\n\n\nLade das Baumkataster und die Stadtgrenzen von Münster herunter. Beantworte folgende Fragen:\n\nWieviele Eichen stehen in Münster Mitte?\nErstelle einen neuen Vektorlayer der die Position des Geo1 enthält.\nWo steht die nächstgelegende Birke vom Geo1? (Tip: z.B. Distance Matrix)\n\n\n\n\n\n\n\n\n\nAufgabe: Sampling Design\n\n\n\nAuf der Aaseewiese sollen Vegetationsaufnahmen durchgeführt werden. Erzeuge dafür 10 zufällige Punkte auf der städtischen Grünfläche."
+    "title": "Vektor-Basics",
+    "section": "",
+    "text": "Aufgabe\n\n\n\nLade das Baumkataster, das Geo1 und die Stadtgrenzen von Münster herunter. Beantworte folgende Fragen:\n\nWieviele Eichen stehen im Münster Mitte?\nWo steht die nächstgelegende Birke vom Geo1 (Tip: z.B. Distance Matrix)"
   }
 ]
