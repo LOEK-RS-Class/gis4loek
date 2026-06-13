@@ -13,7 +13,7 @@ title: Raster Basics
 
 :::{.callout-tip}
 ## Aufgabe:
-Lade das digitale Geländemodell und das digitale Oberflächenmodell.
+Lade das digitale Geländemodell und das digitale Oberflächenmodell von Münster.
 Berechnet die Vegetationshöhe.
 :::
 

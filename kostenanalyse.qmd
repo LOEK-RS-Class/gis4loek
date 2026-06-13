@@ -15,7 +15,7 @@ Für diese Übung werden Beispieldaten aus der Region des Siebengebirges verwend
 
 :::{.callout-tip}
 ## Aufgabe
-Lade die Daten vom Siebengebirge herunter. Die Daten beinhalten ein Geländemodell (SRTM) sowie die Landbedeckung (Corine) inkl. Brücken über den Rhein. Zudem ist einen Startpunkt und einen Zielpunkt gegeben. Du kannst aber gerne andere/weitere Start- und Zielpunkte definieren.
+Lade die Daten vom Siebengebirge herunter (https://uni-muenster.sciebo.de/s/dwzzsNBSAs5xBW9). Die Daten beinhalten ein Geländemodell (SRTM) sowie die Landbedeckung (Corine) inkl. Brücken über den Rhein. Zudem ist einen Startpunkt und einen Zielpunkt gegeben. Du kannst aber gerne andere/weitere Start- und Zielpunkte definieren.
 :::
 
 
