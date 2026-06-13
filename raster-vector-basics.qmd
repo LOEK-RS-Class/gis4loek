@@ -1,5 +1,5 @@
 ---
-title: Grundlegende Funktionen geographischer Daten
+title: Raster-Vektor-Basics
 ---
 
 
@@ -7,5 +7,5 @@ title: Grundlegende Funktionen geographischer Daten
 
 :::{.callout-tip}
 ## Aufgabe 1:
-Wie hoch sind die Bäume? (Baum puffern und ergebnis davor für zonal statistcs verwenden), Höhenstatistiken auf Grünflächen (→ Hanna)
+1. Wie hoch sind die Bäume im Baumkataster? Beachtet, dass die Bäume einen gewissen Kronendurchmesser haben (sagen wir mal 10m).
 :::

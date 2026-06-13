@@ -1,0 +1,49 @@
+---
+title: "GIS Projekt: Hitzebelastung auf Wanderwegen im Naturpark Hessischer Spessart"
+format: html
+---
+
+# Auftrag
+
+Der Klimawandel führt auch im Spessart zu einer Zunahme von Hitzetagen, Trockenperioden und thermischen Belastungen für Erholungssuchende. Wanderwege, die bislang als attraktive Freizeitangebote galten, können insbesondere an heißen Sommertagen an Aufenthaltsqualität verlieren. Gleichzeitig gewinnt die Bereitstellung hitzeangepasster Freizeitangebote zunehmend an Bedeutung.
+Der Naturpark Hessischer Spessart möchte daher untersuchen, welche Faktoren die Hitzebelastung auf Wanderwegen beeinflussen und wie Wanderangebote künftig klimaresilient weiterentwickelt werden können.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(mapview)
+library(sf)
+dat <- st_read("assets/Wanderwege_Blockseminar_HessischerSpessart32632.gpkg",
+  quiet = TRUE)
+mapview(dat)
+```
+
+
+# Eure Aufgabe
+
+
+:::{.callout-tip}
+## Aufgabe 1 (Gruppe)
+Ziel des Projekts ist die Bewertung der Hitzebelastung der Wanderwegen auf Basis frei verfügbarer Geodaten. Überlegt in der Gruppe:
+- Was führt zu Hitzebelastung?
+- Wie können diese Kriterien GIS Basiert abgebildet werden?
+- Wie können die Wanderwege vergleichbar bewertet werden
+:::
+
+
+:::{.callout-tip}
+## Aufgabe 2 (Individuell oder 2-er Teams)
+Sucht euch jeder einen Wanderweg heraus, bewertet die Hitzebelastung, visualisiert die Ergebnisse und bereitet eine Dokumentation der Methoden und Ergebnisse auf. Achtet auch darauf, den Weg nicht nur als ganzes zu bewerten sondern aufzuzeigen, welche Wegabschnitte eine erhöhte thermische Belastung aufweisen (kritische Wegabschnitte)? 
+:::
+
+
+# Daten
+
+[Daten des Naturparks](https://uni-muenster.sciebo.de/s/dwzzsNBSAs5xBW9) mit Infrastruktur (shapefile) und Wegewege (shapefile)
+
+[Digitales Geländemodell (DGM1)](
+https://gds.hessen.de/INTERSHOP/web/WFS/HLBG-Geodaten-Site/de_DE/-/EUR/ViewDownloadcenter-Start?path=3D-Daten/Digitales%20Gel%C3%A4ndemodell%20(DGM1)/Main-Kinzig-Kreis)
+
+[Digitales Oberflächenmodell (DOM1)](https://gds.hessen.de/INTERSHOP/web/WFS/HLBG-Geodaten-Site/de_DE/-/EUR/ViewDownloadcenter-Start?path=3D-Daten/Digitales%20Oberfl%C3%A4chenmodell%20(DOM1)/Main-Kinzig-Kreis)
+
+[High Resolution Layer Tree Cover and Forests]()
+https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover)
