@@ -1,13 +1,13 @@
 ---
-title: "Daten selbst erheben"
+title: "Geographische Daten"
 format: html
 ---
 
-# Warm Up: Geographische Daten erheben
+## Geographische Daten erheben
 
 Wozu geographische Daten und woher kommen die Überhaupt?
 
-
+<embed src="slides/01_geographische-daten.pdf" type="application/pdf" width="100%" height="500">
 
 
 :::{.callout-tip}

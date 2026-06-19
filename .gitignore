@@ -1,6 +1,6 @@
 .quarto/
 data/
-
+example-hydrology/
 
 /.quarto/
 **/*.quarto_ipynb

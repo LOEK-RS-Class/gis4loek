@@ -18,7 +18,7 @@ mapview(dat)
 ```
 
 
-# Eure Aufgabe
+## Eure Aufgabe
 
 
 :::{.callout-tip}
@@ -26,7 +26,7 @@ mapview(dat)
 Ziel des Projekts ist die Bewertung der Hitzebelastung der Wanderwegen auf Basis frei verfügbarer Geodaten. Überlegt in der Gruppe:
 - Was führt zu Hitzebelastung?
 - Wie können diese Kriterien GIS Basiert abgebildet werden?
-- Wie können die Wanderwege vergleichbar bewertet werden
+- Wie können die Wanderwege vergleichbar bewertet werden?
 :::
 
 
@@ -36,7 +36,7 @@ Sucht euch jeder einen Wanderweg heraus, bewertet die Hitzebelastung, visualisie
 :::
 
 
-# Daten
+## Daten
 
 [Daten des Naturparks](https://uni-muenster.sciebo.de/s/dwzzsNBSAs5xBW9) mit Infrastruktur (shapefile) und Wegewege (shapefile)
 

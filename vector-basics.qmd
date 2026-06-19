@@ -2,8 +2,8 @@
 ![](images/giskurs_header_s.png)
 
 ## Vorlesung
-[📄 Kursfolien als PDF öffnen](slides/02a_Vektorbasics.pdf)
 
+<embed src="slides/02a_Vectorbasics.pdf" type="application/pdf" width="100%" height="500">
 
 ## Übung
 

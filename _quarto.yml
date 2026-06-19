@@ -15,7 +15,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: Datenquellen
+      - text: Geographische Daten
         menu:
           - text: Daten erheben
             href: daten-erheben.qmd

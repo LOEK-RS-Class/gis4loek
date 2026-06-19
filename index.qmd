@@ -7,9 +7,6 @@ title-block-banner: false
 
 
 
-<embed src="slides/01_geographische-daten-GIS.pdf" type="application/pdf" width="100%" height="500">
-
-
 
 ## Willkommen
 
@@ -20,5 +17,5 @@ Geographische Informationssysteme sind ein wichtiges Werkzeug zur Verarbeitung r
 - Wie lassen sich Ergebnisse interaktiv Darstellen und Vermitteln? Nutzung und Bereitstellung von Webdiensten
 
 
-Aber bevor wir dazu kommen, ein kleines [Warm Up!](daten-erheben.qmd)
+Aber bevor wir dazu kommen, ein kleines [Warm Up zu Geographischen Daten](daten-erheben.qmd)
 
