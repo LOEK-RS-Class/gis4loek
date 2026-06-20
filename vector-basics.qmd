@@ -3,7 +3,7 @@
 
 ## Vorlesung
 
-<embed src="slides/02a_Vectorbasics.pdf" type="application/pdf" width="100%" height="500">
+<embed src="slides/02a_Vektorbasics.pdf" type="application/pdf" width="100%" height="500">
 
 ## Übung
 
