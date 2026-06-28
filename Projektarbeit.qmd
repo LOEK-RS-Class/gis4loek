@@ -45,5 +45,4 @@ https://gds.hessen.de/INTERSHOP/web/WFS/HLBG-Geodaten-Site/de_DE/-/EUR/ViewDownl
 
 [Digitales Oberflächenmodell (DOM1)](https://gds.hessen.de/INTERSHOP/web/WFS/HLBG-Geodaten-Site/de_DE/-/EUR/ViewDownloadcenter-Start?path=3D-Daten/Digitales%20Oberfl%C3%A4chenmodell%20(DOM1)/Main-Kinzig-Kreis)
 
-[High Resolution Layer Tree Cover and Forests]()
-https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover)
+[High Resolution Layer Tree Cover and Forests](https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover)

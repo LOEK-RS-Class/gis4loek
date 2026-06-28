@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-524cfc69d9eaf187ec0c41c980c8e1d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -199,7 +199,35 @@ background-size: cover;
 
 <section id="webdienste-für-karten-und-geodaten" class="level1 page-columns page-full">
 <h1>Webdienste für Karten und Geodaten</h1>
-<p>Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stell dir einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / <strong>Server</strong> der die Karten und Daten bereitstellt, und ein <strong>Client</strong> der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als <strong>Standards des OGC (Open Geospatial Consortium)</strong> veröffentlicht. Dabei gibt es mehrere zur Auswahl:</p>
+<p>Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stell dir einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / <strong>Server</strong> der die Karten und Daten bereitstellt, und ein <strong>Client</strong> der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als <strong>Standards des OGC (Open Geospatial Consortium)</strong> veröffentlicht. Bevor wir weiter in die Details gehen, richten wir einen Webservice in QGIS ein um zu sehen um was es eigentlich geht.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Aufgabe: Web Feature Service
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Richte den WFS Service https://www.stadt-muenster.de/ows/mapserv706/odgruenserv in QGIS ein.</li>
+<li>Visualisiere die Grünflächen so, dass jeder Flächentyp (obj_art) eine andere Farbe bekommt.</li>
+<li>Wie viele Linden (Baumgruppe Tilia) gibt es in Münster?</li>
+</ul>
+</div>
+</div>
+<section id="web-feature-service---wfs" class="level2">
+<h2 class="anchored" data-anchor-id="web-feature-service---wfs">Web Feature Service - WFS</h2>
+<p>Im Gegensatz zu WM(T)S werden beim <a href="https://www.ogc.org/standards/wfs/">Web Feature Service</a> tatsächliche Geodaten im Vektorformat übertragen. Auch hier werden die Daten nur nach und nach, je nach Kartenausschnitt heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:</p>
+<ul>
+<li><code>getCapabilities</code> zur Anfrage von allgemeinen Metadaten</li>
+<li><code>DescribeFeatureType</code> zur Anfrage von Metadaten spezifischer Vektoren</li>
+<li><code>getFeature</code> zur Anfrage der Vektor Objekte, also die tatsächlichen Daten</li>
+</ul>
+<p>Beispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen)</p>
+<pre><code>https://www.stadt-muenster.de/ows/mapserv706/odgruenserv?REQUEST=GetFeature&amp;SERVICE=WFS&amp;VERSION=2.0.0&amp;TYPENAME=ms:Gruenflaechen&amp;EXCEPTIONS=XML&amp;MAXFEATURES=1</code></pre>
+</section>
 <section id="web-map-service---wms" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="web-map-service---wms">Web Map Service - WMS</h2>
 <p>Beim Web Map Service <a href="https://www.ogc.org/standards/wms/" class="target-blank">(ogc.org/standards/wms/)</a> liefert der Server Bildausschnitte, in der Regel PNG, für die vom Clienten angefragte Koordinaten und Auflösungen. Folgende Anfragen sind das Minimum was ein WMS Standard liefern muss:</p>
@@ -233,17 +261,6 @@ background-size: cover;
 </figure>
 </div>
 </div></div></section>
-<section id="web-feature-service---wfs" class="level2">
-<h2 class="anchored" data-anchor-id="web-feature-service---wfs">Web Feature Service - WFS</h2>
-<p>Im Gegensatz zu WM(T)S werden beim <a href="https://www.ogc.org/standards/wfs/">Web Feature Service</a> tatsächliche Geodaten im Vektorformat übertragen. Auch hier werden die Daten nur nach und nach, je nach Kartenausschnitt heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:</p>
-<ul>
-<li><code>getCapabilities</code> zur Anfrage von allgemeinen Metadaten</li>
-<li><code>DescribeFeatureType</code> zur Anfrage von Metadaten spezifischer Vektoren</li>
-<li><code>getFeature</code> zur Anfrage der Vektor Objekte, also die tatsächlichen Daten</li>
-</ul>
-<p>Beispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen)</p>
-<pre><code>https://www.stadt-muenster.de/ows/mapserv706/odgruenserv?REQUEST=GetFeature&amp;SERVICE=WFS&amp;VERSION=2.0.0&amp;TYPENAME=ms:Gruenflaechen&amp;EXCEPTIONS=XML&amp;MAXFEATURES=1</code></pre>
-</section>
 <section id="beispiel-und-übung" class="level2">
 <h2 class="anchored" data-anchor-id="beispiel-und-übung">Beispiel und Übung</h2>
 <p>Das <a href="https://www.bkg.bund.de/DE/Home/home.html">Bundesamt für Kartographie</a> bietet eine Vielzahl von Basiskarten via Online Services an. Unter folgendem Link sind WMTS Service für Geländemodelldaten zu finden: <a href="https://gdz.bkg.bund.de/index.php/default/wmts-basemapde-schummerung-wmts-basemapde-schummerung.html">WMTS Geländekarte des BKG</a></p>
@@ -299,23 +316,6 @@ background-size: cover;
 </div>
 </div>
 <p>Zuletzt noch ein Beispiel für den Web Feature Service: Die Stadt Münster stellt u.a. die Städtischen Grünflächen und das Baumkataster als WFS zur verfügung.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Aufgabe: Web Feature Service Abfragen
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Richte den WFS Service https://www.stadt-muenster.de/ows/mapserv706/odgruenserv in QGIS ein.</li>
-<li>Visualisiere die Grünflächen so, dass jeder Flächentyp (obj_art) eine andere Farbe bekommt.</li>
-<li>Wie viele Spielplätze gibt es in Münster?</li>
-</ul>
-</div>
-</div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
