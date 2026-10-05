@@ -1,6 +1,87 @@
 # GIS in der Landschaftsökologie
 
 
+## Wochenplan
+
+
+
+### Einführung, Datenaufnahme
+
+- Baum kartieren
+- Sciebo Tabelle 
+- Daten in QGIS importieren
+
+- Aufgabe DONE
+
+### Datenimport, -export und Webservices
+
+- INSPIRE
+- Unterschiedliche Vektordatenformate
+- Webservices
+
+- Aufgabe 
+
+### Projektionen
+
+
+
+### Vektor
+
+
+### Raster
+
+
+
+### Vektor-Raster
+
+### Habitatanalyse
+
+- Heterogenität
+- Landschaft
+
+
+### Geländeanalysen
+
+- Slope
+- Aspect
+- Schummerung
+- Konturen
+
+
+### Hydrology
+
+- TWI
+- Flow Accumulation
+
+### Kostenanalyse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Ideen
+
+Heiden sind das Ergebnis der Kulturlandschaft und auf eine extensive Nutzung angewiesen (z.B. Schafbeweidung).  Häufig sind Heiden in eine Flächennutzung integriert die im Umland landwirtschaftliche Nutzung bedeutet. Daraus ergibt sich eine Gefährdung der Heideflächen durch die Aufgabe der Extensiven Nutzung und durch Nährstoffeintrag aus dem Umfeld.
+Analysiere das Umland von Heideflächen bezüglich der umliegenden Landnutzung und Bewerte deren Risiko eines zukünftig schlechteren Erhaltungszustands!
+
+
+
 ## Tag 1: GIS Basics
    
 - Auftrag: Bäume mit Art und Umfang um das Geo1 Gebäude aufnehmen. (→ Marvin)
@@ -31,3 +112,6 @@
     1. Beschreibe kurz die Datengrundlage. 
     2. Beschreibe den Workflow für ... 
     3. Statische schöne Karte 
+    
+    
+

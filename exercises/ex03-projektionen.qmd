@@ -1,0 +1,24 @@
+
+
+
+
+
+
+
+
+## Vektoroperationen
+
+
+In der nächsten Einheit wird es um Vektoroperationen gehen. Zur Vorbereitung frischen Sie ihre Kenntnisse gängiger Werkzeuge auf.
+In QGIS gibt es in der oberen Menüleiste den Eintrag "Vektor" und darin die Rubrik "Geoprocessing Tools". Dort sind unter anderem die Werkzeuge
+
+- Puffer / Buffer
+- Clip
+- Convex Hull
+- Difference
+- Dissolve
+- Intersection
+- Union
+
+Beschreiben Sie kurz was diese Werkzeuge machen und überlegen Sie sich einen potentiellen Anwendungsfall mit landschaftsökologischem Bezug.
+

@@ -1,0 +1,44 @@
+---
+format: pdf
+---
+
+# Aufgaben - Webdienste
+
+
+
+
+## Datenformate und Webservices.
+
+- Welche Vor- und Nachteile bestehen zwischen Vektordaten im Shapefile Format und im Geopackage Format?
+- Was ist der konzeptionelle Unterschied zwischen dem Web Map Service (WMS) und dem Web Feature Service (WFS)?
+
+
+
+## Web Feature Service
+
+Sie wollen in Münster 
+
+
+
+## Web Map Tile Service
+
+
+Das Bundesamt für Kartographie bietet einem Web Map Tile Service für Geländemodelldaten an: [WMTS Geländekarte des BKG](https://gdz.bkg.bund.de/index.php/default/wmts-basemapde-schummerung-wmts-basemapde-schummerung.html)
+
+- Welche drei Produkte werden von dem Geländedaten-Dienst bereitgestellt?
+- Welche Datenbasis nutzt der Geländedaten-Dienst zur Berechnung der Produkte? Wie hoch ist die räumliche Auflösung?
+
+- Binden Sie den Dienst in QGIS ein. 
+- Jedes der drei Produkte gibt es in vier Versionen. Wodurch unterscheiden sich diese Versionen?
+
+
+
+
+
+
+
+
+
+
+
+

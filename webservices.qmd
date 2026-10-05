@@ -4,7 +4,40 @@ title: "GIS Webdienste"
 
 # Webdienste für Karten und Geodaten
 
-Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stell dir einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / **Server** der die Karten und Daten bereitstellt, und ein **Client** der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als **Standards des OGC (Open Geospatial Consortium)** veröffentlicht. Dabei gibt es mehrere zur Auswahl:
+Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stell dir einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / **Server** der die Karten und Daten bereitstellt, und ein **Client** der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als **Standards des OGC (Open Geospatial Consortium)** veröffentlicht.
+Bevor wir weiter in die Details gehen, richten wir einen Webservice in QGIS ein um zu sehen um was es eigentlich geht.
+
+
+
+
+::: {.callout-tip}
+## Aufgabe: Web Feature Service
+
+- Richte den WFS Service https://www.stadt-muenster.de/ows/mapserv706/odgruenserv in QGIS ein.
+- Visualisiere die Grünflächen so, dass jeder Flächentyp (obj_art) eine andere Farbe bekommt.
+- Wie viele Linden (Baumgruppe Tilia) gibt es in Münster?
+:::
+
+
+## Web Feature Service - WFS
+
+Im Gegensatz zu WM(T)S werden beim [Web Feature Service](https://www.ogc.org/standards/wfs/) tatsächliche Geodaten im Vektorformat übertragen. Auch hier werden die Daten nur nach und nach, je nach Kartenausschnitt heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:
+
+- `getCapabilities` zur Anfrage von allgemeinen Metadaten
+- `DescribeFeatureType` zur Anfrage von Metadaten spezifischer Vektoren
+- `getFeature` zur Anfrage der Vektor Objekte, also die tatsächlichen Daten
+
+
+Beispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen)
+
+```
+https://www.stadt-muenster.de/ows/mapserv706/odgruenserv?REQUEST=GetFeature&SERVICE=WFS&VERSION=2.0.0&TYPENAME=ms:Gruenflaechen&EXCEPTIONS=XML&MAXFEATURES=1
+```
+
+
+
+
+
 
 
 ## Web Map Service - WMS
@@ -50,23 +83,12 @@ https://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapd
 :::
 
 
+## Web Coverage Service
+
+Beispiel: https://gdz.bkg.bund.de/index.php/default/inspire-wcs-elevation-dgm200-wcs-dgm200-inspire.html
 
 
 
-## Web Feature Service - WFS
-
-Im Gegensatz zu WM(T)S werden beim [Web Feature Service](https://www.ogc.org/standards/wfs/) tatsächliche Geodaten im Vektorformat übertragen. Auch hier werden die Daten nur nach und nach, je nach Kartenausschnitt heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:
-
-- `getCapabilities` zur Anfrage von allgemeinen Metadaten
-- `DescribeFeatureType` zur Anfrage von Metadaten spezifischer Vektoren 
-- `getFeature` zur Anfrage der Vektor Objekte, also die tatsächlichen Daten
-
-
-Beispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen) 
-
-```
-https://www.stadt-muenster.de/ows/mapserv706/odgruenserv?REQUEST=GetFeature&SERVICE=WFS&VERSION=2.0.0&TYPENAME=ms:Gruenflaechen&EXCEPTIONS=XML&MAXFEATURES=1
-```
 
 
 ## Beispiel und Übung
@@ -107,13 +129,7 @@ Hier noch ein Beispiel zu WMS: [eine Deutschlandweite Hintergrundkarte des BKG](
 Zuletzt noch ein Beispiel für den Web Feature Service: Die Stadt Münster stellt u.a. die Städtischen Grünflächen und das Baumkataster als WFS zur verfügung.
 
 
-::: {.callout-tip}
-## Aufgabe: Web Feature Service Abfragen
 
-- Richte den WFS Service https://www.stadt-muenster.de/ows/mapserv706/odgruenserv in QGIS ein.
-- Visualisiere die Grünflächen so, dass jeder Flächentyp (obj_art) eine andere Farbe bekommt.
-- Wie viele Spielplätze gibt es in Münster?
-:::
 
 
 

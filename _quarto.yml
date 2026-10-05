@@ -10,34 +10,38 @@ title-block-banner-color: black
 title-block-style: default
 
 website:
-  title: "GIS4LOEK"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - text: Geographische Daten
-        menu:
-          - text: Daten erheben
-            href: daten-erheben.qmd
-          - text: Webdienste
-            href: webservices.qmd
-      - text: GIS Basics
-        menu:
-          - text: Vektor Basics
-            href: vector-basics.qmd
-          - text: Raster Basics
-            href: raster-basics.qmd
-          - text: Raster-Vektor Basics
-            href: raster-vector-basics.qmd
-      - href: topography.qmd
-        text: Geländeanalysen
-      - href: kostenanalyse.qmd
-        text: Kostenanalyse
-      - href: Projektarbeit.qmd
-        text: GIS Projekt
-
-
-
+  title: "GIS LOEK"
+  sidebar:
+    style: floating
+    search: false
+    contents:
+      - text: Home
+        href: index.qmd
+      - section: Geographische Daten
+        contents:
+          - href: daten-erheben.qmd
+            text: Daten erheben
+          - href: webservices.qmd
+            text: Webdienste
+          - href: projectionen.qmd
+            text: Projektionen
+      - section: GIS Grundlagen
+        contents:
+          - href: vector-basics.qmd
+            text: Vektor Basics
+          - href: raster-basics.qmd
+            text: Raster Basics
+          - href: raster-vector-basics.qmd
+            text: Raster-Vektor Interaktionen
+      - section: Habitatanalysen
+      - section: Geländeanalysen
+        contents:
+          - href: topography.qmd
+            text: Digitale Geländemodelle
+          - href: hydrology.qmd
+            text: Hydrologische Analysen
+      - text: Kostenanalyse
+        href: kostenanalyse.qmd
 
 
 

@@ -1,0 +1,33 @@
+---
+title: Projektionen
+---
+
+
+Koordinaten sind die Grundlage 
+
+
+Grundsätzlich gibt es zwei verschiedene Systeme um positionen auf der Erdoberfläche 
+
+
+
+
+
+![Gaskraftwerk Meppen](https://www.kreiszeitung.de/assets/images/33/623/33623662-eine-aufnahme-des-kuehlturms-mit-der-riesigen-weltkarte-aus-dem-jahr-2015-2csYPX8LHS73.jpg)
+
+
+
+
+
+
+
+
+
+## Projektionen in QGIS
+
+
+
+
+
+
+
+

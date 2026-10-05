@@ -1,6 +1,5 @@
 ---
 title: "GIS in der Landschaftsökologie"
-title-block-banner: false
 ---
 
 ![](assets/giskurs_header_s.png)

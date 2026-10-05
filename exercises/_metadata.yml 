@@ -1,0 +1,8 @@
+  format:
+    pdf:
+      mainfont: "Jost*"
+      geometry:
+        - top=25mm
+        - left=20mm
+        - right=20mm
+        - bottom=20mm

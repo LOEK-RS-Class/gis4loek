@@ -1,0 +1,72 @@
+---
+format: pdf
+---
+# Aufgaben - Geographische Daten
+
+
+## Geographische Daten: Anwendungsbeispiele
+
+Am Institut für Landschaftsökolgie der Universität Münster gibt es folgende Arbeitsgruppen:
+
+- Angewandte Landschaftsökologie und Ökologische Planung
+- Biodiversität und Ökosystemforschung
+- Biosphere-Atmosphere Interaction
+- Bodenökologie und Landnutzung
+- Faunistik und Ökologie der Wirbeltiere
+- Fernerkundung und Räumliche Modellierung
+- Ökohydrologie und Stoffkreisläufe 
+- Tierökologie 
+
+Überlegen Sie sich für jede Arbeitsgruppe Forschungsfrage für die geographische Daten und der Einsatz von Geographischen Informationssytemen sinnvoll wäre.
+
+
+
+
+## Schwierigkeiten in der Datenaufnahme
+
+Von einer Unteren Naturschutzbehörde erhalten die unten stehende Tabelle als .csv Datei (Daten fiktiv und KI generiert) um damit Baumbestände im Bezug auf ihren Standort zu analysieren.
+
+Welche Probleme erwarten Sie bei der Nutzung dieser Daten?
+
+
+| ID    | Latitude       | Longitude       | Art                  | Deckungsgrad | Bemerkungen                     |
+|-------|----------------|-----------------|----------------------|--------------|---------------------------------|
+| B-01  | 52° 31' N      | 13° 24'       | Fagus sylvatica      | 2            | Dominant im Altbestand          |
+| A-07  | 48.452612      | 11.8562125       | Rotbuche             | 1            |          |
+| C-12  | 50.566632      | 7.56865511        | Quercus robur        | 3            |   |
+| P-03  | 54° 20' N      | 10° 08' E       | Waldkiefer           | +            |           |
+| F-15  | 47° 30' N      | 9° 25' E        | Platane  |             | Einzelbaum verletzt             |
+| D-22  | 51° 14' N      | 6° 47' E        | Gemeine Fichte       |             |     |
+| E-08  | 49° 53' N      | 8° 39' E        | F.Syl                | 2            | Unterwuchs fehlt |
+| H-31  |                |                 | F.Syl                | 1            | Verjüngung           |
+
+
+
+
+
+## Zugang zu geographischen Daten
+
+Das [Bundesamt für Kartographie](https://www.bkg.bund.de/DE/Home/home.html) bietet einige frei verfügbare Datensätze an - unter anderem die Verwaltungsgrenzen mit Einwohnerzahl Deutschlands: 
+
+https://gdz.bkg.bund.de/index.php/default/open-data/verwaltungsgebiete-1-250-000-mit-einwohnerzahlen-stand-31-12-vg250-ew-31-12.html
+
+Zu jedem Datensatz gibt es umfangreiche Dokumentationen zu deren Inhalt und Nutzung. Nutzen Sie diese um folgende Fragen zu klären:
+
+- In welchen Dateiformaten wird der Datensatz angeboten?
+- Welche Bereitstellungsoptionen bietet das BKG an?
+- Welche Administrativen Verwaltungsebenen sind im Datensatz enthalten?
+
+Laden Sie den Datensatz als .gpkg herunter. Den brauchen wir nächste Woche.
+
+
+
+
+
+
+
+
+
+
+
+
+
