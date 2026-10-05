@@ -2,12 +2,13 @@
 title: "GIS in der Landschaftsökologie"
 ---
 
-![](assets/giskurs_header_s.png)
-
-
-
 
 ## Willkommen
+
+
+<embed src="slides/00_Intro.pdf" type="application/pdf" width="100%" height="500">
+
+
 
 Geographische Informationssysteme sind ein wichtiges Werkzeug zur Verarbeitung räumlicher Daten und damit für die Beantwortung landschaftsökologischer Fragestellungen hochrelevant. Diese Kurseinheit stellt typische Fragen und Problemstellungen der einzelnen Teildisziplinen der Landschaftsökologie vor und vermittelt daran Konzepte und Anwendungen von GIS Systemen. Hier ein Auszug an Fragen und Themen des Kurses:
 

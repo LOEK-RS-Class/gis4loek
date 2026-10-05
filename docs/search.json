@@ -239,8 +239,8 @@
     "objectID": "index.html#willkommen",
     "href": "index.html#willkommen",
     "title": "GIS in der Landschaftsökologie",
-    "section": "Willkommen",
-    "text": "Willkommen\nGeographische Informationssysteme sind ein wichtiges Werkzeug zur Verarbeitung räumlicher Daten und damit für die Beantwortung landschaftsökologischer Fragestellungen hochrelevant. Diese Kurseinheit stellt typische Fragen und Problemstellungen der einzelnen Teildisziplinen der Landschaftsökologie vor und vermittelt daran Konzepte und Anwendungen von GIS Systemen. Hier ein Auszug an Fragen und Themen des Kurses:\n\nWo fließt Wasser? Topographie und Hydrologie zur Beschreibung von Landschaften.\nWie Bewegen sich Arten in der Landschaft? Kostenanalysen auf Basis von Geländeinformationen\nWie lassen sich Ergebnisse interaktiv Darstellen und Vermitteln? Nutzung und Bereitstellung von Webdiensten\n\nAber bevor wir dazu kommen, ein kleines Warm Up zu Geographischen Daten",
+    "section": "",
+    "text": "Geographische Informationssysteme sind ein wichtiges Werkzeug zur Verarbeitung räumlicher Daten und damit für die Beantwortung landschaftsökologischer Fragestellungen hochrelevant. Diese Kurseinheit stellt typische Fragen und Problemstellungen der einzelnen Teildisziplinen der Landschaftsökologie vor und vermittelt daran Konzepte und Anwendungen von GIS Systemen. Hier ein Auszug an Fragen und Themen des Kurses:\n\nWo fließt Wasser? Topographie und Hydrologie zur Beschreibung von Landschaften.\nWie Bewegen sich Arten in der Landschaft? Kostenanalysen auf Basis von Geländeinformationen\nWie lassen sich Ergebnisse interaktiv Darstellen und Vermitteln? Nutzung und Bereitstellung von Webdiensten\n\nAber bevor wir dazu kommen, ein kleines Warm Up zu Geographischen Daten",
     "crumbs": [
       "Home"
     ]
@@ -287,6 +287,16 @@
     "crumbs": [
       "GIS Grundlagen",
       "Vektor Basics"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "GIS in der Landschaftsökologie",
+    "section": "",
+    "text": "Geographische Informationssysteme sind ein wichtiges Werkzeug zur Verarbeitung räumlicher Daten und damit für die Beantwortung landschaftsökologischer Fragestellungen hochrelevant. Diese Kurseinheit stellt typische Fragen und Problemstellungen der einzelnen Teildisziplinen der Landschaftsökologie vor und vermittelt daran Konzepte und Anwendungen von GIS Systemen. Hier ein Auszug an Fragen und Themen des Kurses:\n\nWo fließt Wasser? Topographie und Hydrologie zur Beschreibung von Landschaften.\nWie Bewegen sich Arten in der Landschaft? Kostenanalysen auf Basis von Geländeinformationen\nWie lassen sich Ergebnisse interaktiv Darstellen und Vermitteln? Nutzung und Bereitstellung von Webdiensten\n\nAber bevor wir dazu kommen, ein kleines Warm Up zu Geographischen Daten",
+    "crumbs": [
+      "Home"
     ]
   }
 ]
