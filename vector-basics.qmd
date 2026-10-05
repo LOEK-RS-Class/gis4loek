@@ -6,6 +6,24 @@ title: Vektor-Basics
 
 <embed src="slides/02a_Vektorbasics.pdf" type="application/pdf" width="100%" height="500">
 
+## Das Vektordatenmodell
+
+Bevor wir in die Praxis einsteigen, ein kurzer theoretischer Rückblick: Ein Datenmodell dient dazu, die reale Welt im GIS repräsentieren zu können. Da die Realität zu komplex ist, erfolgt dies durch eine Abstraktion. Je nachdem, ob wir diskrete Objekte (z. B. Bäume, Flüsse, Naturschutzgebiete) betrachten oder kontinuierliche Felder (z. B. Lufttemperatur, Höhe), bieten sich zwei verschiedene Datenmodelle an.
+
+In dieser Woche konzentrieren wir uns zunähst auf das Vektormodell, das Koordinatenpaare (x, y) nutzt, um geografische Objekte zu beschreiben. Da wir hier von diskreten Objekten sprechen, bedeutet dies, dass die Objekte klar definierte Grenzen haben und als einzelne, voneinander trennbare Einheiten existieren.
+
+Wir unterscheiden dabei drei grundlegende Geometrietypen:
+
+- Punkt: Ein einzelner Koordinatenpunkt (z. B. ein Messstandort, ein einzelner Baum).
+- Linie (Polyline): Eine Folge von Punkten, die durch Segmente verbunden sind (z. B. Bachläufe, Wanderwege).
+- Polygon: Eine geschlossene Linie, die eine Fläche umschließt (z. B. Waldgebiet, Stadtbezirk).
+
+Vektordaten erlauben die direkte Verknüpfung der geometrie mit einer Attributtabelle, in der alle nicht-geometrischen Informationen (z. B. Baumart, pH-Wert, Flächennutzung) gespeichert werden.
+
+
+
+## Vektoroperationen
+
 ## Übung
 
 :::{.callout-tip}
