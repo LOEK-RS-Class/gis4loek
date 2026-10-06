@@ -6,19 +6,34 @@
 
 
 
-## Vektoroperationen
+## Vorbereitung Vektordaten
+
+In der nächsten Einheit wird es um Vektoroperationen gehen. Zur Vorbereitung frischen Sie ihre Kenntnisse gängiger Werkzeuge auf. Lesen Sie dazu den Website Text zu den Vektordaten.
+
+### Thematische Abfragen
+Stellen Sie sich vor, Sie arbeiten mit einem Vektordatensatz von Beobachtungen verschiedener Tierarten in einem Nationalpark. Jedes Objekt (Punkt) ist mit einer Attributtabelle verknüpft, die unter anderem die Spalten Art, Gewicht (in kg) und Status (z. B. 'gefährdet', 'stabil') enthält.
+
+Ein Kollege hat eine Abfrage erstellt, um eine bestimmte Gruppe von Tieren für eine Analyse zu selektieren. Der Ausdruck im Editor sieht wie folgt aus:
+
+```sql
+"Gewicht" > 400 AND ("Art" = 'Elefant' OR "Art" = 'Nashorn')
+```
+
+Analysieren Sie diesen Ausdruck und beantworten Sie die folgenden Fragen:
+
+- Wie viele Vergleichsoperatoren können Sie identifizieren? Welche sind es?
+- Wie viele logische Operatoren kommen vor? Welche sind es?
+- Formulieren Sie diesen formalen Ausdruck in eine normale, fachliche Frage um. Was genau möchte der Kollege mit dieser Abfrage finden?
 
 
-In der nächsten Einheit wird es um Vektoroperationen gehen. Zur Vorbereitung frischen Sie ihre Kenntnisse gängiger Werkzeuge auf.
+### Vektorverarbeitung
 In QGIS gibt es in der oberen Menüleiste den Eintrag "Vektor" und darin die Rubrik "Geoprocessing Tools". Dort sind unter anderem die Werkzeuge
 
 - Puffer / Buffer
 - Clip
-- Convex Hull
 - Difference
 - Dissolve
 - Intersection
-- Union
 
-Beschreiben Sie kurz was diese Werkzeuge machen und überlegen Sie sich einen potentiellen Anwendungsfall mit landschaftsökologischem Bezug.
+Beschreiben Sie kurz was diese Werkzeuge machen und überlegen Sie sich zu 3 der Werkzeuge einen potentiellen Anwendungsfall mit landschaftsökologischem Bezug.
 
