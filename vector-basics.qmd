@@ -101,7 +101,7 @@ Auf diesen grundlegenden Abfragen basieren komplexere topologische Analysen und 
 ## Aufgabe
 Lade das [Baumkataster](https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-m%C3%BCnster/resource/096c4fc2-cfdb-4b9b-840f-da9e638e65ec), das [Geo1](https://uni-muenster.sciebo.de/s/dwzzsNBSAs5xBW9) und die [Stadtgrenzen von Münster](https://opendata.stadt-muenster.de/sites/default/files/05515000_shp_stadtbezirk.zip) herunter. Beantworte folgende Fragen:
 
-1. Wieviele Eichen stehen im Münster Mitte?
+1. Wieviele Eichen stehen im Münster Mitte? (Tip: Hier brauchst du eine räumliche Verschneidung sowie eine thematische Abfrage)
 
 2. Wo steht die nächstgelegende Birke vom Geo1 (Tip: Verwende das Werkzeug "Distance Matrix": Dieses Werkzeug berechnet die Distanz zwischen allen Punkten eines Start-Layers (z. B. Geo1) und allen Punkten eines Ziel-Layers (z. B. Birken). Das Ergebnis ist eine neue Tabelle, aus der du den kürzesten Abstand (Minimum) einfach herausfiltern kannst.)
 

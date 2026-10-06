@@ -283,7 +283,7 @@
     "href": "vector-basics.html#übung",
     "title": "Vektor-Basics",
     "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nAufgabe\n\n\n\nLade das Baumkataster, das Geo1 und die Stadtgrenzen von Münster herunter. Beantworte folgende Fragen:\n\nWieviele Eichen stehen im Münster Mitte?\nWo steht die nächstgelegende Birke vom Geo1 (Tip: z.B. Distance Matrix)",
+    "text": "Übung\n\n\n\n\n\n\nAufgabe\n\n\n\nLade das Baumkataster, das Geo1 und die Stadtgrenzen von Münster herunter. Beantworte folgende Fragen:\n\nWieviele Eichen stehen im Münster Mitte?\nWo steht die nächstgelegende Birke vom Geo1 (Tip: Verwende das Werkzeug “Distance Matrix”: Dieses Werkzeug berechnet die Distanz zwischen allen Punkten eines Start-Layers (z. B. Geo1) und allen Punkten eines Ziel-Layers (z. B. Birken). Das Ergebnis ist eine neue Tabelle, aus der du den kürzesten Abstand (Minimum) einfach herausfiltern kannst.)",
     "crumbs": [
       "GIS Grundlagen",
       "Vektor Basics"
@@ -389,5 +389,19 @@
     "title": "GIS LOEK",
     "section": "Vorbereitung Rasterdaten",
     "text": "Vorbereitung Rasterdaten"
+  },
+  {
+    "objectID": "exercises/ex04-vektor.html",
+    "href": "exercises/ex04-vektor.html",
+    "title": "GIS LOEK",
+    "section": "",
+    "text": "Für diese Übung nutzen Sie die bereits heruntergeladenen Datensätze: das Baumkataster und die Stadtbezirke von Münster. Bearbeiten Sie die folgenden Aufgaben und dokumentieren Sie Ihre Ergebnisse:\n\nWieviele Eichen und Linden gibt es in Münster? Wie sieht die entsprechende thematische Abfrage dafür aus?\nVergleichen Sie die Baumbestände zweier Stadtbezirke: Hat Münster-Mitte oder Münster-West mehr Bäume? (Tipp: Um die Bäume den jeweiligen Stadtbezirken zuzuordnen, nutzen Sie das Werkzeug „Verschneidung“ (Intersection)).\nWelcher Bezirk hat die größte Baumdichte (mit wievielen Bäumen pro m²)? Berechnen Sie dazu die Fläche der Stadtteile. Die Flächenberechnung geht am einfachsten über den Feldrechner (Field Calculator) in der Attributtabelle mit der Funktion $area."
+  },
+  {
+    "objectID": "exercises/ex04-vektor.html#vektordaten",
+    "href": "exercises/ex04-vektor.html#vektordaten",
+    "title": "GIS LOEK",
+    "section": "",
+    "text": "Für diese Übung nutzen Sie die bereits heruntergeladenen Datensätze: das Baumkataster und die Stadtbezirke von Münster. Bearbeiten Sie die folgenden Aufgaben und dokumentieren Sie Ihre Ergebnisse:\n\nWieviele Eichen und Linden gibt es in Münster? Wie sieht die entsprechende thematische Abfrage dafür aus?\nVergleichen Sie die Baumbestände zweier Stadtbezirke: Hat Münster-Mitte oder Münster-West mehr Bäume? (Tipp: Um die Bäume den jeweiligen Stadtbezirken zuzuordnen, nutzen Sie das Werkzeug „Verschneidung“ (Intersection)).\nWelcher Bezirk hat die größte Baumdichte (mit wievielen Bäumen pro m²)? Berechnen Sie dazu die Fläche der Stadtteile. Die Flächenberechnung geht am einfachsten über den Feldrechner (Field Calculator) in der Attributtabelle mit der Funktion $area."
   }
 ]
