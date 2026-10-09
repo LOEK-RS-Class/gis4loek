@@ -1,7 +1,7 @@
 ---
+title: Ex01 - Geographische Daten
 format: pdf
 ---
-# Aufgaben - Geographische Daten
 
 
 ## Geographische Daten: Anwendungsbeispiele
@@ -56,7 +56,7 @@ Zu jedem Datensatz gibt es umfangreiche Dokumentationen zu deren Inhalt und Nutz
 - Welche Bereitstellungsoptionen bietet das BKG an?
 - Welche Administrativen Verwaltungsebenen sind im Datensatz enthalten?
 
-Laden Sie den Datensatz als .gpkg herunter. Den brauchen wir nächste Woche.
+Laden Sie den Datensatz als geopackage (.gpkg) herunter. Den brauchen wir nächste Woche.
 
 
 

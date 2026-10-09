@@ -1,3 +1,10 @@
+---
+title: Ex04 - Vektoren
+format: pdf
+---
+
+
+
 ## Vektordaten
 
 Für diese Übung nutzen Sie die bereits heruntergeladenen Datensätze: das Baumkataster und die Stadtbezirke von Münster. Bearbeiten Sie die folgenden Aufgaben und dokumentieren Sie Ihre Ergebnisse:

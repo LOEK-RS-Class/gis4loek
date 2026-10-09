@@ -10,8 +10,10 @@ title-block-banner: assets/giskurs_header_s_t.png
 title-block-banner-color: black
 title-block-style: default
 
+
 website:
   title: "GIS LOEK"
+  bread-crumbs: false
   sidebar:
     style: floating
     search: false
@@ -39,10 +41,14 @@ website:
         contents:
           - href: topography.qmd
             text: Digitale Geländemodelle
-          - href: hydrology.qmd
-            text: Hydrologische Analysen
+         # - href: hydrology.qmd
+         #   text: Hydrologische Analysen
       - text: Kostenanalyse
         href: kostenanalyse.qmd
+      - section: Übungen als PDF
+        contents: exercises/*
+
+
 
 
 

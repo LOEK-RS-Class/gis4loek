@@ -1,0 +1,13 @@
+---
+title: Ex02 - Datenformate
+format: pdf
+---
+
+
+
+## Vektor - Datenformate
+
+- Welche Vor- und Nachteile bestehen zwischen Vektordaten im Shapefile Format und im Geopackage Format?
+
+
+

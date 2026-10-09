@@ -1,4 +1,5 @@
 ---
+title: Ex03 - Webdienste
 format: pdf
 ---
 
@@ -6,17 +7,9 @@ format: pdf
 
 
 
+## Webdienste
 
-## Datenformate und Webservices.
-
-- Welche Vor- und Nachteile bestehen zwischen Vektordaten im Shapefile Format und im Geopackage Format?
-- Was ist der konzeptionelle Unterschied zwischen dem Web Map Service (WMS) und dem Web Feature Service (WFS)?
-
-
-
-## Web Feature Service
-
-Sie wollen in Münster 
+Was ist der konzeptionelle Unterschied zwischen dem Web Map Service (WMS) und dem Web Feature Service (WFS)?
 
 
 

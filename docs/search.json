@@ -162,27 +162,6 @@
     ]
   },
   {
-    "objectID": "exercises/ex04-vektor.html",
-    "href": "exercises/ex04-vektor.html",
-    "title": "GIS LOEK",
-    "section": "",
-    "text": "Für diese Übung nutzen Sie die bereits heruntergeladenen Datensätze: das Baumkataster und die Stadtbezirke von Münster. Bearbeiten Sie die folgenden Aufgaben und dokumentieren Sie Ihre Ergebnisse:\n\nWieviele Eichen und Linden gibt es in Münster? Wie sieht die entsprechende thematische Abfrage dafür aus?\nVergleichen Sie die Baumbestände zweier Stadtbezirke: Hat Münster-Mitte oder Münster-West mehr Bäume? (Tipp: Um die Bäume den jeweiligen Stadtbezirken zuzuordnen, nutzen Sie das Werkzeug „Verschneidung“ (Intersection)).\nWelcher Bezirk hat die größte Baumdichte (mit wievielen Bäumen pro m²)? Berechnen Sie dazu die Fläche der Stadtteile. Die Flächenberechnung geht am einfachsten über den Feldrechner (Field Calculator) in der Attributtabelle mit der Funktion $area."
-  },
-  {
-    "objectID": "exercises/ex04-vektor.html#vektordaten",
-    "href": "exercises/ex04-vektor.html#vektordaten",
-    "title": "GIS LOEK",
-    "section": "",
-    "text": "Für diese Übung nutzen Sie die bereits heruntergeladenen Datensätze: das Baumkataster und die Stadtbezirke von Münster. Bearbeiten Sie die folgenden Aufgaben und dokumentieren Sie Ihre Ergebnisse:\n\nWieviele Eichen und Linden gibt es in Münster? Wie sieht die entsprechende thematische Abfrage dafür aus?\nVergleichen Sie die Baumbestände zweier Stadtbezirke: Hat Münster-Mitte oder Münster-West mehr Bäume? (Tipp: Um die Bäume den jeweiligen Stadtbezirken zuzuordnen, nutzen Sie das Werkzeug „Verschneidung“ (Intersection)).\nWelcher Bezirk hat die größte Baumdichte (mit wievielen Bäumen pro m²)? Berechnen Sie dazu die Fläche der Stadtteile. Die Flächenberechnung geht am einfachsten über den Feldrechner (Field Calculator) in der Attributtabelle mit der Funktion $area."
-  },
-  {
-    "objectID": "exercises/ex04-vektor.html#vorbereitung-rasterdaten",
-    "href": "exercises/ex04-vektor.html#vorbereitung-rasterdaten",
-    "title": "GIS LOEK",
-    "section": "Vorbereitung Rasterdaten",
-    "text": "Vorbereitung Rasterdaten"
-  },
-  {
     "objectID": "daten-erheben.html",
     "href": "daten-erheben.html",
     "title": "Geographische Daten",
@@ -252,27 +231,6 @@
     "title": "GIS LOEK",
     "section": "",
     "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     dataset\n\n\n                PROJCRS[“WGS 84 / UTM zone 32N”,BASEGEOGCRS[“WGS 84”,ENSEMBLE[“World Geodetic System 1984 ensemble”,MEMBER[“World Geodetic System 1984 (Transit)”],MEMBER[“World Geodetic System 1984 (G730)”],MEMBER[“World Geodetic System 1984 (G873)”],MEMBER[“World Geodetic System 1984 (G1150)”],MEMBER[“World Geodetic System 1984 (G1674)”],MEMBER[“World Geodetic System 1984 (G1762)”],MEMBER[“World Geodetic System 1984 (G2139)”],MEMBER[“World Geodetic System 1984 (G2296)”],ELLIPSOID[“WGS 84”,6378137,298.257223563,LENGTHUNIT[“metre”,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[“Greenwich”,0,ANGLEUNIT[“degree”,0.0174532925199433]],ID[“EPSG”,4326]],CONVERSION[“UTM zone 32N”,METHOD[“Transverse Mercator”,ID[“EPSG”,9807]],PARAMETER[“Latitude of natural origin”,0,ANGLEUNIT[“degree”,0.0174532925199433],ID[“EPSG”,8801]],PARAMETER[“Longitude of natural origin”,9,ANGLEUNIT[“degree”,0.0174532925199433],ID[“EPSG”,8802]],PARAMETER[“Scale factor at natural origin”,0.9996,SCALEUNIT[“unity”,1],ID[“EPSG”,8805]],PARAMETER[“False easting”,500000,LENGTHUNIT[“metre”,1],ID[“EPSG”,8806]],PARAMETER[“False northing”,0,LENGTHUNIT[“metre”,1],ID[“EPSG”,8807]]],CS[Cartesian,2],AXIS[“(E)”,east,ORDER[1],LENGTHUNIT[“metre”,1]],AXIS[“(N)”,north,ORDER[2],LENGTHUNIT[“metre”,1]],USAGE[SCOPE[“Navigation and medium accuracy spatial referencing.”],AREA[“Between 6°E and 12°E, northern hemisphere between equator and 84°N, onshore and offshore. Algeria. Austria. Cameroon. Denmark. Equatorial Guinea. France. Gabon. Germany. Italy. Libya. Liechtenstein. Monaco. Netherlands. Niger. Nigeria. Norway. Sao Tome and Principe. Svalbard. Sweden. Switzerland. Tunisia. Vatican City State.”],BBOX[0,6,84,12]],ID[“EPSG”,32632]] +proj=utm +zone=32 +datum=WGS84 +units=m +no_defs 3116 32632 EPSG:32632 WGS 84 / UTM zone 32N utm EPSG:7030 false"
-  },
-  {
-    "objectID": "exercises/ex03-projektionen.html",
-    "href": "exercises/ex03-projektionen.html",
-    "title": "GIS LOEK",
-    "section": "",
-    "text": "Auf naturalearthdata.com gibt es grundlegende Vektordaten für karthographische Zwecke. Laden Sie die Küstenlinien über folgenen Link herunter: https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_coastline.zip. Und über folgenden Link die Ozeane mit Label: https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geography_marine_polys.zip Und über folgenden Link https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geographic_lines.zip geographische Linien zur besseren Orientierung.\n\nIn welchem Koordinatensystem liegen die Daten vor?\nVisualisiere die Küstenlinien und die Ozeane sinnvoll.\nFür die Ozeane sollen nur die Label sichtbar sein (Spalte ‘name’ der Attributtabelle).\n\nPapageientaucher (Fratercula arctica) und Krabbentaucher (Alle Alle) haben ihr Hauptverbreitungsgebiet in der Arktis. Auf der Kollaborative Plattform gbif.org werden Artbeobachtungen gesammelt und können dort heruntergeladen werden. Hier ist ein Datensatz, mit den Beobachtungen der beiden Arten in den Jahren 2024 und 2025: XXX\n\nVisualisieren Sie den Datensatz.\nNutzen Sie dafür ein Koordinatenbezugssytem, welches auf die Arktis angepasst ist.\nWie unterscheidet sich das Verbreitungsgebiet der beiden Arten?\nGibt es einen Unterschied zwischen 2024 und 2025?"
-  },
-  {
-    "objectID": "exercises/ex03-projektionen.html#arktische-fauna",
-    "href": "exercises/ex03-projektionen.html#arktische-fauna",
-    "title": "GIS LOEK",
-    "section": "",
-    "text": "Auf naturalearthdata.com gibt es grundlegende Vektordaten für karthographische Zwecke. Laden Sie die Küstenlinien über folgenen Link herunter: https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_coastline.zip. Und über folgenden Link die Ozeane mit Label: https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geography_marine_polys.zip Und über folgenden Link https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geographic_lines.zip geographische Linien zur besseren Orientierung.\n\nIn welchem Koordinatensystem liegen die Daten vor?\nVisualisiere die Küstenlinien und die Ozeane sinnvoll.\nFür die Ozeane sollen nur die Label sichtbar sein (Spalte ‘name’ der Attributtabelle).\n\nPapageientaucher (Fratercula arctica) und Krabbentaucher (Alle Alle) haben ihr Hauptverbreitungsgebiet in der Arktis. Auf der Kollaborative Plattform gbif.org werden Artbeobachtungen gesammelt und können dort heruntergeladen werden. Hier ist ein Datensatz, mit den Beobachtungen der beiden Arten in den Jahren 2024 und 2025: XXX\n\nVisualisieren Sie den Datensatz.\nNutzen Sie dafür ein Koordinatenbezugssytem, welches auf die Arktis angepasst ist.\nWie unterscheidet sich das Verbreitungsgebiet der beiden Arten?\nGibt es einen Unterschied zwischen 2024 und 2025?"
-  },
-  {
-    "objectID": "exercises/ex03-projektionen.html#vorbereitung-vektordaten",
-    "href": "exercises/ex03-projektionen.html#vorbereitung-vektordaten",
-    "title": "GIS LOEK",
-    "section": "Vorbereitung Vektordaten",
-    "text": "Vorbereitung Vektordaten\nIn der nächsten Einheit wird es um Vektoroperationen gehen. Zur Vorbereitung frischen Sie ihre Kenntnisse gängiger Werkzeuge auf. Lesen Sie dazu den Website Text zu den Vektordaten.\n\nThematische Abfragen\nStellen Sie sich vor, Sie arbeiten mit einem Vektordatensatz von Beobachtungen verschiedener Tierarten in einem Nationalpark. Jedes Objekt (Punkt) ist mit einer Attributtabelle verknüpft, die unter anderem die Spalten Art, Gewicht (in kg) und Status (z. B. ‘gefährdet’, ‘stabil’) enthält.\nEin Kollege hat eine Abfrage erstellt, um eine bestimmte Gruppe von Tieren für eine Analyse zu selektieren. Der Ausdruck im Editor sieht wie folgt aus:\n\"Gewicht\" &gt; 400 AND (\"Art\" = 'Elefant' OR \"Art\" = 'Nashorn')\nAnalysieren Sie diesen Ausdruck und beantworten Sie die folgenden Fragen:\n\nWie viele Vergleichsoperatoren können Sie identifizieren? Welche sind es?\nWie viele logische Operatoren kommen vor? Welche sind es?\nFormulieren Sie diesen formalen Ausdruck in eine normale, fachliche Frage um. Was genau möchte der Kollege mit dieser Abfrage finden?\n\n\n\nVektorverarbeitung\nIn QGIS gibt es in der oberen Menüleiste den Eintrag “Vektor” und darin die Rubrik “Geoprocessing Tools”. Dort sind unter anderem die Werkzeuge\n\nPuffer / Buffer\nClip\nDifference\nDissolve\nIntersection\n\nBeschreiben Sie kurz was diese Werkzeuge machen und überlegen Sie sich zu 3 der Werkzeuge einen potentiellen Anwendungsfall mit landschaftsökologischem Bezug."
   },
   {
     "objectID": "index.html",
