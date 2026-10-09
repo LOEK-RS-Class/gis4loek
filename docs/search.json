@@ -1,0 +1,396 @@
+[
+  {
+    "objectID": "webservices.html",
+    "href": "webservices.html",
+    "title": "GIS Webdienste",
+    "section": "",
+    "text": "Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stellen Sie sich einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / Server der die Karten und Daten bereitstellt, und ein Client der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als Standards des OGC (Open Geospatial Consortium) veröffentlicht. Bevor wir weiter in die Details gehen, richten wir einen Webservice in QGIS ein um zu sehen um was es eigentlich geht.\n\n\n\n\n\n\nTipAufgabe: Web Feature Service\n\n\n\n\nRichte den WFS Service https://www.stadt-muenster.de/ows/mapserv706/odgruenserv in QGIS ein.\nVisualisiere die Grünflächen so, dass jeder Flächentyp (obj_art) eine andere Farbe bekommt.\nWie viele Linden (Baumgruppe Tilia) gibt es in Münster?\n\n\n\n\n\n\nDer Eingebundene dienst ist ein sogenannter Web Feature Service. Über diesen werden Geodaten im Vektorformat übertragen. Die Daten werden nach und nach, je nach Kartenausschnitt und Zoomstufe heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:\n\ngetCapabilities zur Anfrage von allgemeinen Metadaten\nDescribeFeatureType zur Anfrage von Metadaten spezifischer Vektoren\ngetFeature zur Anfrage der Vektor Objekte, also die tatsächlichen Daten\n\nBeispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen) aus dem eingebundenen Dienst der Stadt Münster.\n\nhttps://www.stadt-muenster.de/ows/mapserv706/odgruenserv?REQUEST=GetFeature&SERVICE=WFS&VERSION=2.0.0&TYPENAME=ms:Gruenflaechen&EXCEPTIONS=XML&MAXFEATURES=1\n\n\n\n\nBeim Web Map Service (ogc.org/standards/wms/) liefert der Server Bildausschnitte, in der Regel PNG, für die vom Clienten angefragte Koordinaten und Auflösungen. Folgende Anfragen sind das Minimum was ein WMS Standard liefern muss:\n\ngetCapabilities zur Anfrage von Metadaten\ngetMap zur Anfrage von Karten\n\nEin Beispiel für getCapabilities:\n\nhttps://sgx.geodatenzentrum.de/wms_basemapde_schummerung?request=GetCapabilities&service=WMS\n\nDie getMap URLs sind etwas Umfangreicher und setzen sich zusammen aus Serveradresse, Koordinaten, Bildgröße und Format:\n\nhttps://sgx.geodatenzentrum.de/wms_basemapde_schummerung?service=wms&version=1.3.0&request=GetMap&Layers=de_basemapde_web_raster_combshade&STYLES=default&CRS=EPSG:25832&bbox=500000,5700000,500200,5700200&width=150&Height=150&Format=image/png\n\n\n\n\nDer Web Map Tile Service ist eine Variante des WMS bei dem die Daten vorprozessiert gekachelt (tiles) auf dem Server geordnet sind. Dadurch wird die Anfrage performanter, benötigt aber auch mehr Speicherplatz. https://www.ogc.org/standards/wmts/\n#| code-overflow: wrap\nhttps://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapde_web_raster_combshade/default/DE_EPSG_3857_ADV/06/662/1082.png\n\n\n\nDer Web Coverage Service dient zur Distribution von Rasterdaten.\n\ngetCapabilities zur Anfrage von datensatzweiten Metadaten\ndescribeCoverage zur Anfrage von Metadaten spezifischer Produkte\ngetCoverage zur Anfrage der Rasterkachel\n\n\nhttps://gdz.bkg.bund.de/index.php/default/inspire-wcs-elevation-dgm200-wcs-dgm200-inspire.html\n\n\n\n\nDas Bundesamt für Kartographie bietet eine Vielzahl von Basiskarten via Online Services an. Unter folgendem Link sind WMTS Service für Geländemodelldaten zu finden: WMTS Geländekarte des BKG\n\n\n\n\n\n\nTipAufgabe: Web Services Informationen\n\n\n\n\nSchau in die Dokumentation der WMTS Geländedaten des BKG.\nWelche drei Produkte werden von dem Geländedaten-Dienst bereitgestellt?\nWelche Datenbasis nutzt der Geländedaten-Dienst zur Berechnung der Produkte? Wie hoch ist die räumliche Auflösung?\n\n\n\nHier noch ein Beispiel zu WMS: eine Deutschlandweite Hintergrundkarte des BKG\n\n\n\n\n\n\nTipAufgabe: Web Service URLs\n\n\n\n\nIn der Dokumentation der Grundkarte ist ein Beispiellink zum Abruf der Dienste angegeben. Öffne die URL zur GetMap (GET) in einem Web Browser.\nModifiziere die URL so, dass ein Ausschnitt Münsters gezeigt wird. Das Geo1 hat ungefähr die Koordinaten (403500, 5758500 - in UTM32N)\n\n\n\n\n\n\n\n\n\nCautionDiskussion\n\n\n\nWelche Vor- und Nachteile bringt der Einsatz von Webdiensten in einem GIS Projekt mit sich?",
+    "crumbs": [
+      "Geographische Daten",
+      "Webdienste"
+    ]
+  },
+  {
+    "objectID": "webservices.html#reader-und-übung",
+    "href": "webservices.html#reader-und-übung",
+    "title": "GIS Webdienste",
+    "section": "",
+    "text": "Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stellen Sie sich einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / Server der die Karten und Daten bereitstellt, und ein Client der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als Standards des OGC (Open Geospatial Consortium) veröffentlicht. Bevor wir weiter in die Details gehen, richten wir einen Webservice in QGIS ein um zu sehen um was es eigentlich geht.\n\n\n\n\n\n\nTipAufgabe: Web Feature Service\n\n\n\n\nRichte den WFS Service https://www.stadt-muenster.de/ows/mapserv706/odgruenserv in QGIS ein.\nVisualisiere die Grünflächen so, dass jeder Flächentyp (obj_art) eine andere Farbe bekommt.\nWie viele Linden (Baumgruppe Tilia) gibt es in Münster?",
+    "crumbs": [
+      "Geographische Daten",
+      "Webdienste"
+    ]
+  },
+  {
+    "objectID": "webservices.html#web-feature-service---wfs",
+    "href": "webservices.html#web-feature-service---wfs",
+    "title": "GIS Webdienste",
+    "section": "",
+    "text": "Der Eingebundene dienst ist ein sogenannter Web Feature Service. Über diesen werden Geodaten im Vektorformat übertragen. Die Daten werden nach und nach, je nach Kartenausschnitt und Zoomstufe heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:\n\ngetCapabilities zur Anfrage von allgemeinen Metadaten\nDescribeFeatureType zur Anfrage von Metadaten spezifischer Vektoren\ngetFeature zur Anfrage der Vektor Objekte, also die tatsächlichen Daten\n\nBeispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen) aus dem eingebundenen Dienst der Stadt Münster.\n\nhttps://www.stadt-muenster.de/ows/mapserv706/odgruenserv?REQUEST=GetFeature&SERVICE=WFS&VERSION=2.0.0&TYPENAME=ms:Gruenflaechen&EXCEPTIONS=XML&MAXFEATURES=1",
+    "crumbs": [
+      "Geographische Daten",
+      "Webdienste"
+    ]
+  },
+  {
+    "objectID": "webservices.html#web-map-service---wms",
+    "href": "webservices.html#web-map-service---wms",
+    "title": "GIS Webdienste",
+    "section": "",
+    "text": "Beim Web Map Service (ogc.org/standards/wms/) liefert der Server Bildausschnitte, in der Regel PNG, für die vom Clienten angefragte Koordinaten und Auflösungen. Folgende Anfragen sind das Minimum was ein WMS Standard liefern muss:\n\ngetCapabilities zur Anfrage von Metadaten\ngetMap zur Anfrage von Karten\n\nEin Beispiel für getCapabilities:\n\nhttps://sgx.geodatenzentrum.de/wms_basemapde_schummerung?request=GetCapabilities&service=WMS\n\nDie getMap URLs sind etwas Umfangreicher und setzen sich zusammen aus Serveradresse, Koordinaten, Bildgröße und Format:\n\nhttps://sgx.geodatenzentrum.de/wms_basemapde_schummerung?service=wms&version=1.3.0&request=GetMap&Layers=de_basemapde_web_raster_combshade&STYLES=default&CRS=EPSG:25832&bbox=500000,5700000,500200,5700200&width=150&Height=150&Format=image/png",
+    "crumbs": [
+      "Geographische Daten",
+      "Webdienste"
+    ]
+  },
+  {
+    "objectID": "webservices.html#web-map-tile-service---wmts",
+    "href": "webservices.html#web-map-tile-service---wmts",
+    "title": "GIS Webdienste",
+    "section": "",
+    "text": "Der Web Map Tile Service ist eine Variante des WMS bei dem die Daten vorprozessiert gekachelt (tiles) auf dem Server geordnet sind. Dadurch wird die Anfrage performanter, benötigt aber auch mehr Speicherplatz. https://www.ogc.org/standards/wmts/\n#| code-overflow: wrap\nhttps://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapde_web_raster_combshade/default/DE_EPSG_3857_ADV/06/662/1082.png",
+    "crumbs": [
+      "Geographische Daten",
+      "Webdienste"
+    ]
+  },
+  {
+    "objectID": "webservices.html#web-coverage-service",
+    "href": "webservices.html#web-coverage-service",
+    "title": "GIS Webdienste",
+    "section": "",
+    "text": "Der Web Coverage Service dient zur Distribution von Rasterdaten.\n\ngetCapabilities zur Anfrage von datensatzweiten Metadaten\ndescribeCoverage zur Anfrage von Metadaten spezifischer Produkte\ngetCoverage zur Anfrage der Rasterkachel\n\n\nhttps://gdz.bkg.bund.de/index.php/default/inspire-wcs-elevation-dgm200-wcs-dgm200-inspire.html",
+    "crumbs": [
+      "Geographische Daten",
+      "Webdienste"
+    ]
+  },
+  {
+    "objectID": "webservices.html#beispiel-und-übung",
+    "href": "webservices.html#beispiel-und-übung",
+    "title": "GIS Webdienste",
+    "section": "",
+    "text": "Das Bundesamt für Kartographie bietet eine Vielzahl von Basiskarten via Online Services an. Unter folgendem Link sind WMTS Service für Geländemodelldaten zu finden: WMTS Geländekarte des BKG\n\n\n\n\n\n\nTipAufgabe: Web Services Informationen\n\n\n\n\nSchau in die Dokumentation der WMTS Geländedaten des BKG.\nWelche drei Produkte werden von dem Geländedaten-Dienst bereitgestellt?\nWelche Datenbasis nutzt der Geländedaten-Dienst zur Berechnung der Produkte? Wie hoch ist die räumliche Auflösung?\n\n\n\nHier noch ein Beispiel zu WMS: eine Deutschlandweite Hintergrundkarte des BKG\n\n\n\n\n\n\nTipAufgabe: Web Service URLs\n\n\n\n\nIn der Dokumentation der Grundkarte ist ein Beispiellink zum Abruf der Dienste angegeben. Öffne die URL zur GetMap (GET) in einem Web Browser.\nModifiziere die URL so, dass ein Ausschnitt Münsters gezeigt wird. Das Geo1 hat ungefähr die Koordinaten (403500, 5758500 - in UTM32N)\n\n\n\n\n\n\n\n\n\nCautionDiskussion\n\n\n\nWelche Vor- und Nachteile bringt der Einsatz von Webdiensten in einem GIS Projekt mit sich?",
+    "crumbs": [
+      "Geographische Daten",
+      "Webdienste"
+    ]
+  },
+  {
+    "objectID": "topography.html",
+    "href": "topography.html",
+    "title": "Topographische Analysen",
+    "section": "",
+    "text": "Topographische Daten sind für eine Vielzahl von Anwendungen und wissenschaftlichen Fragestellungen nützlich. Wie hoch ist die Lawinengefahr? Wie verändert sich die Vegetation mit der Geländehöhe? Wohin wandern Dünen? Bei all diesen Fragen kann die Analyse eines Geländemodell hinzugezogen werden.\nDie Datengrundlage für ein Geländemodell sind meist Radarbefliegungen die die Geländehöhe in einem Regelmäßigen Abstand messen und gerastert abspeichern. Für großflächige Analysen bietet es sich an auf Satellitenbasierte aufnahmen zurückzugreifen. Die Shuttle Radar Topographic Mission (SRTM) der NASA bietet beispielsweise Geländedaten in 30 bis 90 m räumlicher Auflösung. Ein Digitales Geländemodell im .tif Format ist technisch gesehen eine georeferenzierte Bilddatei, aber in dieser stehen keine Farbwerte, sondern die Geländehöhe an dieser Position. Jedes Pixel des Raster”bilds” enthält die Geländehöhe über NN an dieser Position. Digitale Geländemodelle können wir uns auch als 3-Dimensionales Netz vorstellen (Mesh, Netzwerk) da der Mittelpunkt jedes Pixels einen X, Y, und Z-Wert definiert.",
+    "crumbs": [
+      "Geländeanalysen",
+      "Digitale Geländemodelle"
+    ]
+  },
+  {
+    "objectID": "topography.html#topographische-berechnungen",
+    "href": "topography.html#topographische-berechnungen",
+    "title": "Topographische Analysen",
+    "section": "Topographische Berechnungen",
+    "text": "Topographische Berechnungen\nUnter https://uni-muenster.sciebo.de/s/sGk3yc2ZZypprTb könnt ihr SRTM Daten in 90m Auflösung für Norddeutschland und benachbarte Staaten herunterladen.\n\n\n\n\n\n\nTipAufgabe: SRTM\n\n\n\n\nLade die SRTM Daten für Deutschland herunter.\nBerechne die Hangneigung (slope), die Exposition (aspect) und eine Schummerung (Hillshade) aus den Geländedaten.\n\n\n\n\n\n\n\n\n\nTipAufgabe: Visualisierung von Topographischen Daten\n\n\n\n\nVisualisiere eine Topographische Karte aus der Schummerung und den Geländehöhen.\nFinde eine sinnvolle Visualisierung zur Darstellung der Exposition\nBerechne und Visualisiere Isohypsen, also Linien gleicher Höhe (contour).",
+    "crumbs": [
+      "Geländeanalysen",
+      "Digitale Geländemodelle"
+    ]
+  },
+  {
+    "objectID": "topography.html#topographic-wetness-index",
+    "href": "topography.html#topographic-wetness-index",
+    "title": "Topographische Analysen",
+    "section": "Topographic Wetness Index",
+    "text": "Topographic Wetness Index\nAuf Basis des Geländemodells lassen sich Hydrologische Ableitungen treffen, beispielsweise die Einzugsgebiete von Gewässern, Abflüsse, oder Ganglinien. Diese können auch als ökologische Indikatoren dienen um z.B. potentiell feuchtere Gebiete zu beschreiben oder zu identifizieren. Ein weit verbreiteter Indikator ist der Topografic Wetness Index:\n\n\n\nKopecy et al. 2020\n\n\n\n\n\n\n\n\nTipAufgabe: Reading Time\n\n\n\n\nLese das Paper von https://www.sciencedirect.com/science/article/abs/pii/S0048969720373162 zum Topographic Wetness Index.\nBeschreibe den TWI in eigenen Worten.\nWas sind Herausforderungen bei der Nutzung des TWIs für ökologische Fragen?\n\n\n\n\n\n\n\n\n\nTipAufgabe: Ökosystemanalyse\n\n\n\n\nIdentifiziere potentielle Feuchtgebiete in Nordrhein-Westfalen.\nNutze dazu den Topografic Wetness Index.\nVergleiche den TWI in verschiedenen Natura 2000 Lebensraumtypen.",
+    "crumbs": [
+      "Geländeanalysen",
+      "Digitale Geländemodelle"
+    ]
+  },
+  {
+    "objectID": "topography.html#saga-und-grass-gis",
+    "href": "topography.html#saga-und-grass-gis",
+    "title": "Topographische Analysen",
+    "section": "SAGA und GRASS GIS",
+    "text": "SAGA und GRASS GIS\nNeben QGIS gibt es im OSGeo Kosmos weitere GIS Programme die andere Schwerpunkte und Zielgruppen bedienen. SAGA ist das System for Automated Geoscientific Analysis saga-gis.org und implementiert u.a. Fernerkundungsalgorithmen, komplexe Simulationen (z.B. Erosion) und Hydrologische Analysewerkzeuge. GRASS GIS ist das Geographic Resources Analysis Support System grass.osgeo.org und legt den Fokus auf Verarbeitungsketten. Auch in GRASS sind spezialisierte Werkzeuge zu vielen Teilbereichen der Landschaftsökologie implementiert. Die Dokumentation von GRASS ist hervoragend und gibt einen guten Überblick der Möglichkeiten.\nQGIS kann über die Werkzeugkiste auf die SAGA und GRASS Algortihmen zugreifen und diese Ausführen.",
+    "crumbs": [
+      "Geländeanalysen",
+      "Digitale Geländemodelle"
+    ]
+  },
+  {
+    "objectID": "raster-basics.html#übung",
+    "href": "raster-basics.html#übung",
+    "title": "Raster Basics",
+    "section": "Übung",
+    "text": "Übung\n\n\n\n\n\n\nTipAufgabe:\n\n\n\nLade das digitale Geländemodell und das digitale Oberflächenmodell von Münster. Berechnet die Vegetationshöhe.\n\n\n\n\n\n\n\n\nTipZusatzaufgabe:\n\n\n\nWo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen &lt;50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen.",
+    "crumbs": [
+      "GIS Grundlagen",
+      "Raster Basics"
+    ]
+  },
+  {
+    "objectID": "kostenanalyse.html",
+    "href": "kostenanalyse.html",
+    "title": "Kostenanalyse",
+    "section": "",
+    "text": "Die Kostenanalyse im GIS beschreibt, wie „Aufwand“ für die Bewegung durch eine Landschaft räumlich dargestellt und bewertet werden kann. Dabei werden Faktoren wie Gelände, Landnutzung oder Barrieren in sogenannten Kostenoberflächen (Cost Surfaces) abgebildet, die zeigen, wie leicht oder schwer bestimmte Bereiche zu durchqueren sind. Auf dieser Grundlage lassen sich z. B. die günstigsten Wege (Least-Cost Paths) oder mögliche Ausbreitungskorridore für Arten berechnen. In der Landschaftsökologie hilft diese Methode, räumliche Verbindungen und Barrieren besser zu verstehen und ökologische Prozesse im Raum zu analysieren.",
+    "crumbs": [
+      "Kostenanalyse"
+    ]
+  },
+  {
+    "objectID": "kostenanalyse.html#vorlesung",
+    "href": "kostenanalyse.html#vorlesung",
+    "title": "Kostenanalyse",
+    "section": "Vorlesung",
+    "text": "Vorlesung",
+    "crumbs": [
+      "Kostenanalyse"
+    ]
+  },
+  {
+    "objectID": "kostenanalyse.html#übung",
+    "href": "kostenanalyse.html#übung",
+    "title": "Kostenanalyse",
+    "section": "Übung",
+    "text": "Übung\n\nBeispieldaten\nFür diese Übung werden Beispieldaten aus der Region des Siebengebirges verwendet. Diese Daten wurden bereits in den vorherigen Folien zur Übung vorgestellt. Sie dienen als gemeinsame Grundlage für die weiteren Analysen im GIS.\n\n\n\n\n\n\nTipAufgabe\n\n\n\nLade die Daten vom Siebengebirge herunter (https://uni-muenster.sciebo.de/s/dwzzsNBSAs5xBW9). Die Daten beinhalten ein Geländemodell (SRTM) sowie die Landbedeckung (Corine) inkl. Brücken über den Rhein. Zudem ist einen Startpunkt und einen Zielpunkt gegeben. Du kannst aber gerne andere/weitere Start- und Zielpunkte definieren.\n\n\n\n\nKriterien definieren\nAls nächstes geht es darum, die für eine Art relevanten Umweltfaktoren als Kriterien für eine Kostenanalyse im GIS zu definieren. Diese Kriterien bestimmen, wie „leicht“ oder „schwer“ bestimmte Landschaftsbereiche für die Art zu durchqueren oder zu nutzen sind. Die Auswahl geeigneter Faktoren ist dabei entscheidend, da sie die Grundlage für alle weiteren Analysen wie Kostenoberflächen oder Ausbreitungskorridore bildet.\n\n\n\n\n\n\nTipAufgabe\n\n\n\nFür eine Art deiner Wahl: Überlege und berechne erforderliche Kriterien (z.B Entfernung zu Straßen, Exposition, …) die “Kosten” verursachen.\n\n\n\n\nKostenoberfläche erstellen\nDie Erstellung einer Kostenoberfläche ist der zentrale Schritt, um die zuvor definierten Kriterien räumlich zusammenzuführen. Sie ermöglicht es, die einzelnen Umweltfaktoren in ein gemeinsames Raster zu überführen, das die „Durchlässigkeit“ der Landschaft für die gewählte Art abbildet. Bereiche mit niedrigen Werten stehen dabei für geringe Kosten und somit günstige Bedingungen, während hohe Werte schwer passierbare oder ungünstige Bereiche darstellen. Auf dieser Grundlage können später räumliche Ausbreitungswege und ökologische Verbindungen im GIS analysiert werden.\n\n\n\n\n\n\nTipAufgabe\n\n\n\nKombiniere deine Kriterien zu einem Kostenraster welches durch niedrige Werte geringe “Kosten” und durch hohe Werte hohe “Kosten” widerspiegelt\n\n\n\n\nKostendistanz und Bewegungsrichtung berechnen\nDie Berechnung von Kostendistanz und Bewegungsrichtung erweitert die Kostenanalyse um die räumliche Dimension der Erreichbarkeit. Dabei wird ermittelt, wie hoch der kumulative Aufwand ist, um von einem Startpunkt aus durch die Kostenoberfläche zu jedem anderen Rasterzellenpunkt zu gelangen. Zusätzlich zeigt die Bewegungsrichtung, aus welcher Richtung die geringsten Kosten für die Fortbewegung stammen. Diese Informationen sind die Grundlage, um später optimale Wander- oder Ausbreitungswege innerhalb der Landschaft zu bestimmen.\n\n\n\n\n\n\nTipAufgabe\n\n\n\nBerechne die Kostendistanz und die Bewegungsrichtung auf Basis des Kostenrasters. Wenn du QGIS nutzt, wähle dazu das GRASS GIS Tool r.cost.\n\n\n\n\nPfad der geringsten Kosten berechnen\nDie Berechnung des Pfads der geringsten Kosten (Least-Cost Path) nutzt die zuvor ermittelten Kostendistanzen und Bewegungsrichtungen, um den optimalen Weg zwischen zwei Punkten zu bestimmen. Dabei wird derjenige Pfad ausgewählt, der die geringstmöglichen kumulativen „Kosten“ über die Kostenoberfläche verursacht. So lassen sich potenzielle Wanderkorridore oder Ausbreitungswege einer Art in der Landschaft identifizieren.\n\n\n\n\n\n\nTipAufgabe\n\n\n\nErstelle auf Basis der Bewegungsrichtung den Pfad der geringsten Kosten. Wenn du QGIS nutzt, wähle dazu das GRASS GIS Tool r.path.",
+    "crumbs": [
+      "Kostenanalyse"
+    ]
+  },
+  {
+    "objectID": "exercises/ex04-vektor.html",
+    "href": "exercises/ex04-vektor.html",
+    "title": "GIS LOEK",
+    "section": "",
+    "text": "Für diese Übung nutzen Sie die bereits heruntergeladenen Datensätze: das Baumkataster und die Stadtbezirke von Münster. Bearbeiten Sie die folgenden Aufgaben und dokumentieren Sie Ihre Ergebnisse:\n\nWieviele Eichen und Linden gibt es in Münster? Wie sieht die entsprechende thematische Abfrage dafür aus?\nVergleichen Sie die Baumbestände zweier Stadtbezirke: Hat Münster-Mitte oder Münster-West mehr Bäume? (Tipp: Um die Bäume den jeweiligen Stadtbezirken zuzuordnen, nutzen Sie das Werkzeug „Verschneidung“ (Intersection)).\nWelcher Bezirk hat die größte Baumdichte (mit wievielen Bäumen pro m²)? Berechnen Sie dazu die Fläche der Stadtteile. Die Flächenberechnung geht am einfachsten über den Feldrechner (Field Calculator) in der Attributtabelle mit der Funktion $area."
+  },
+  {
+    "objectID": "exercises/ex04-vektor.html#vektordaten",
+    "href": "exercises/ex04-vektor.html#vektordaten",
+    "title": "GIS LOEK",
+    "section": "",
+    "text": "Für diese Übung nutzen Sie die bereits heruntergeladenen Datensätze: das Baumkataster und die Stadtbezirke von Münster. Bearbeiten Sie die folgenden Aufgaben und dokumentieren Sie Ihre Ergebnisse:\n\nWieviele Eichen und Linden gibt es in Münster? Wie sieht die entsprechende thematische Abfrage dafür aus?\nVergleichen Sie die Baumbestände zweier Stadtbezirke: Hat Münster-Mitte oder Münster-West mehr Bäume? (Tipp: Um die Bäume den jeweiligen Stadtbezirken zuzuordnen, nutzen Sie das Werkzeug „Verschneidung“ (Intersection)).\nWelcher Bezirk hat die größte Baumdichte (mit wievielen Bäumen pro m²)? Berechnen Sie dazu die Fläche der Stadtteile. Die Flächenberechnung geht am einfachsten über den Feldrechner (Field Calculator) in der Attributtabelle mit der Funktion $area."
+  },
+  {
+    "objectID": "exercises/ex04-vektor.html#vorbereitung-rasterdaten",
+    "href": "exercises/ex04-vektor.html#vorbereitung-rasterdaten",
+    "title": "GIS LOEK",
+    "section": "Vorbereitung Rasterdaten",
+    "text": "Vorbereitung Rasterdaten"
+  },
+  {
+    "objectID": "daten-erheben.html",
+    "href": "daten-erheben.html",
+    "title": "Geographische Daten",
+    "section": "",
+    "text": "Wozu geographische Daten und woher kommen die Überhaupt?\n\n\n\n\n\n\n\nTipAufgabe: Räumliche Daten\n\n\n\nGeht um das Geo1 Gebäude und nehmt die Koordinaten von 10 Bäumen auf. Notiert auch die Baumart.\n\n\n\n\n\n\n\n\nCautionDiskussion\n\n\n\nWie bekommen wir die Daten jetzt in ein GIS?",
+    "crumbs": [
+      "Geographische Daten",
+      "Daten erheben"
+    ]
+  },
+  {
+    "objectID": "daten-erheben.html#geographische-daten-erheben",
+    "href": "daten-erheben.html#geographische-daten-erheben",
+    "title": "Geographische Daten",
+    "section": "",
+    "text": "Wozu geographische Daten und woher kommen die Überhaupt?\n\n\n\n\n\n\n\nTipAufgabe: Räumliche Daten\n\n\n\nGeht um das Geo1 Gebäude und nehmt die Koordinaten von 10 Bäumen auf. Notiert auch die Baumart.\n\n\n\n\n\n\n\n\nCautionDiskussion\n\n\n\nWie bekommen wir die Daten jetzt in ein GIS?",
+    "crumbs": [
+      "Geographische Daten",
+      "Daten erheben"
+    ]
+  },
+  {
+    "objectID": "data/wanderwege_spessart/Infrastruktur_Wege32632.html",
+    "href": "data/wanderwege_spessart/Infrastruktur_Wege32632.html",
+    "title": "GIS LOEK",
+    "section": "",
+    "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     dataset\n\n\n                PROJCRS[“WGS 84 / UTM zone 32N”,BASEGEOGCRS[“WGS 84”,ENSEMBLE[“World Geodetic System 1984 ensemble”,MEMBER[“World Geodetic System 1984 (Transit)”],MEMBER[“World Geodetic System 1984 (G730)”],MEMBER[“World Geodetic System 1984 (G873)”],MEMBER[“World Geodetic System 1984 (G1150)”],MEMBER[“World Geodetic System 1984 (G1674)”],MEMBER[“World Geodetic System 1984 (G1762)”],MEMBER[“World Geodetic System 1984 (G2139)”],MEMBER[“World Geodetic System 1984 (G2296)”],ELLIPSOID[“WGS 84”,6378137,298.257223563,LENGTHUNIT[“metre”,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[“Greenwich”,0,ANGLEUNIT[“degree”,0.0174532925199433]],ID[“EPSG”,4326]],CONVERSION[“UTM zone 32N”,METHOD[“Transverse Mercator”,ID[“EPSG”,9807]],PARAMETER[“Latitude of natural origin”,0,ANGLEUNIT[“degree”,0.0174532925199433],ID[“EPSG”,8801]],PARAMETER[“Longitude of natural origin”,9,ANGLEUNIT[“degree”,0.0174532925199433],ID[“EPSG”,8802]],PARAMETER[“Scale factor at natural origin”,0.9996,SCALEUNIT[“unity”,1],ID[“EPSG”,8805]],PARAMETER[“False easting”,500000,LENGTHUNIT[“metre”,1],ID[“EPSG”,8806]],PARAMETER[“False northing”,0,LENGTHUNIT[“metre”,1],ID[“EPSG”,8807]]],CS[Cartesian,2],AXIS[“(E)”,east,ORDER[1],LENGTHUNIT[“metre”,1]],AXIS[“(N)”,north,ORDER[2],LENGTHUNIT[“metre”,1]],USAGE[SCOPE[“Navigation and medium accuracy spatial referencing.”],AREA[“Between 6°E and 12°E, northern hemisphere between equator and 84°N, onshore and offshore. Algeria. Austria. Cameroon. Denmark. Equatorial Guinea. France. Gabon. Germany. Italy. Libya. Liechtenstein. Monaco. Netherlands. Niger. Nigeria. Norway. Sao Tome and Principe. Svalbard. Sweden. Switzerland. Tunisia. Vatican City State.”],BBOX[0,6,84,12]],ID[“EPSG”,32632]] +proj=utm +zone=32 +datum=WGS84 +units=m +no_defs 3116 32632 EPSG:32632 WGS 84 / UTM zone 32N utm EPSG:7030 false"
+  },
+  {
+    "objectID": "Projektarbeit.html",
+    "href": "Projektarbeit.html",
+    "title": "GIS Projekt: Hitzebelastung auf Wanderwegen im Naturpark Hessischer Spessart",
+    "section": "",
+    "text": "Der Klimawandel führt auch im Spessart zu einer Zunahme von Hitzetagen, Trockenperioden und thermischen Belastungen für Erholungssuchende. Wanderwege, die bislang als attraktive Freizeitangebote galten, können insbesondere an heißen Sommertagen an Aufenthaltsqualität verlieren. Gleichzeitig gewinnt die Bereitstellung hitzeangepasster Freizeitangebote zunehmend an Bedeutung. Der Naturpark Hessischer Spessart möchte daher untersuchen, welche Faktoren die Hitzebelastung auf Wanderwegen beeinflussen und wie Wanderangebote künftig klimaresilient weiterentwickelt werden können.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipAufgabe 1 (Gruppe)\n\n\n\nZiel des Projekts ist die Bewertung der Hitzebelastung der Wanderwegen auf Basis frei verfügbarer Geodaten. Überlegt in der Gruppe: - Was führt zu Hitzebelastung? - Wie können diese Kriterien GIS Basiert abgebildet werden? - Wie können die Wanderwege vergleichbar bewertet werden?\n\n\n\n\n\n\n\n\nTipAufgabe 2 (Individuell oder 2-er Teams)\n\n\n\nSucht euch jeder einen Wanderweg heraus, bewertet die Hitzebelastung, visualisiert die Ergebnisse und bereitet eine Dokumentation der Methoden und Ergebnisse auf. Achtet auch darauf, den Weg nicht nur als ganzes zu bewerten sondern aufzuzeigen, welche Wegabschnitte eine erhöhte thermische Belastung aufweisen (kritische Wegabschnitte)?\n\n\n\n\n\nDaten des Naturparks mit Infrastruktur (shapefile) und Wegewege (shapefile)\nDigitales Geländemodell (DGM1)\nDigitales Oberflächenmodell (DOM1)\nHigh Resolution Layer Tree Cover and Forests\n\n\n\nMit Linie bei Maximallänge teilen kann der Wanderweg in regelmäßige Segmente aufgeteilt werden. Die Segmente können über die Symbololisierung - Kategorisiert unterschiedlich visualisiert werden.\nMit v.rast.stats können Statistiken aus Rasterpixeln entlang der Wegsegmente berechnet werden die dann in der Attributtabelle gespeichert werden.\n\n\n\nZielgruppe: Naturparkverwaltung (keine Wanderplakate, sondern “Consulting”)\nZur Struktur:\n\nEinführung der Problemstellung\nVerwendete Daten\nKonzeptionelle Bewertung des Hitzerisikos\nUmsetzung in GIS\nErgebnisse mit Einordnung (mindestens 3 Abbildungen)\n\nWichtig: Es müssen Notwendigerweise nicht viele Parameter berücksichtigt werden, sondern die sinnvolle und nachvollziehbare Begründungung der Bewertung."
+  },
+  {
+    "objectID": "Projektarbeit.html#eure-aufgabe",
+    "href": "Projektarbeit.html#eure-aufgabe",
+    "title": "GIS Projekt: Hitzebelastung auf Wanderwegen im Naturpark Hessischer Spessart",
+    "section": "",
+    "text": "TipAufgabe 1 (Gruppe)\n\n\n\nZiel des Projekts ist die Bewertung der Hitzebelastung der Wanderwegen auf Basis frei verfügbarer Geodaten. Überlegt in der Gruppe: - Was führt zu Hitzebelastung? - Wie können diese Kriterien GIS Basiert abgebildet werden? - Wie können die Wanderwege vergleichbar bewertet werden?\n\n\n\n\n\n\n\n\nTipAufgabe 2 (Individuell oder 2-er Teams)\n\n\n\nSucht euch jeder einen Wanderweg heraus, bewertet die Hitzebelastung, visualisiert die Ergebnisse und bereitet eine Dokumentation der Methoden und Ergebnisse auf. Achtet auch darauf, den Weg nicht nur als ganzes zu bewerten sondern aufzuzeigen, welche Wegabschnitte eine erhöhte thermische Belastung aufweisen (kritische Wegabschnitte)?"
+  },
+  {
+    "objectID": "Projektarbeit.html#daten",
+    "href": "Projektarbeit.html#daten",
+    "title": "GIS Projekt: Hitzebelastung auf Wanderwegen im Naturpark Hessischer Spessart",
+    "section": "",
+    "text": "Daten des Naturparks mit Infrastruktur (shapefile) und Wegewege (shapefile)\nDigitales Geländemodell (DGM1)\nDigitales Oberflächenmodell (DOM1)\nHigh Resolution Layer Tree Cover and Forests"
+  },
+  {
+    "objectID": "Projektarbeit.html#technische-tipps",
+    "href": "Projektarbeit.html#technische-tipps",
+    "title": "GIS Projekt: Hitzebelastung auf Wanderwegen im Naturpark Hessischer Spessart",
+    "section": "",
+    "text": "Mit Linie bei Maximallänge teilen kann der Wanderweg in regelmäßige Segmente aufgeteilt werden. Die Segmente können über die Symbololisierung - Kategorisiert unterschiedlich visualisiert werden.\nMit v.rast.stats können Statistiken aus Rasterpixeln entlang der Wegsegmente berechnet werden die dann in der Attributtabelle gespeichert werden."
+  },
+  {
+    "objectID": "Projektarbeit.html#hinweise-zum-projektbericht",
+    "href": "Projektarbeit.html#hinweise-zum-projektbericht",
+    "title": "GIS Projekt: Hitzebelastung auf Wanderwegen im Naturpark Hessischer Spessart",
+    "section": "",
+    "text": "Zielgruppe: Naturparkverwaltung (keine Wanderplakate, sondern “Consulting”)\nZur Struktur:\n\nEinführung der Problemstellung\nVerwendete Daten\nKonzeptionelle Bewertung des Hitzerisikos\nUmsetzung in GIS\nErgebnisse mit Einordnung (mindestens 3 Abbildungen)\n\nWichtig: Es müssen Notwendigerweise nicht viele Parameter berücksichtigt werden, sondern die sinnvolle und nachvollziehbare Begründungung der Bewertung."
+  },
+  {
+    "objectID": "data/wanderwege_spessart/Wanderwege_Blockseminar_HessischerSpessart32632.html",
+    "href": "data/wanderwege_spessart/Wanderwege_Blockseminar_HessischerSpessart32632.html",
+    "title": "GIS LOEK",
+    "section": "",
+    "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     dataset\n\n\n                PROJCRS[“WGS 84 / UTM zone 32N”,BASEGEOGCRS[“WGS 84”,ENSEMBLE[“World Geodetic System 1984 ensemble”,MEMBER[“World Geodetic System 1984 (Transit)”],MEMBER[“World Geodetic System 1984 (G730)”],MEMBER[“World Geodetic System 1984 (G873)”],MEMBER[“World Geodetic System 1984 (G1150)”],MEMBER[“World Geodetic System 1984 (G1674)”],MEMBER[“World Geodetic System 1984 (G1762)”],MEMBER[“World Geodetic System 1984 (G2139)”],MEMBER[“World Geodetic System 1984 (G2296)”],ELLIPSOID[“WGS 84”,6378137,298.257223563,LENGTHUNIT[“metre”,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[“Greenwich”,0,ANGLEUNIT[“degree”,0.0174532925199433]],ID[“EPSG”,4326]],CONVERSION[“UTM zone 32N”,METHOD[“Transverse Mercator”,ID[“EPSG”,9807]],PARAMETER[“Latitude of natural origin”,0,ANGLEUNIT[“degree”,0.0174532925199433],ID[“EPSG”,8801]],PARAMETER[“Longitude of natural origin”,9,ANGLEUNIT[“degree”,0.0174532925199433],ID[“EPSG”,8802]],PARAMETER[“Scale factor at natural origin”,0.9996,SCALEUNIT[“unity”,1],ID[“EPSG”,8805]],PARAMETER[“False easting”,500000,LENGTHUNIT[“metre”,1],ID[“EPSG”,8806]],PARAMETER[“False northing”,0,LENGTHUNIT[“metre”,1],ID[“EPSG”,8807]]],CS[Cartesian,2],AXIS[“(E)”,east,ORDER[1],LENGTHUNIT[“metre”,1]],AXIS[“(N)”,north,ORDER[2],LENGTHUNIT[“metre”,1]],USAGE[SCOPE[“Navigation and medium accuracy spatial referencing.”],AREA[“Between 6°E and 12°E, northern hemisphere between equator and 84°N, onshore and offshore. Algeria. Austria. Cameroon. Denmark. Equatorial Guinea. France. Gabon. Germany. Italy. Libya. Liechtenstein. Monaco. Netherlands. Niger. Nigeria. Norway. Sao Tome and Principe. Svalbard. Sweden. Switzerland. Tunisia. Vatican City State.”],BBOX[0,6,84,12]],ID[“EPSG”,32632]] +proj=utm +zone=32 +datum=WGS84 +units=m +no_defs 3116 32632 EPSG:32632 WGS 84 / UTM zone 32N utm EPSG:7030 false"
+  },
+  {
+    "objectID": "exercises/ex03-projektionen.html",
+    "href": "exercises/ex03-projektionen.html",
+    "title": "GIS LOEK",
+    "section": "",
+    "text": "Auf naturalearthdata.com gibt es grundlegende Vektordaten für karthographische Zwecke. Laden Sie die Küstenlinien über folgenen Link herunter: https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_coastline.zip. Und über folgenden Link die Ozeane mit Label: https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geography_marine_polys.zip Und über folgenden Link https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geographic_lines.zip geographische Linien zur besseren Orientierung.\n\nIn welchem Koordinatensystem liegen die Daten vor?\nVisualisiere die Küstenlinien und die Ozeane sinnvoll.\nFür die Ozeane sollen nur die Label sichtbar sein (Spalte ‘name’ der Attributtabelle).\n\nPapageientaucher (Fratercula arctica) und Krabbentaucher (Alle Alle) haben ihr Hauptverbreitungsgebiet in der Arktis. Auf der Kollaborative Plattform gbif.org werden Artbeobachtungen gesammelt und können dort heruntergeladen werden. Hier ist ein Datensatz, mit den Beobachtungen der beiden Arten in den Jahren 2024 und 2025: XXX\n\nVisualisieren Sie den Datensatz.\nNutzen Sie dafür ein Koordinatenbezugssytem, welches auf die Arktis angepasst ist.\nWie unterscheidet sich das Verbreitungsgebiet der beiden Arten?\nGibt es einen Unterschied zwischen 2024 und 2025?"
+  },
+  {
+    "objectID": "exercises/ex03-projektionen.html#arktische-fauna",
+    "href": "exercises/ex03-projektionen.html#arktische-fauna",
+    "title": "GIS LOEK",
+    "section": "",
+    "text": "Auf naturalearthdata.com gibt es grundlegende Vektordaten für karthographische Zwecke. Laden Sie die Küstenlinien über folgenen Link herunter: https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_coastline.zip. Und über folgenden Link die Ozeane mit Label: https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geography_marine_polys.zip Und über folgenden Link https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geographic_lines.zip geographische Linien zur besseren Orientierung.\n\nIn welchem Koordinatensystem liegen die Daten vor?\nVisualisiere die Küstenlinien und die Ozeane sinnvoll.\nFür die Ozeane sollen nur die Label sichtbar sein (Spalte ‘name’ der Attributtabelle).\n\nPapageientaucher (Fratercula arctica) und Krabbentaucher (Alle Alle) haben ihr Hauptverbreitungsgebiet in der Arktis. Auf der Kollaborative Plattform gbif.org werden Artbeobachtungen gesammelt und können dort heruntergeladen werden. Hier ist ein Datensatz, mit den Beobachtungen der beiden Arten in den Jahren 2024 und 2025: XXX\n\nVisualisieren Sie den Datensatz.\nNutzen Sie dafür ein Koordinatenbezugssytem, welches auf die Arktis angepasst ist.\nWie unterscheidet sich das Verbreitungsgebiet der beiden Arten?\nGibt es einen Unterschied zwischen 2024 und 2025?"
+  },
+  {
+    "objectID": "exercises/ex03-projektionen.html#vorbereitung-vektordaten",
+    "href": "exercises/ex03-projektionen.html#vorbereitung-vektordaten",
+    "title": "GIS LOEK",
+    "section": "Vorbereitung Vektordaten",
+    "text": "Vorbereitung Vektordaten\nIn der nächsten Einheit wird es um Vektoroperationen gehen. Zur Vorbereitung frischen Sie ihre Kenntnisse gängiger Werkzeuge auf. Lesen Sie dazu den Website Text zu den Vektordaten.\n\nThematische Abfragen\nStellen Sie sich vor, Sie arbeiten mit einem Vektordatensatz von Beobachtungen verschiedener Tierarten in einem Nationalpark. Jedes Objekt (Punkt) ist mit einer Attributtabelle verknüpft, die unter anderem die Spalten Art, Gewicht (in kg) und Status (z. B. ‘gefährdet’, ‘stabil’) enthält.\nEin Kollege hat eine Abfrage erstellt, um eine bestimmte Gruppe von Tieren für eine Analyse zu selektieren. Der Ausdruck im Editor sieht wie folgt aus:\n\"Gewicht\" &gt; 400 AND (\"Art\" = 'Elefant' OR \"Art\" = 'Nashorn')\nAnalysieren Sie diesen Ausdruck und beantworten Sie die folgenden Fragen:\n\nWie viele Vergleichsoperatoren können Sie identifizieren? Welche sind es?\nWie viele logische Operatoren kommen vor? Welche sind es?\nFormulieren Sie diesen formalen Ausdruck in eine normale, fachliche Frage um. Was genau möchte der Kollege mit dieser Abfrage finden?\n\n\n\nVektorverarbeitung\nIn QGIS gibt es in der oberen Menüleiste den Eintrag “Vektor” und darin die Rubrik “Geoprocessing Tools”. Dort sind unter anderem die Werkzeuge\n\nPuffer / Buffer\nClip\nDifference\nDissolve\nIntersection\n\nBeschreiben Sie kurz was diese Werkzeuge machen und überlegen Sie sich zu 3 der Werkzeuge einen potentiellen Anwendungsfall mit landschaftsökologischem Bezug."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "GIS in der Landschaftsökologie",
+    "section": "",
+    "text": "Geographische Informationssysteme sind ein wichtiges Werkzeug zur Verarbeitung räumlicher Daten und damit für die Beantwortung landschaftsökologischer Fragestellungen hochrelevant. Diese Kurseinheit stellt typische Fragen und Problemstellungen der einzelnen Teildisziplinen der Landschaftsökologie vor und vermittelt daran Konzepte und Anwendungen von GIS Systemen. Hier ein Auszug an Fragen und Themen des Kurses:\n\nWo fließt Wasser? Topographie und Hydrologie zur Beschreibung von Landschaften.\nWie Bewegen sich Arten in der Landschaft? Kostenanalysen auf Basis von Geländeinformationen\nWie lassen sich Ergebnisse interaktiv Darstellen und Vermitteln? Nutzung und Bereitstellung von Webdiensten\n\nAber bevor wir dazu kommen, ein kleines Warm Up zu Geographischen Daten",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#willkommen",
+    "href": "index.html#willkommen",
+    "title": "GIS in der Landschaftsökologie",
+    "section": "",
+    "text": "Geographische Informationssysteme sind ein wichtiges Werkzeug zur Verarbeitung räumlicher Daten und damit für die Beantwortung landschaftsökologischer Fragestellungen hochrelevant. Diese Kurseinheit stellt typische Fragen und Problemstellungen der einzelnen Teildisziplinen der Landschaftsökologie vor und vermittelt daran Konzepte und Anwendungen von GIS Systemen. Hier ein Auszug an Fragen und Themen des Kurses:\n\nWo fließt Wasser? Topographie und Hydrologie zur Beschreibung von Landschaften.\nWie Bewegen sich Arten in der Landschaft? Kostenanalysen auf Basis von Geländeinformationen\nWie lassen sich Ergebnisse interaktiv Darstellen und Vermitteln? Nutzung und Bereitstellung von Webdiensten\n\nAber bevor wir dazu kommen, ein kleines Warm Up zu Geographischen Daten",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "projectionen.html",
+    "href": "projectionen.html",
+    "title": "Projektionen",
+    "section": "",
+    "text": "Wie bekommen wir eine Kugel auf Papier?",
+    "crumbs": [
+      "Geographische Daten",
+      "Projektionen"
+    ]
+  },
+  {
+    "objectID": "projectionen.html#ein-video-zur-einführung",
+    "href": "projectionen.html#ein-video-zur-einführung",
+    "title": "Projektionen",
+    "section": "Ein Video zur Einführung",
+    "text": "Ein Video zur Einführung",
+    "crumbs": [
+      "Geographische Daten",
+      "Projektionen"
+    ]
+  },
+  {
+    "objectID": "projectionen.html#animationen-zu-ausgewählten-projekt",
+    "href": "projectionen.html#animationen-zu-ausgewählten-projekt",
+    "title": "Projektionen",
+    "section": "Animationen zu ausgewählten Projekt",
+    "text": "Animationen zu ausgewählten Projekt\n\nDie Mercator Projektion\n\n\n\n\nLambert Azimutal Equal Area",
+    "crumbs": [
+      "Geographische Daten",
+      "Projektionen"
+    ]
+  },
+  {
+    "objectID": "projectionen.html#vorlesung",
+    "href": "projectionen.html#vorlesung",
+    "title": "Projektionen",
+    "section": "Vorlesung",
+    "text": "Vorlesung",
+    "crumbs": [
+      "Geographische Daten",
+      "Projektionen"
+    ]
+  },
+  {
+    "objectID": "projectionen.html#übung-projektionen-in-qgis",
+    "href": "projectionen.html#übung-projektionen-in-qgis",
+    "title": "Projektionen",
+    "section": "Übung: Projektionen in QGIS",
+    "text": "Übung: Projektionen in QGIS\nDas LIFECrossBorder Projekt hat das Ziel eine Moorfläche an der Grenze Deutschland-Niederlande zu renaturieren. Dafür wurden deutschen und niederländischen Projektpartnern Brunnen installiert die den Grundwasserstand / Moorwasserstand messen.\n\n\n\n\n\n\nTipAufgabe: LIFECrossBoderBog\n\n\n\n\nLade die Daten der Province Overijssel (NL) herunter:\nLade die Daten der Biologischen Station Zwillbrock (DE) herunter:\nBinde die Daten in QGIS ein.\nIn welchem Bezugssystem liegen die Daten jeweils vor?\nErstelle einen kombinierten Datensatz und exportiere ihn als Geopackage.",
+    "crumbs": [
+      "Geographische Daten",
+      "Projektionen"
+    ]
+  },
+  {
+    "objectID": "raster-vector-basics.html#übung",
+    "href": "raster-vector-basics.html#übung",
+    "title": "Raster-Vektor-Basics",
+    "section": "Übung",
+    "text": "Übung\n\n\n\n\n\n\nTipAufgabe 1:\n\n\n\n\nWie hoch sind die Bäume im Baumkataster? Beachtet, dass die Bäume einen gewissen Kronendurchmesser haben (sagen wir mal 10m).",
+    "crumbs": [
+      "GIS Grundlagen",
+      "Raster-Vektor Interaktionen"
+    ]
+  },
+  {
+    "objectID": "vector-basics.html",
+    "href": "vector-basics.html",
+    "title": "Vektor-Basics",
+    "section": "",
+    "text": "Bevor wir in die Praxis einsteigen, ein kurzer theoretischer Rückblick: Ein Datenmodell dient dazu, die reale Welt im GIS repräsentieren zu können. Da die Realität zu komplex ist, erfolgt dies durch eine Abstraktion. Je nachdem, ob wir diskrete Objekte (z. B. Bäume, Flüsse, Naturschutzgebiete) betrachten oder kontinuierliche Felder (z. B. Lufttemperatur, Höhe), bieten sich zwei verschiedene Datenmodelle an: das Vektormodell und das Rastermodell.In dieser Woche konzentrieren wir uns zunächst auf das Vektormodell, das Koordinatenpaare (x, y) nutzt, um geografische Objekte zu beschreiben. Da wir hier von diskreten Objekten sprechen, bedeutet dies, dass die Objekte klar definierte Grenzen haben und als einzelne, voneinander trennbare Einheiten existieren.Wir unterscheiden dabei drei grundlegende Geometrietypen:\n\nPunkt: Ein einzelner Koordinatenpunkt (z. B. ein Messstandort, ein einzelner Baum).\nLinie (Polyline): Eine Folge von Punkten, die durch Segmente verbunden sind (z. B. Bachläufe, Wanderwege).\nPolygon: Eine geschlossene Linie, die eine Fläche umschließt (z. B. Waldgebiet, Stadtbezirk).\n\nVektordaten erlauben die direkte Verknüpfung der Geometrie mit einer Attributtabelle, in der alle nicht-geometrischen Informationen (z. B. Baumart, pH-Wert, Flächennutzung) gespeichert werden.Um mit Vektordaten zu arbeiten, nutzen wir verschiedene Werkzeuge zur Analyse und Verarbeitung.\n\n\n\nWie analysieren wir jetzt die Daten? Oft wollen wir Daten nach bestimmten Kriterien selektieren oder sie weiterverarbeiten, um neue Informationen zu generieren. Eine Abfrage (Query) liefert eine Antwort oder eine Auswahl (z. B. „Welche Flächen sind Moore?“ \\(\\rightarrow\\) Ergebnis: Es werden nur die Polygone ausgewählt, auf die diese Bedingung zutrifft). Die Originaldaten bleiben unverändert. Eine Operation (Processing) erzeugt ein neues Produkt oder verändert die Daten (z. B. ein Buffer \\(\\rightarrow\\) Ergebnis: ein neuer Polygon-Layer). Je nachdem, ob wir uns für die Attribute, die Geometrien oder die Topologien (also die räumliche Anordnung) interessieren, lassen sich diese Vorgänge in drei Kategorien unterteilen:\n\nThematische Analysen: Wählt die Objekte aus, deren Eigenschaften (Attribute) die vorgegebenen Bedingungen erfüllen – z. B.: „Selektiere alle Bäume der Art Fichte.“\nGeometrische Analysen: Wählt die Objekte aus, die bestimmte räumliche Maße oder Distanzbedingungen erfüllen – z. B.: „Selektiere alle Bäume, die weniger als 250 m vom Fluss entfernt sind.“\nTopologische Analysen: Wählt die Objekte aus, die in einer bestimmten räumlichen Beziehung zu anderen Objekten stehen – z. B.: „Selektiere alle Bäume, die sich innerhalb des Stadtgebiets von Münster befinden.“\n\n\n\n\nHier erfolgt die Auswahl von Geoobjekten rein auf Grundlage ihrer Attributwerte. Im Gegensatz zu räumlichen Analysen handelt es sich um nicht-raumbezogene Abfragen: Es geht also nicht darum, wo ein Objekt liegt, sondern welche Eigenschaften in der Attributtabelle hinterlegt sind.\nIn QGIS wird dies über den Ausdruckseditor gelöst, der entweder direkt über die Attributtabelle oder über die Funktion „Objekte nach Ausdruck auswählen“ angesteuert werden kann.\nUm eine Abfrage zu erstellen, muss die fachliche Frage in eine formale Bedingung übersetzt werden. Dieser Prozess erfolgt in zwei Schritten:\n\nIdentifikation: Welche Attribute (Spalten) sind für die Fragestellung relevant?\nFormulierung: Wie muss der Ausdruck aufgebaut sein, um die gewünschten Objekte zu isolieren?\n\nDafür müssen die gängigsten Operatoren bekannt sein:\n\nAuswahloperatoren: Dienen dem gezielten Abrufen von Werten (z. B. IN für eine Liste von Werten).\nVergleichsoperatoren: Prüfen auf Gleichheit oder Größenunterschiede\n\n= gleich\n&lt;&gt; ungleich (in anderer Software oft auch !=)\n&lt; kleiner als\n&gt; größer als\n&gt;= größer oder gleich\n&lt;= kleiner oder gleich.\n\nArithmetische Operatoren: Ermöglichen Berechnungen innerhalb der Abfrage (z. B. +, -, *****, /).\nLogische Operatoren: Diese kommen zum Einsatz, sobald mehrere Bedingungen gemeinsam ausgewertet werden sollen. Sie verknüpfen einzelne Aussagen zu komplexeren Auswahlregeln:\n\nAND: Beide Bedingungen müssen erfüllt sein.\nOR: Mindestens eine der Bedingungen muss erfüllt sein.\nNOT: Negiert eine Bedingung (kehrt das Ergebnis um).\nXOR: Genau eine der Bedingungen muss erfüllt sein, aber nicht beide gleichzeitig.\n\n\nNeben thematischen Abfragen zählt auch die Tabellenverknüpfung (Join) zu den thematischen Analysen. Ein Join ist eine Operation, bei der zwei Tabellen basierend auf einem gemeinsamen Merkmal (einem sogenannten Schlüsselfeld oder Unique Identifier) miteinander verknüpft werden. In der GIS-Praxis bedeutet das meist, dass eine externe Tabelle (z. B. eine Excel-Liste oder eine CSV-Datei) an einen räumlichen Layer angehängt wird. Das Ziel ist es, die Attributtabelle eines Objekts zu erweitern, ohne die Geometrie des Objekts zu verändern.\n\n\n\nIm Gegensatz zu thematischen Analysen werten geometrische Abfragen nicht die Attributwerte aus, sondern die Geometrie der Geoobjekte. Hier steht die räumliche Form, die Größe oder die exakte Position im Vordergrund.\nGeometrische Abfragen dienen dazu, Informationen über die Beschaffenheit eines Objekts oder seine räumliche Beziehung zu anderen Objekten zu erhalten, ohne den Datensatz zu verändern. Beispiele hierfür sind:\n\nFlächen- und Längenberechnungen: Ermittlung der Fläche eines Polygons, des Umfangs oder der Länge einer Linie (z. B. „Wie viele Hektar umfasst dieses Biotop?“).\nDistanzanalysen: Messung des Abstands zwischen zwei Objekten (z. B. „Wie weit ist der nächste Messpunkt vom Bach entfernt?“).\nReichweitenanalysen: Prüfung, ob ein Objekt innerhalb eines bestimmten Radius liegt (z. B. „Welche Standorte befinden sich im Umkreis von 500 m um die Siedlung?“).\n\nNeben diesen reinen Abfragen gibt es geometrische Standardverarbeitungswerkzeuge. Diese basieren zwar ebenfalls auf geometrischen Abfragen, liefern jedoch als Ergebnis neue, verarbeitete Daten (neue Layer). Zu den wichtigsten Operationen gehören:\n\nBuffer (Puffer): Erzeugt eine neue Fläche in einem definierten Abstand um ein Objekt (z. B. ein 10 m breiter Schutzstreifen entlang eines Gewässers).\nClip (Ausschneiden): Schneidet einen Layer mithilfe eines anderen Layers (der „Maske“) zu, sodass nur die Objekte innerhalb der Maske erhalten bleiben.\nDissolve (Auflösen): Verschmilzt benachbarte Polygone zu einer größeren Einheit, sofern sie ein gemeinsames Attribut teilen.\nIntersection (Verschneiden): Kombiniert zwei Layer und behält nur die Bereiche, die räumlich überlappen. Dabei werden sowohl die Geometrien verschnitten als auch die Attribute beider Layer kombiniert.\n\n\n\n\nWährend geometrische Analysen konkrete Maße (wie Meter oder Hektar) berechnen, konzentrieren sich topologische Abfragen auf die räumlichen Beziehungen zwischen Objekten. Hier geht es nicht um Distanzen, sondern um die Prüfung spezifischer räumlicher Bedingungen (sog. topologische Prädikate).\nKlassische topologische Abfragen prüfen beispielsweise:\n\nBerührung (Touches): Haben zwei Objekte eine gemeinsame Grenze, ohne dass ihre Flächen überlappen? (z. B. „Grenzt die Waldfläche an das Feld?“)\nÜberlappung (Overlaps): Teilen sich zwei Objekte einen Raum, ohne dass eines das andere vollständig umschließt?\nEnthaltensein (Contains / Within): Liegt ein Objekt vollständig innerhalb eines anderen? (z. B. „Liegt der See vollständig innerhalb des Naturschutzgebiets?“)\nSchnittmenge (Intersects): Haben zwei Objekte irgendeinen gemeinsamen Punkt? (Die allgemeinste Form der räumlichen Beziehung).\n\n\n\n\n\n\n\nFigure 1: Verschiedene Topologische Abfragen\n\n\n\nAuf diesen grundlegenden Abfragen basieren komplexere topologische Analysen und Operationen:\n\nSpatial Join (Räumliche Verknüpfung): Nutzt eine topologische Abfrage (z. B. „liegt in“), um Informationen zwischen Tabellen zu übertragen. Anstatt einer ID wie bei den thematischen Analysen, wird die räumliche Beziehung als „Schlüssel“ genutzt, um Attribute eines Polygons auf darin liegende Punkte zu übertragen.\nNächster Nachbar (Nearest Neighbor): Sucht das Objekt mit der engsten topologischen Bindung (kürzester Abstand), um Netzwerke oder Nachbarschaften zu definieren.\nKonnektivität: Prüft in Liniennetzwerken, ob Segmente an Knotenpunkten verbunden sind (z. B. „Ist das Gewässernetz lückenlos verbunden?“).",
+    "crumbs": [
+      "GIS Grundlagen",
+      "Vektor Basics"
+    ]
+  },
+  {
+    "objectID": "vector-basics.html#vorlesung",
+    "href": "vector-basics.html#vorlesung",
+    "title": "Vektor-Basics",
+    "section": "",
+    "text": "Bevor wir in die Praxis einsteigen, ein kurzer theoretischer Rückblick: Ein Datenmodell dient dazu, die reale Welt im GIS repräsentieren zu können. Da die Realität zu komplex ist, erfolgt dies durch eine Abstraktion. Je nachdem, ob wir diskrete Objekte (z. B. Bäume, Flüsse, Naturschutzgebiete) betrachten oder kontinuierliche Felder (z. B. Lufttemperatur, Höhe), bieten sich zwei verschiedene Datenmodelle an: das Vektormodell und das Rastermodell.In dieser Woche konzentrieren wir uns zunächst auf das Vektormodell, das Koordinatenpaare (x, y) nutzt, um geografische Objekte zu beschreiben. Da wir hier von diskreten Objekten sprechen, bedeutet dies, dass die Objekte klar definierte Grenzen haben und als einzelne, voneinander trennbare Einheiten existieren.Wir unterscheiden dabei drei grundlegende Geometrietypen:\n\nPunkt: Ein einzelner Koordinatenpunkt (z. B. ein Messstandort, ein einzelner Baum).\nLinie (Polyline): Eine Folge von Punkten, die durch Segmente verbunden sind (z. B. Bachläufe, Wanderwege).\nPolygon: Eine geschlossene Linie, die eine Fläche umschließt (z. B. Waldgebiet, Stadtbezirk).\n\nVektordaten erlauben die direkte Verknüpfung der Geometrie mit einer Attributtabelle, in der alle nicht-geometrischen Informationen (z. B. Baumart, pH-Wert, Flächennutzung) gespeichert werden.Um mit Vektordaten zu arbeiten, nutzen wir verschiedene Werkzeuge zur Analyse und Verarbeitung.\n\n\n\nWie analysieren wir jetzt die Daten? Oft wollen wir Daten nach bestimmten Kriterien selektieren oder sie weiterverarbeiten, um neue Informationen zu generieren. Eine Abfrage (Query) liefert eine Antwort oder eine Auswahl (z. B. „Welche Flächen sind Moore?“ \\(\\rightarrow\\) Ergebnis: Es werden nur die Polygone ausgewählt, auf die diese Bedingung zutrifft). Die Originaldaten bleiben unverändert. Eine Operation (Processing) erzeugt ein neues Produkt oder verändert die Daten (z. B. ein Buffer \\(\\rightarrow\\) Ergebnis: ein neuer Polygon-Layer). Je nachdem, ob wir uns für die Attribute, die Geometrien oder die Topologien (also die räumliche Anordnung) interessieren, lassen sich diese Vorgänge in drei Kategorien unterteilen:\n\nThematische Analysen: Wählt die Objekte aus, deren Eigenschaften (Attribute) die vorgegebenen Bedingungen erfüllen – z. B.: „Selektiere alle Bäume der Art Fichte.“\nGeometrische Analysen: Wählt die Objekte aus, die bestimmte räumliche Maße oder Distanzbedingungen erfüllen – z. B.: „Selektiere alle Bäume, die weniger als 250 m vom Fluss entfernt sind.“\nTopologische Analysen: Wählt die Objekte aus, die in einer bestimmten räumlichen Beziehung zu anderen Objekten stehen – z. B.: „Selektiere alle Bäume, die sich innerhalb des Stadtgebiets von Münster befinden.“\n\n\n\n\nHier erfolgt die Auswahl von Geoobjekten rein auf Grundlage ihrer Attributwerte. Im Gegensatz zu räumlichen Analysen handelt es sich um nicht-raumbezogene Abfragen: Es geht also nicht darum, wo ein Objekt liegt, sondern welche Eigenschaften in der Attributtabelle hinterlegt sind.\nIn QGIS wird dies über den Ausdruckseditor gelöst, der entweder direkt über die Attributtabelle oder über die Funktion „Objekte nach Ausdruck auswählen“ angesteuert werden kann.\nUm eine Abfrage zu erstellen, muss die fachliche Frage in eine formale Bedingung übersetzt werden. Dieser Prozess erfolgt in zwei Schritten:\n\nIdentifikation: Welche Attribute (Spalten) sind für die Fragestellung relevant?\nFormulierung: Wie muss der Ausdruck aufgebaut sein, um die gewünschten Objekte zu isolieren?\n\nDafür müssen die gängigsten Operatoren bekannt sein:\n\nAuswahloperatoren: Dienen dem gezielten Abrufen von Werten (z. B. IN für eine Liste von Werten).\nVergleichsoperatoren: Prüfen auf Gleichheit oder Größenunterschiede\n\n= gleich\n&lt;&gt; ungleich (in anderer Software oft auch !=)\n&lt; kleiner als\n&gt; größer als\n&gt;= größer oder gleich\n&lt;= kleiner oder gleich.\n\nArithmetische Operatoren: Ermöglichen Berechnungen innerhalb der Abfrage (z. B. +, -, *****, /).\nLogische Operatoren: Diese kommen zum Einsatz, sobald mehrere Bedingungen gemeinsam ausgewertet werden sollen. Sie verknüpfen einzelne Aussagen zu komplexeren Auswahlregeln:\n\nAND: Beide Bedingungen müssen erfüllt sein.\nOR: Mindestens eine der Bedingungen muss erfüllt sein.\nNOT: Negiert eine Bedingung (kehrt das Ergebnis um).\nXOR: Genau eine der Bedingungen muss erfüllt sein, aber nicht beide gleichzeitig.\n\n\nNeben thematischen Abfragen zählt auch die Tabellenverknüpfung (Join) zu den thematischen Analysen. Ein Join ist eine Operation, bei der zwei Tabellen basierend auf einem gemeinsamen Merkmal (einem sogenannten Schlüsselfeld oder Unique Identifier) miteinander verknüpft werden. In der GIS-Praxis bedeutet das meist, dass eine externe Tabelle (z. B. eine Excel-Liste oder eine CSV-Datei) an einen räumlichen Layer angehängt wird. Das Ziel ist es, die Attributtabelle eines Objekts zu erweitern, ohne die Geometrie des Objekts zu verändern.\n\n\n\nIm Gegensatz zu thematischen Analysen werten geometrische Abfragen nicht die Attributwerte aus, sondern die Geometrie der Geoobjekte. Hier steht die räumliche Form, die Größe oder die exakte Position im Vordergrund.\nGeometrische Abfragen dienen dazu, Informationen über die Beschaffenheit eines Objekts oder seine räumliche Beziehung zu anderen Objekten zu erhalten, ohne den Datensatz zu verändern. Beispiele hierfür sind:\n\nFlächen- und Längenberechnungen: Ermittlung der Fläche eines Polygons, des Umfangs oder der Länge einer Linie (z. B. „Wie viele Hektar umfasst dieses Biotop?“).\nDistanzanalysen: Messung des Abstands zwischen zwei Objekten (z. B. „Wie weit ist der nächste Messpunkt vom Bach entfernt?“).\nReichweitenanalysen: Prüfung, ob ein Objekt innerhalb eines bestimmten Radius liegt (z. B. „Welche Standorte befinden sich im Umkreis von 500 m um die Siedlung?“).\n\nNeben diesen reinen Abfragen gibt es geometrische Standardverarbeitungswerkzeuge. Diese basieren zwar ebenfalls auf geometrischen Abfragen, liefern jedoch als Ergebnis neue, verarbeitete Daten (neue Layer). Zu den wichtigsten Operationen gehören:\n\nBuffer (Puffer): Erzeugt eine neue Fläche in einem definierten Abstand um ein Objekt (z. B. ein 10 m breiter Schutzstreifen entlang eines Gewässers).\nClip (Ausschneiden): Schneidet einen Layer mithilfe eines anderen Layers (der „Maske“) zu, sodass nur die Objekte innerhalb der Maske erhalten bleiben.\nDissolve (Auflösen): Verschmilzt benachbarte Polygone zu einer größeren Einheit, sofern sie ein gemeinsames Attribut teilen.\nIntersection (Verschneiden): Kombiniert zwei Layer und behält nur die Bereiche, die räumlich überlappen. Dabei werden sowohl die Geometrien verschnitten als auch die Attribute beider Layer kombiniert.\n\n\n\n\nWährend geometrische Analysen konkrete Maße (wie Meter oder Hektar) berechnen, konzentrieren sich topologische Abfragen auf die räumlichen Beziehungen zwischen Objekten. Hier geht es nicht um Distanzen, sondern um die Prüfung spezifischer räumlicher Bedingungen (sog. topologische Prädikate).\nKlassische topologische Abfragen prüfen beispielsweise:\n\nBerührung (Touches): Haben zwei Objekte eine gemeinsame Grenze, ohne dass ihre Flächen überlappen? (z. B. „Grenzt die Waldfläche an das Feld?“)\nÜberlappung (Overlaps): Teilen sich zwei Objekte einen Raum, ohne dass eines das andere vollständig umschließt?\nEnthaltensein (Contains / Within): Liegt ein Objekt vollständig innerhalb eines anderen? (z. B. „Liegt der See vollständig innerhalb des Naturschutzgebiets?“)\nSchnittmenge (Intersects): Haben zwei Objekte irgendeinen gemeinsamen Punkt? (Die allgemeinste Form der räumlichen Beziehung).\n\n\n\n\n\n\n\nFigure 1: Verschiedene Topologische Abfragen\n\n\n\nAuf diesen grundlegenden Abfragen basieren komplexere topologische Analysen und Operationen:\n\nSpatial Join (Räumliche Verknüpfung): Nutzt eine topologische Abfrage (z. B. „liegt in“), um Informationen zwischen Tabellen zu übertragen. Anstatt einer ID wie bei den thematischen Analysen, wird die räumliche Beziehung als „Schlüssel“ genutzt, um Attribute eines Polygons auf darin liegende Punkte zu übertragen.\nNächster Nachbar (Nearest Neighbor): Sucht das Objekt mit der engsten topologischen Bindung (kürzester Abstand), um Netzwerke oder Nachbarschaften zu definieren.\nKonnektivität: Prüft in Liniennetzwerken, ob Segmente an Knotenpunkten verbunden sind (z. B. „Ist das Gewässernetz lückenlos verbunden?“).",
+    "crumbs": [
+      "GIS Grundlagen",
+      "Vektor Basics"
+    ]
+  },
+  {
+    "objectID": "vector-basics.html#übung",
+    "href": "vector-basics.html#übung",
+    "title": "Vektor-Basics",
+    "section": "Übung",
+    "text": "Übung\n\n\n\n\n\n\nTipAufgabe\n\n\n\nLade das Baumkataster, das Geo1 und die Stadtgrenzen von Münster herunter. Beantworte folgende Fragen:\n\nWieviele Eichen stehen im Münster Mitte? (Tip: Hier brauchst du eine räumliche Verschneidung sowie eine thematische Abfrage)\nWo steht die nächstgelegende Birke vom Geo1 (Tip: Verwende das Werkzeug “Distance Matrix”: Dieses Werkzeug berechnet die Distanz zwischen allen Punkten eines Start-Layers (z. B. Geo1) und allen Punkten eines Ziel-Layers (z. B. Birken). Das Ergebnis ist eine neue Tabelle, aus der du den kürzesten Abstand (Minimum) einfach herausfiltern kannst.)",
+    "crumbs": [
+      "GIS Grundlagen",
+      "Vektor Basics"
+    ]
+  }
+]
