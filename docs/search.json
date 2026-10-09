@@ -295,33 +295,22 @@
     ]
   },
   {
-    "objectID": "projectionen.html",
-    "href": "projectionen.html",
+    "objectID": "projectionen.html#einführung-die-kartografische-darstellung-der-welt",
+    "href": "projectionen.html#einführung-die-kartografische-darstellung-der-welt",
     "title": "Projektionen",
-    "section": "",
-    "text": "Wie bekommen wir eine Kugel auf Papier?",
+    "section": "Einführung: Die kartografische Darstellung der Welt",
+    "text": "Einführung: Die kartografische Darstellung der Welt\nKarten sind politisch. Sie sind immer auch ein Ausdruck der Kartograph*in und Abseits des (beabsichtigten) Inhalts sind Entscheidungen über die Gestaltung der Karte ein mächtiges Werkzeug der Informationsvermittlung. Welche Farbskala wird benutzt? Welche Beschriftungen werden dargestellt? Welchen Ausschnitt zeigt die Karte, welchen nicht? Welche Dimension diese scheinbar simplen Entscheidungen haben wird im nachfolgenden Video von “Mit offenen Karten” des franko-deutschen Kultursenders ARTE deutlich.\n\n\nWie im Video gezeigt, hängt die Form und Aussagekraft der Karte maßgeblich von der gewählten Projektion ab.",
     "crumbs": [
       "Geographische Daten",
       "Projektionen"
     ]
   },
   {
-    "objectID": "projectionen.html#ein-video-zur-einführung",
-    "href": "projectionen.html#ein-video-zur-einführung",
+    "objectID": "projectionen.html#einige-ausgewählte-projektionen",
+    "href": "projectionen.html#einige-ausgewählte-projektionen",
     "title": "Projektionen",
-    "section": "Ein Video zur Einführung",
-    "text": "Ein Video zur Einführung",
-    "crumbs": [
-      "Geographische Daten",
-      "Projektionen"
-    ]
-  },
-  {
-    "objectID": "projectionen.html#animationen-zu-ausgewählten-projekt",
-    "href": "projectionen.html#animationen-zu-ausgewählten-projekt",
-    "title": "Projektionen",
-    "section": "Animationen zu ausgewählten Projekt",
-    "text": "Animationen zu ausgewählten Projekt\n\nDie Mercator Projektion\n\n\n\n\nLambert Azimutal Equal Area",
+    "section": "Einige ausgewählte Projektionen",
+    "text": "Einige ausgewählte Projektionen\n\nDie Mercator Projektion\nHier nochmal in Kurzform eine Animation zur Mercatorprojektion:\n\n\n\nZylindrische Projektion\nNur am Äquator verzerrungsfrei (dort berührt der Zylinder die Kugel)\nVerzerrung nimmt mit geographischer Breite zu\nWinkeltreu, d.h. die Gitternetzlinien fallen senkrecht aufeinander\n\n\n\nLambert Azimutal Equal Area\nStatt eines Zylinders wird bei der Azimutalen Projektion eine Ebene an die Erdkugel angelegt. Es gibt mehrere Optionen wie genau die Erdoberfläche dann auf diese Ebene projeziert wird die in Unterschiedlichen Eigenschaften der Projektion resultieren - dazu in der Vorlesung mehr. Eine Möglichkeit ist die sogenannte Flächentreue (=Equal Area) Azimutalprojektion:\n\n\nNicht Winkeltreu - Gitternetzlinien beachten.\nProjektion hat ein Zentrum (dort wo die Ebene die Kugel berührt).\nEuropean Environmental Agency nutzt diese Projektion für ihre Geodaten\n\n\n\n\nVergleich von Mercatorprojektion (links) und Labert Azimutal Equal Area (rechts)",
     "crumbs": [
       "Geographische Daten",
       "Projektionen"
@@ -343,7 +332,7 @@
     "href": "projectionen.html#übung-projektionen-in-qgis",
     "title": "Projektionen",
     "section": "Übung: Projektionen in QGIS",
-    "text": "Übung: Projektionen in QGIS\nDas LIFECrossBorder Projekt hat das Ziel eine Moorfläche an der Grenze Deutschland-Niederlande zu renaturieren. Dafür wurden deutschen und niederländischen Projektpartnern Brunnen installiert die den Grundwasserstand / Moorwasserstand messen.\n\n\n\n\n\n\nTipAufgabe: LIFECrossBoderBog\n\n\n\n\nLade die Daten der Province Overijssel (NL) herunter:\nLade die Daten der Biologischen Station Zwillbrock (DE) herunter:\nBinde die Daten in QGIS ein.\nIn welchem Bezugssystem liegen die Daten jeweils vor?\nErstelle einen kombinierten Datensatz und exportiere ihn als Geopackage.",
+    "text": "Übung: Projektionen in QGIS\n\n\n\n\n\n\nTipAufgabe: Datenprojektion vs. Kartenprojektion\n\n\n\n\nLade folgende Daten herunter.\nTeste verschiedene Projektionssysteme.\n\n\n\nDas LIFECrossBorder Projekt hat das Ziel eine Moorfläche an der Grenze Deutschland-Niederlande zu renaturieren. Dafür wurden deutschen und niederländischen Projektpartnern Brunnen installiert die den Grundwasserstand / Moorwasserstand messen.\n\n\n\n\n\n\nTipAufgabe: LIFECrossBoderBog\n\n\n\n\nLade die Daten der Province Overijssel (NL) herunter:\nLade die Daten der Biologischen Station Zwillbrock (DE) herunter:\nBinde die Daten in QGIS ein.\nIn welchem Bezugssystem liegen die Daten jeweils vor?\nErstelle einen kombinierten Datensatz und exportiere ihn als Geopackage.",
     "crumbs": [
       "Geographische Daten",
       "Projektionen"

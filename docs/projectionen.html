@@ -249,30 +249,68 @@ background-size: cover;
 
 
 <blockquote class="blockquote">
-<p>Wie bekommen wir eine Kugel auf Papier?</p>
+<h2 id="wie-bekommen-wir-eine-kugel-auf-papier" class="anchored">Wie bekommen wir eine Kugel auf Papier?</h2>
 </blockquote>
-<section id="ein-video-zur-einführung" class="level2">
-<h2 class="anchored" data-anchor-id="ein-video-zur-einführung">Ein Video zur Einführung</h2>
+<section id="einführung-die-kartografische-darstellung-der-welt" class="level2">
+<h2 class="anchored" data-anchor-id="einführung-die-kartografische-darstellung-der-welt">Einführung: Die kartografische Darstellung der Welt</h2>
+<p>Karten sind politisch. Sie sind immer auch ein Ausdruck der Kartograph*in und Abseits des (beabsichtigten) Inhalts sind Entscheidungen über die Gestaltung der Karte ein mächtiges Werkzeug der Informationsvermittlung. Welche Farbskala wird benutzt? Welche Beschriftungen werden dargestellt? Welchen Ausschnitt zeigt die Karte, welchen nicht? Welche Dimension diese scheinbar simplen Entscheidungen haben wird im nachfolgenden Video von “Mit offenen Karten” des franko-deutschen Kultursenders ARTE deutlich.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5UJ33QElhHQ?si=ed_Xoixtm2DuhOjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
+<p>Wie im Video gezeigt, hängt die Form und Aussagekraft der Karte maßgeblich von der gewählten Projektion ab.</p>
 </section>
-<section id="animationen-zu-ausgewählten-projekt" class="level2">
-<h2 class="anchored" data-anchor-id="animationen-zu-ausgewählten-projekt">Animationen zu ausgewählten Projekt</h2>
+<section id="einige-ausgewählte-projektionen" class="level2">
+<h2 class="anchored" data-anchor-id="einige-ausgewählte-projektionen">Einige ausgewählte Projektionen</h2>
 <section id="die-mercator-projektion" class="level3">
 <h3 class="anchored" data-anchor-id="die-mercator-projektion">Die Mercator Projektion</h3>
+<p>Hier nochmal in Kurzform eine Animation zur Mercatorprojektion:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CPQZ7NcQ6YQ?si=LrL78Lmlffoj1yCP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
+<ul>
+<li>Zylindrische Projektion</li>
+<li>Nur am Äquator verzerrungsfrei (dort berührt der Zylinder die Kugel)</li>
+<li>Verzerrung nimmt mit geographischer Breite zu</li>
+<li>Winkeltreu, d.h. die Gitternetzlinien fallen senkrecht aufeinander</li>
+</ul>
 </section>
 <section id="lambert-azimutal-equal-area" class="level3">
 <h3 class="anchored" data-anchor-id="lambert-azimutal-equal-area">Lambert Azimutal Equal Area</h3>
+<p>Statt eines Zylinders wird bei der Azimutalen Projektion eine Ebene an die Erdkugel angelegt. Es gibt mehrere Optionen wie genau die Erdoberfläche dann auf diese Ebene projeziert wird die in Unterschiedlichen Eigenschaften der Projektion resultieren - dazu in der Vorlesung mehr. Eine Möglichkeit ist die sogenannte Flächentreue (=Equal Area) Azimutalprojektion:</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Generalized_Lambert_Equal-Area_projection.gif?utm_source=de.wikipedia.org&amp;utm_campaign=imageinfo&amp;utm_content=original" class="img-fluid"></p>
+<ul>
+<li>Nicht Winkeltreu - Gitternetzlinien beachten.</li>
+<li>Projektion hat ein Zentrum (dort wo die Ebene die Kugel berührt).</li>
+<li>European Environmental Agency nutzt diese Projektion für ihre Geodaten</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/europe_mercator_laea.png" class="img-fluid figure-img"></p>
+<figcaption>Vergleich von Mercatorprojektion (links) und Labert Azimutal Equal Area (rechts)</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="vorlesung" class="level2">
 <h2 class="anchored" data-anchor-id="vorlesung">Vorlesung</h2>
+<embed src="slides/01c-projektionen.pdf" type="application/pdf" width="100%" height="500">
 </section>
 <section id="übung-projektionen-in-qgis" class="level2">
 <h2 class="anchored" data-anchor-id="übung-projektionen-in-qgis">Übung: Projektionen in QGIS</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Aufgabe: Datenprojektion vs.&nbsp;Kartenprojektion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Lade folgende Daten herunter.</li>
+<li>Teste verschiedene Projektionssysteme.</li>
+</ul>
+</div>
+</div>
 <p>Das LIFECrossBorder Projekt hat das Ziel eine Moorfläche an der Grenze Deutschland-Niederlande zu renaturieren. Dafür wurden deutschen und niederländischen Projektpartnern Brunnen installiert die den Grundwasserstand / Moorwasserstand messen.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
