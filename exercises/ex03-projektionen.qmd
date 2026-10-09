@@ -1,7 +1,26 @@
 
 
+## Arktische Fauna
 
 
+Auf `naturalearthdata.com` gibt es grundlegende Vektordaten für karthographische Zwecke. Laden Sie die Küstenlinien über folgenen Link herunter: [https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_coastline.zip](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_coastline.zip).
+Und über folgenden Link die Ozeane mit Label: [https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geography_marine_polys.zip](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geography_marine_polys.zip)
+Und über folgenden Link [https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geographic_lines.zip](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geographic_lines.zip) geographische Linien zur besseren Orientierung.
+
+
+- In welchem Koordinatensystem liegen die Daten vor?
+- Visualisiere die Küstenlinien und die Ozeane sinnvoll.
+- Für die Ozeane sollen nur die Label sichtbar sein (Spalte 'name' der Attributtabelle).
+
+
+Papageientaucher (*Fratercula arctica*) und Krabbentaucher (*Alle Alle*) haben ihr Hauptverbreitungsgebiet in der Arktis.
+Auf der Kollaborative Plattform [gbif.org](https://www.gbif.org/) werden Artbeobachtungen gesammelt und können dort heruntergeladen werden.
+Hier ist ein Datensatz, mit den Beobachtungen der beiden Arten in den Jahren 2024 und 2025: XXX
+
+- Visualisieren Sie den Datensatz. 
+- Nutzen Sie dafür ein Koordinatenbezugssytem, welches auf die Arktis angepasst ist.
+- Wie unterscheidet sich das Verbreitungsgebiet der beiden Arten?
+- Gibt es einen Unterschied zwischen 2024 und 2025?
 
 
 
