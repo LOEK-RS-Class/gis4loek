@@ -63,10 +63,3 @@ Laden Sie den Datensatz als .gpkg herunter. Den brauchen wir nächste Woche.
 
 
 
-
-
-
-
-
-
-

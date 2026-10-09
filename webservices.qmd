@@ -4,10 +4,17 @@ title: "GIS Webdienste"
 
 # Webdienste für Karten und Geodaten
 
-Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stell dir einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / **Server** der die Karten und Daten bereitstellt, und ein **Client** der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als **Standards des OGC (Open Geospatial Consortium)** veröffentlicht.
+
+## Vorlesung
+
+
+<embed src="slides/01b_webservice.pdf" type="application/pdf" width="100%" height="500">
+
+## Reader und Übung
+
+
+Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stellen Sie sich einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / **Server** der die Karten und Daten bereitstellt, und ein **Client** der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als **Standards des OGC (Open Geospatial Consortium)** veröffentlicht.
 Bevor wir weiter in die Details gehen, richten wir einen Webservice in QGIS ein um zu sehen um was es eigentlich geht.
-
-
 
 
 ::: {.callout-tip}
@@ -21,23 +28,21 @@ Bevor wir weiter in die Details gehen, richten wir einen Webservice in QGIS ein 
 
 ## Web Feature Service - WFS
 
-Im Gegensatz zu WM(T)S werden beim [Web Feature Service](https://www.ogc.org/standards/wfs/) tatsächliche Geodaten im Vektorformat übertragen. Auch hier werden die Daten nur nach und nach, je nach Kartenausschnitt heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:
+Der Eingebundene dienst ist ein sogenannter [Web Feature Service](https://www.ogc.org/standards/wfs/). Über diesen werden Geodaten im Vektorformat übertragen. Die Daten werden nach und nach, je nach Kartenausschnitt und Zoomstufe heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:
 
 - `getCapabilities` zur Anfrage von allgemeinen Metadaten
 - `DescribeFeatureType` zur Anfrage von Metadaten spezifischer Vektoren
 - `getFeature` zur Anfrage der Vektor Objekte, also die tatsächlichen Daten
 
 
-Beispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen)
+Beispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen) aus dem eingebundenen Dienst der Stadt Münster.
 
-```
+```{r}
+#| code-overflow: wrap
+#| eval: false
+
 https://www.stadt-muenster.de/ows/mapserv706/odgruenserv?REQUEST=GetFeature&SERVICE=WFS&VERSION=2.0.0&TYPENAME=ms:Gruenflaechen&EXCEPTIONS=XML&MAXFEATURES=1
 ```
-
-
-
-
-
 
 
 ## Web Map Service - WMS
@@ -49,18 +54,22 @@ Folgende Anfragen sind das Minimum was ein WMS Standard liefern muss:
 - `getMap` zur Anfrage von Karten
 
 Ein Beispiel für `getCapabilities`: 
-```
+
+```{r}
+#| code-overflow: wrap
+#| eval: false
+
 https://sgx.geodatenzentrum.de/wms_basemapde_schummerung?request=GetCapabilities&service=WMS
 ```
+
 Die `getMap` URLs sind etwas Umfangreicher und setzen sich zusammen aus Serveradresse, Koordinaten, Bildgröße und Format:
-```
+
+```{r}
+#| code-overflow: wrap
+#| eval: false
 https://sgx.geodatenzentrum.de/wms_basemapde_schummerung?service=wms&version=1.3.0&request=GetMap&Layers=de_basemapde_web_raster_combshade&STYLES=default&CRS=EPSG:25832&bbox=500000,5700000,500200,5700200&width=150&Height=150&Format=image/png
 ```
 
-::: {.column-margin}
-![bbox=500000,5700000,500200,5700200](https://sgx.geodatenzentrum.de/wms_basemapde_schummerung?service=wms&version=1.3.0&request=GetMap&Layers=de_basemapde_web_raster_combshade&STYLES=default&CRS=EPSG:25832&bbox=500000,5700000,500200,5700200&width=150&Height=150&Format=image/png)
-
-:::
 
 
 
@@ -72,21 +81,27 @@ Der Web Map Tile Service ist eine Variante des WMS bei dem die Daten vorprozessi
 
 
 ```
+#| code-overflow: wrap
 https://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapde_web_raster_combshade/default/DE_EPSG_3857_ADV/06/662/1082.png
 ```
 
-::: {.column-margin}
-
-![DE_EPSG_3857_ADV/06/662/1082.png](https://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapde_web_raster_combshade/default/DE_EPSG_3857_ADV/06/662/1082.png)
-
-
-:::
-
-
 ## Web Coverage Service
 
-Beispiel: https://gdz.bkg.bund.de/index.php/default/inspire-wcs-elevation-dgm200-wcs-dgm200-inspire.html
+Der Web Coverage Service dient zur Distribution von Rasterdaten.
 
+
+- `getCapabilities` zur Anfrage von datensatzweiten  Metadaten
+- `describeCoverage` zur Anfrage von Metadaten spezifischer Produkte
+- `getCoverage` zur Anfrage der Rasterkachel
+
+
+```{r}
+#| code-overflow: wrap
+#| eval: false
+https://gdz.bkg.bund.de/index.php/default/inspire-wcs-elevation-dgm200-wcs-dgm200-inspire.html
+
+
+```
 
 
 
@@ -117,26 +132,14 @@ Hier noch ein Beispiel zu WMS: [eine Deutschlandweite Hintergrundkarte des BKG](
 
 
 
-::: {.callout-tip}
-## Aufgabe: Web Services in QGIS Einrichten
-
-- Richte die WMS Grundkarte und die WMTS Geländedienste in QGIS ein. (z.B. über den Data Source Manager)
-- Schau dir eine der Layer Eigenschaften an. Welche Anfrage wurde da gerade gestellt?
-- Visualisiere ein paar der Layer. Bemerkst du einen Unterschied zwischen WFS und WFTS?
-:::
-
-
-Zuletzt noch ein Beispiel für den Web Feature Service: Die Stadt Münster stellt u.a. die Städtischen Grünflächen und das Baumkataster als WFS zur verfügung.
-
-
-
-
 
 
 :::{.callout-caution}
 ## Diskussion
 Welche Vor- und Nachteile bringt der Einsatz von Webdiensten in einem GIS Projekt mit sich?
 :::
+
+
 
 
 

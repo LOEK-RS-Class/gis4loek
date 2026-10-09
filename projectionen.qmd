@@ -3,29 +3,44 @@ title: Projektionen
 ---
 
 
-Koordinaten sind die Grundlage 
 
-
-Grundsätzlich gibt es zwei verschiedene Systeme um positionen auf der Erdoberfläche 
-
+> Wie bekommen wir eine Kugel auf Papier?
 
 
 
-
-![Gaskraftwerk Meppen](https://www.kreiszeitung.de/assets/images/33/623/33623662-eine-aufnahme-des-kuehlturms-mit-der-riesigen-weltkarte-aus-dem-jahr-2015-2csYPX8LHS73.jpg)
+## Vorlesung
 
 
 
 
 
+## Animationen zu ausgewählten Projekt
+
+### Die Mercator Projektion
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CPQZ7NcQ6YQ?si=LrL78Lmlffoj1yCP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+### Lambert Azimutal Equal Area
+
+![](https://upload.wikimedia.org/wikipedia/commons/4/4d/Generalized_Lambert_Equal-Area_projection.gif?utm_source=de.wikipedia.org&utm_campaign=imageinfo&utm_content=original)
 
 
 
-
-## Projektionen in QGIS
-
+## Übung: Projektionen in QGIS
 
 
+Das LIFECrossBorder Projekt hat das Ziel eine Moorfläche an der Grenze Deutschland-Niederlande zu renaturieren. Dafür wurden deutschen und niederländischen Projektpartnern Brunnen installiert die den Grundwasserstand / Moorwasserstand messen.
+
+::: {.callout-tip}
+## Aufgabe: LIFECrossBoderBog
+- Lade die Daten der Province Overijssel (NL) herunter: 
+- Lade die Daten der Biologischen Station Zwillbrock (DE) herunter: 
+- Binde die Daten in QGIS ein.
+- In welchem Bezugssystem liegen die Daten jeweils vor?
+- Erstelle einen kombinierten Datensatz und exportiere ihn als Geopackage.
+:::
 
 
 

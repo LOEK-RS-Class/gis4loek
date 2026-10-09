@@ -2,7 +2,7 @@
 format: pdf
 ---
 
-# Aufgaben - Webdienste
+# Aufgaben - Datenformate und Webdienste
 
 
 
@@ -33,8 +33,14 @@ Das Bundesamt für Kartographie bietet einem Web Map Tile Service für Geländem
 
 
 
+## Vorbereitung: Projektionen
 
+Im Wintersemester 2014 / 2015 hat Matthias Rüster an der Hochschule Anhalt im Modul Liegenschaftswesen eine Hausarbeit zum Thema "Umstellung GK zu ETRS89/UTM: Auswirkungen auf das Kataster" geschrieben. Er hat die Arbeit auf seiner Homepage veröffentlicht: [https://www.m13r.de/Studium/LW-Seminar-201415-Matthias-R%C3%BCster.pdf](https://www.m13r.de/Studium/LW-Seminar-201415-Matthias-R%C3%BCster.pdf)
 
+- Lesen Sie die Arbeit.
+- Wie bewerten Sie die Arbeit? Was ist positiv, was negativ?
+- Was bedeutet GK? Was bedeutet ETRS89? Und warum wurde Umgestellt?
+- Notieren Sie sich offene Fragen und Diskussionspunkte die wir im Plenum diskutieren können.
 
 
 

@@ -1,0 +1,15 @@
+## Vektordaten
+
+Für diese Übung nutzen Sie die bereits heruntergeladenen Datensätze: das Baumkataster und die Stadtbezirke von Münster. Bearbeiten Sie die folgenden Aufgaben und dokumentieren Sie Ihre Ergebnisse:
+
+- Wieviele Eichen und Linden gibt es in Münster? Wie sieht die entsprechende thematische Abfrage dafür aus?
+
+- Vergleichen Sie die Baumbestände zweier Stadtbezirke: Hat Münster-Mitte oder Münster-West mehr Bäume?
+    (Tipp: Um die Bäume den jeweiligen Stadtbezirken zuzuordnen, nutzen Sie das Werkzeug „Verschneidung“ (Intersection)).
+
+- Welcher Bezirk hat die größte Baumdichte (mit wievielen Bäumen pro m²)? Berechnen Sie dazu die Fläche der Stadtteile. Die Flächenberechnung geht am einfachsten über den Feldrechner (Field Calculator) in der Attributtabelle mit der Funktion $area.
+
+
+
+## Vorbereitung Rasterdaten
+

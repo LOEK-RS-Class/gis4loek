@@ -4,6 +4,7 @@ project:
   render:
     - "*.qmd"
     - "!readme.md"
+    - "!staged/"
 
 title-block-banner: assets/giskurs_header_s_t.png
 title-block-banner-color: black
