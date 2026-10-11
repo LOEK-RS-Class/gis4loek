@@ -36,7 +36,8 @@ website:
             text: Raster Basics
           - href: raster-vector-basics.qmd
             text: Raster-Vektor Interaktionen
-      - section: Habitatanalysen
+      - text: Habitatanalysen
+        href: habitatanalysen.qmd
       - section: Geländeanalysen
         contents:
           - href: topography.qmd

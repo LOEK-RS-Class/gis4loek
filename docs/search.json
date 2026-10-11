@@ -125,7 +125,7 @@
     "href": "raster-basics.html#übung",
     "title": "Raster Basics",
     "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nTipAufgabe:\n\n\n\nLade das digitale Geländemodell und das digitale Oberflächenmodell von Münster. Berechnet die Vegetationshöhe.\n\n\n\n\n\n\n\n\nTipZusatzaufgabe:\n\n\n\nWo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen &lt;50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen.",
+    "text": "Übung\n\n\n\n\n\n\nAufgabe:\n\n\n\nLade das digitale Geländemodell und das digitale Oberflächenmodell von Münster. Berechnet die Vegetationshöhe.\n\n\n\n\n\n\n\n\nZusatzaufgabe:\n\n\n\nWo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen &lt;50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen.",
     "crumbs": [
       "GIS Grundlagen",
       "Raster Basics"
@@ -338,6 +338,38 @@
     "crumbs": [
       "GIS Grundlagen",
       "Vektor Basics"
+    ]
+  },
+  {
+    "objectID": "raster-basics.html",
+    "href": "raster-basics.html",
+    "title": "Raster Basics",
+    "section": "",
+    "text": "Nachdem wir uns in der letzten Einheit mit diskreten Objekten beschäftigt haben, die wir über das Vektordatenmodell beschreiben, kommen wir diese Woche zum Rasterdatenmodell. Während das Vektormodell die Welt als einzelne Objekte (Punkte, Linien, Polygone) modelliert, repräsentiert das Rastermodell die Erdoberfläche als eine kontinuierliche Fläche.\nEin Rastermodell unterteilt den Raum über Zeilen und Spalten in ein gleichmäßiges Gitter aus Zellen (Pixeln). Jede dieser Zellen enthält einen einzigen Wert, der eine bestimmte Eigenschaft dieses Pixels beschreibt. Das Rastermodell ist ideal für Phänomene, die keine scharfen Grenzen haben, sondern fließend ineinander übergehen. Man spricht hier von kontinuierlichen Feldern, auch wenn sowohl kontinuierliche Informationen (z. B. Temperatur oder Geländehöhe) als auch diskrete Informationen (z. B. Landnutzungsklassen) abgespeichert werden können.\n\n\n\n\n             \n\n10 12 15 14 18\n\nRasterdatenmodell Zelle (Pixel) mit zugeordnetem Wert",
+    "crumbs": [
+      "GIS Grundlagen",
+      "Raster Basics"
+    ]
+  },
+  {
+    "objectID": "raster-basics.html#vorlesung",
+    "href": "raster-basics.html#vorlesung",
+    "title": "Raster Basics",
+    "section": "",
+    "text": "Nachdem wir uns in der letzten Einheit mit diskreten Objekten beschäftigt haben, die wir über das Vektordatenmodell beschreiben, kommen wir diese Woche zum Rasterdatenmodell. Während das Vektormodell die Welt als einzelne Objekte (Punkte, Linien, Polygone) modelliert, repräsentiert das Rastermodell die Erdoberfläche als eine kontinuierliche Fläche.\nEin Rastermodell unterteilt den Raum über Zeilen und Spalten in ein gleichmäßiges Gitter aus Zellen (Pixeln). Jede dieser Zellen enthält einen einzigen Wert, der eine bestimmte Eigenschaft dieses Pixels beschreibt. Das Rastermodell ist ideal für Phänomene, die keine scharfen Grenzen haben, sondern fließend ineinander übergehen. Man spricht hier von kontinuierlichen Feldern, auch wenn sowohl kontinuierliche Informationen (z. B. Temperatur oder Geländehöhe) als auch diskrete Informationen (z. B. Landnutzungsklassen) abgespeichert werden können.\n\n\n\n\n             \n\n10 12 15 14 18\n\nRasterdatenmodell Zelle (Pixel) mit zugeordnetem Wert",
+    "crumbs": [
+      "GIS Grundlagen",
+      "Raster Basics"
+    ]
+  },
+  {
+    "objectID": "habitatanalysen.html#übung",
+    "href": "habitatanalysen.html#übung",
+    "title": "Habitatanalysen",
+    "section": "Übung",
+    "text": "Übung\n\n\n\n\n\n\nAufgabe:\n\n\n\nWo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen &lt;50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen.",
+    "crumbs": [
+      "Habitatanalysen"
     ]
   }
 ]

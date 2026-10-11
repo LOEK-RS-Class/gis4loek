@@ -7,6 +7,17 @@ title: Raster Basics
 
 <embed src="slides/02b_Rasterbasics.pdf" type="application/pdf" width="100%" height="500">
 
+### Das Rasterdatenmodell
+
+Nachdem wir uns in der letzten Einheit mit diskreten Objekten beschäftigt haben, die wir über das Vektordatenmodell beschreiben, kommen wir diese Woche zum Rasterdatenmodell. Während das Vektormodell die Welt als einzelne Objekte (Punkte, Linien, Polygone) modelliert, repräsentiert das Rastermodell die Erdoberfläche als eine kontinuierliche Fläche.
+
+Ein Rastermodell unterteilt den Raum über Zeilen und Spalten in ein gleichmäßiges Gitter aus Zellen (Pixeln). Jede dieser Zellen enthält einen einzigen Wert, der eine bestimmte Eigenschaft dieses Pixels beschreibt. Das Rastermodell ist ideal für Phänomene, die keine scharfen Grenzen haben, sondern fließend ineinander übergehen. Man spricht hier von kontinuierlichen Feldern, auch wenn sowohl kontinuierliche Informationen (z. B. Temperatur oder Geländehöhe) als auch diskrete Informationen (z. B. Landnutzungsklassen) abgespeichert werden können. 
+
+
+
+
+### Rasterdatenverarbeitung
+
 
 
 ## Übung
@@ -17,10 +28,6 @@ Lade das digitale Geländemodell und das digitale Oberflächenmodell von Münste
 Berechnet die Vegetationshöhe.
 :::
 
-:::{.callout-tip}
-## Zusatzaufgabe:
-Wo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen <50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen.
-:::
 
 
 

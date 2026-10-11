@@ -1,0 +1,22 @@
+---
+title: Habitatanalysen
+---
+
+
+
+## Vorlesung
+
+
+
+
+## Übung
+
+
+
+:::{.callout-tip}
+## Aufgabe:
+Wo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen <50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen.
+:::
+
+
+
