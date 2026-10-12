@@ -20,3 +20,9 @@ Für diese Übung nutzen Sie die bereits heruntergeladenen Datensätze: das Baum
 
 ## Vorbereitung Rasterdaten
 
+In der nächsten Einheit wird es um Rasteroperationen gehen. Zur Vorbereitung frischen Sie ihre Kenntnisse gängiger Werkzeuge auf. Lesen Sie dazu den Website Text zu den Rasterdaten.
+
+Suchen Sie drei Beispiele für ökologische Phänomene, die sich am besten als kontinuierliche Felder (Raster) und nicht als diskrete Objekte (Vektoren) modellieren lassen.
+Begründen Sie Ihre Wahl: Warum ist eine zellbasierte Darstellung in diesen Fällen präziser oder praktischer als eine klare geometrische Abgrenzung?
+
+

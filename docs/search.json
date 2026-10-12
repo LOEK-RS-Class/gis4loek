@@ -121,11 +121,33 @@
     ]
   },
   {
+    "objectID": "raster-basics.html",
+    "href": "raster-basics.html",
+    "title": "Raster Basics",
+    "section": "",
+    "text": "Nachdem wir uns in der letzten Einheit mit diskreten Objekten beschäftigt haben, die wir über das Vektordatenmodell beschreiben, kommen wir diese Woche zum Rasterdatenmodell. Während das Vektormodell die Welt als einzelne Objekte (Punkte, Linien, Polygone) modelliert, repräsentiert das Rastermodell die Erdoberfläche als eine kontinuierliche Fläche.\nEin Rastermodell unterteilt den Raum über Zeilen und Spalten in ein gleichmäßiges Gitter aus Zellen (Pixeln). Jede dieser Zellen enthält einen einzigen Wert, der eine bestimmte Eigenschaft dieses Pixels beschreibt. Das Rastermodell ist ideal für Phänomene, die keine scharfen Grenzen haben, sondern fließend ineinander übergehen. Man spricht hier von kontinuierlichen Feldern, auch wenn sowohl kontinuierliche Informationen (z. B. Temperatur oder Geländehöhe) als auch diskrete Informationen (z. B. Landnutzungsklassen) abgespeichert werden können.",
+    "crumbs": [
+      "GIS Grundlagen",
+      "Raster Basics"
+    ]
+  },
+  {
+    "objectID": "raster-basics.html#vorlesung",
+    "href": "raster-basics.html#vorlesung",
+    "title": "Raster Basics",
+    "section": "",
+    "text": "Nachdem wir uns in der letzten Einheit mit diskreten Objekten beschäftigt haben, die wir über das Vektordatenmodell beschreiben, kommen wir diese Woche zum Rasterdatenmodell. Während das Vektormodell die Welt als einzelne Objekte (Punkte, Linien, Polygone) modelliert, repräsentiert das Rastermodell die Erdoberfläche als eine kontinuierliche Fläche.\nEin Rastermodell unterteilt den Raum über Zeilen und Spalten in ein gleichmäßiges Gitter aus Zellen (Pixeln). Jede dieser Zellen enthält einen einzigen Wert, der eine bestimmte Eigenschaft dieses Pixels beschreibt. Das Rastermodell ist ideal für Phänomene, die keine scharfen Grenzen haben, sondern fließend ineinander übergehen. Man spricht hier von kontinuierlichen Feldern, auch wenn sowohl kontinuierliche Informationen (z. B. Temperatur oder Geländehöhe) als auch diskrete Informationen (z. B. Landnutzungsklassen) abgespeichert werden können.",
+    "crumbs": [
+      "GIS Grundlagen",
+      "Raster Basics"
+    ]
+  },
+  {
     "objectID": "raster-basics.html#übung",
     "href": "raster-basics.html#übung",
     "title": "Raster Basics",
     "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nTipAufgabe:\n\n\n\nLade das digitale Geländemodell und das digitale Oberflächenmodell von Münster. Berechnet die Vegetationshöhe.\n\n\n\n\n\n\n\n\nTipZusatzaufgabe:\n\n\n\nWo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen &lt;50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen.",
+    "text": "Übung\n\n\n\n\n\n\nTipAufgabe:\n\n\n\nLade das digitale Geländemodell und das digitale Oberflächenmodell von Münster. Berechnet die Vegetationshöhe.",
     "crumbs": [
       "GIS Grundlagen",
       "Raster Basics"
@@ -162,41 +184,18 @@
     ]
   },
   {
-    "objectID": "gis-projekte.html",
-    "href": "gis-projekte.html",
-    "title": "QGIS",
-    "section": "",
-    "text": "Wo kann ich mir GIS Grundlagen draufschaffen?\n\nWir wollen uns in dieser Sitzung einmal durch grundlegende GIS Kenntnisse und Organisation von Geodaten arbeiten. Ein großteil des Kurses wird in QGIS stattfinden, ein OpenSource Geoinformationssystem das von einer großen Community weiterentwicklt und genutzt wird: https://www.qgis.org/\n\n\n\nQGIS\n\n\nFür QGIS gibt es eine umfassende Dokumentation die von den Entwicklern und der Community erweitert und auf die jeweilgen Versionen angepasst werden:\nhttps://docs.qgis.org/3.44/en/docs/index.html\nFür die meisten Hilfeseiten existiert auch eine deutsche Fassung:\nhttps://docs.qgis.org/3.44/de/docs/index.html\nEin großer Teil der Doku ist das Benutzerhandbuch zu der Funktionalität und der Desginphilosophie der Software QGIS an sich. Aber auch eine “Sanfte Einführung in GIS ist in der Doku zu finden. Hier werden die wichtigsten Konzepte von Geoinformationssystemen softwareunabhängig erklärt und mit vielen Beispielen beschrieben. Also ganz ähnlich wie es hier im Kurs auch vermittelt werden soll.\n\nZu dieser Einheit gibt es keine Vorlesung als Input. Stattdessen geht es direkt in eine umfangreichere Übung: Ex02 QGIS und Geodaten.",
+    "objectID": "habitatanalysen.html#übung",
+    "href": "habitatanalysen.html#übung",
+    "title": "Habitatanalysen",
+    "section": "Übung",
+    "text": "Übung\n\n\n\n\n\n\nTipAufgabe:\n\n\n\nWo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen &lt;50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen.",
     "crumbs": [
-      "Geographische Daten",
-      "(Q)GIS Projekte"
+      "Habitatanalysen"
     ]
   },
   {
-    "objectID": "daten-erheben.html",
-    "href": "daten-erheben.html",
-    "title": "Geographische Daten",
-    "section": "",
-    "text": "Was macht Daten geographisch?",
-    "crumbs": [
-      "Geographische Daten",
-      "Daten erheben"
-    ]
-  },
-  {
-    "objectID": "daten-erheben.html#geographische-daten-erheben",
-    "href": "daten-erheben.html#geographische-daten-erheben",
-    "title": "Geographische Daten",
-    "section": "Geographische Daten erheben",
-    "text": "Geographische Daten erheben\nGeographische Informationssysteme im Kontext der Landschaftsökologie ist unmittelbar mit der Beobachtung, Auswertung und Darstellung von Umweltdaten verbunden. Wie diese Umweltdaten zustandekommen und welche Rolle das GIS dabei spielt wollen wir uns in dieser Einführung überlegen.\n\n\n\n\n\n\n\nTipAufgabe: Räumliche Daten\n\n\n\nGehen Sie um das Geo1 Gebäude und erheben Sie Geodaten. Dabei sollen Polygone, Linien und Punktgeometrien entstehen die mit Umweltinformationen verkünpft sind. Überlegen Sie sich vorher eine geeignete Aufzeichnungsart damit Sie nächste Woche auch noch in Ihren Daten durchsteigen.",
-    "crumbs": [
-      "Geographische Daten",
-      "Daten erheben"
-    ]
-  },
-  {
-    "objectID": "data/wanderwege_spessart/Infrastruktur_Wege32632.html",
-    "href": "data/wanderwege_spessart/Infrastruktur_Wege32632.html",
+    "objectID": "data/wanderwege_spessart/Wanderwege_Blockseminar_HessischerSpessart32632.html",
+    "href": "data/wanderwege_spessart/Wanderwege_Blockseminar_HessischerSpessart32632.html",
     "title": "GIS LOEK",
     "section": "",
     "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     dataset\n\n\n                PROJCRS[“WGS 84 / UTM zone 32N”,BASEGEOGCRS[“WGS 84”,ENSEMBLE[“World Geodetic System 1984 ensemble”,MEMBER[“World Geodetic System 1984 (Transit)”],MEMBER[“World Geodetic System 1984 (G730)”],MEMBER[“World Geodetic System 1984 (G873)”],MEMBER[“World Geodetic System 1984 (G1150)”],MEMBER[“World Geodetic System 1984 (G1674)”],MEMBER[“World Geodetic System 1984 (G1762)”],MEMBER[“World Geodetic System 1984 (G2139)”],MEMBER[“World Geodetic System 1984 (G2296)”],ELLIPSOID[“WGS 84”,6378137,298.257223563,LENGTHUNIT[“metre”,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[“Greenwich”,0,ANGLEUNIT[“degree”,0.0174532925199433]],ID[“EPSG”,4326]],CONVERSION[“UTM zone 32N”,METHOD[“Transverse Mercator”,ID[“EPSG”,9807]],PARAMETER[“Latitude of natural origin”,0,ANGLEUNIT[“degree”,0.0174532925199433],ID[“EPSG”,8801]],PARAMETER[“Longitude of natural origin”,9,ANGLEUNIT[“degree”,0.0174532925199433],ID[“EPSG”,8802]],PARAMETER[“Scale factor at natural origin”,0.9996,SCALEUNIT[“unity”,1],ID[“EPSG”,8805]],PARAMETER[“False easting”,500000,LENGTHUNIT[“metre”,1],ID[“EPSG”,8806]],PARAMETER[“False northing”,0,LENGTHUNIT[“metre”,1],ID[“EPSG”,8807]]],CS[Cartesian,2],AXIS[“(E)”,east,ORDER[1],LENGTHUNIT[“metre”,1]],AXIS[“(N)”,north,ORDER[2],LENGTHUNIT[“metre”,1]],USAGE[SCOPE[“Navigation and medium accuracy spatial referencing.”],AREA[“Between 6°E and 12°E, northern hemisphere between equator and 84°N, onshore and offshore. Algeria. Austria. Cameroon. Denmark. Equatorial Guinea. France. Gabon. Germany. Italy. Libya. Liechtenstein. Monaco. Netherlands. Niger. Nigeria. Norway. Sao Tome and Principe. Svalbard. Sweden. Switzerland. Tunisia. Vatican City State.”],BBOX[0,6,84,12]],ID[“EPSG”,32632]] +proj=utm +zone=32 +datum=WGS84 +units=m +no_defs 3116 32632 EPSG:32632 WGS 84 / UTM zone 32N utm EPSG:7030 false"
@@ -237,11 +236,44 @@
     "text": "Zielgruppe: Naturparkverwaltung (keine Wanderplakate, sondern “Consulting”)\nZur Struktur:\n\nEinführung der Problemstellung\nVerwendete Daten\nKonzeptionelle Bewertung des Hitzerisikos\nUmsetzung in GIS\nErgebnisse mit Einordnung (mindestens 3 Abbildungen)\n\nWichtig: Es müssen Notwendigerweise nicht viele Parameter berücksichtigt werden, sondern die sinnvolle und nachvollziehbare Begründungung der Bewertung."
   },
   {
-    "objectID": "data/wanderwege_spessart/Wanderwege_Blockseminar_HessischerSpessart32632.html",
-    "href": "data/wanderwege_spessart/Wanderwege_Blockseminar_HessischerSpessart32632.html",
+    "objectID": "data/wanderwege_spessart/Infrastruktur_Wege32632.html",
+    "href": "data/wanderwege_spessart/Infrastruktur_Wege32632.html",
     "title": "GIS LOEK",
     "section": "",
     "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     dataset\n\n\n                PROJCRS[“WGS 84 / UTM zone 32N”,BASEGEOGCRS[“WGS 84”,ENSEMBLE[“World Geodetic System 1984 ensemble”,MEMBER[“World Geodetic System 1984 (Transit)”],MEMBER[“World Geodetic System 1984 (G730)”],MEMBER[“World Geodetic System 1984 (G873)”],MEMBER[“World Geodetic System 1984 (G1150)”],MEMBER[“World Geodetic System 1984 (G1674)”],MEMBER[“World Geodetic System 1984 (G1762)”],MEMBER[“World Geodetic System 1984 (G2139)”],MEMBER[“World Geodetic System 1984 (G2296)”],ELLIPSOID[“WGS 84”,6378137,298.257223563,LENGTHUNIT[“metre”,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[“Greenwich”,0,ANGLEUNIT[“degree”,0.0174532925199433]],ID[“EPSG”,4326]],CONVERSION[“UTM zone 32N”,METHOD[“Transverse Mercator”,ID[“EPSG”,9807]],PARAMETER[“Latitude of natural origin”,0,ANGLEUNIT[“degree”,0.0174532925199433],ID[“EPSG”,8801]],PARAMETER[“Longitude of natural origin”,9,ANGLEUNIT[“degree”,0.0174532925199433],ID[“EPSG”,8802]],PARAMETER[“Scale factor at natural origin”,0.9996,SCALEUNIT[“unity”,1],ID[“EPSG”,8805]],PARAMETER[“False easting”,500000,LENGTHUNIT[“metre”,1],ID[“EPSG”,8806]],PARAMETER[“False northing”,0,LENGTHUNIT[“metre”,1],ID[“EPSG”,8807]]],CS[Cartesian,2],AXIS[“(E)”,east,ORDER[1],LENGTHUNIT[“metre”,1]],AXIS[“(N)”,north,ORDER[2],LENGTHUNIT[“metre”,1]],USAGE[SCOPE[“Navigation and medium accuracy spatial referencing.”],AREA[“Between 6°E and 12°E, northern hemisphere between equator and 84°N, onshore and offshore. Algeria. Austria. Cameroon. Denmark. Equatorial Guinea. France. Gabon. Germany. Italy. Libya. Liechtenstein. Monaco. Netherlands. Niger. Nigeria. Norway. Sao Tome and Principe. Svalbard. Sweden. Switzerland. Tunisia. Vatican City State.”],BBOX[0,6,84,12]],ID[“EPSG”,32632]] +proj=utm +zone=32 +datum=WGS84 +units=m +no_defs 3116 32632 EPSG:32632 WGS 84 / UTM zone 32N utm EPSG:7030 false"
+  },
+  {
+    "objectID": "daten-erheben.html",
+    "href": "daten-erheben.html",
+    "title": "Geographische Daten",
+    "section": "",
+    "text": "Was macht Daten geographisch?",
+    "crumbs": [
+      "Geographische Daten",
+      "Daten erheben"
+    ]
+  },
+  {
+    "objectID": "daten-erheben.html#geographische-daten-erheben",
+    "href": "daten-erheben.html#geographische-daten-erheben",
+    "title": "Geographische Daten",
+    "section": "Geographische Daten erheben",
+    "text": "Geographische Daten erheben\nGeographische Informationssysteme im Kontext der Landschaftsökologie ist unmittelbar mit der Beobachtung, Auswertung und Darstellung von Umweltdaten verbunden. Wie diese Umweltdaten zustandekommen und welche Rolle das GIS dabei spielt wollen wir uns in dieser Einführung überlegen.\n\n\n\n\n\n\n\nTipAufgabe: Räumliche Daten\n\n\n\nGehen Sie um das Geo1 Gebäude und erheben Sie Geodaten. Dabei sollen Polygone, Linien und Punktgeometrien entstehen die mit Umweltinformationen verkünpft sind. Überlegen Sie sich vorher eine geeignete Aufzeichnungsart damit Sie nächste Woche auch noch in Ihren Daten durchsteigen.",
+    "crumbs": [
+      "Geographische Daten",
+      "Daten erheben"
+    ]
+  },
+  {
+    "objectID": "gis-projekte.html",
+    "href": "gis-projekte.html",
+    "title": "QGIS",
+    "section": "",
+    "text": "Wo kann ich mir GIS Grundlagen draufschaffen?\n\nWir wollen uns in dieser Sitzung einmal durch grundlegende GIS Kenntnisse und Organisation von Geodaten arbeiten. Ein großteil des Kurses wird in QGIS stattfinden, ein OpenSource Geoinformationssystem das von einer großen Community weiterentwicklt und genutzt wird: https://www.qgis.org/\n\n\n\nQGIS\n\n\nFür QGIS gibt es eine umfassende Dokumentation die von den Entwicklern und der Community erweitert und auf die jeweilgen Versionen angepasst werden:\nhttps://docs.qgis.org/3.44/en/docs/index.html\nFür die meisten Hilfeseiten existiert auch eine deutsche Fassung:\nhttps://docs.qgis.org/3.44/de/docs/index.html\nEin großer Teil der Doku ist das Benutzerhandbuch zu der Funktionalität und der Desginphilosophie der Software QGIS an sich. Aber auch eine “Sanfte Einführung in GIS ist in der Doku zu finden. Hier werden die wichtigsten Konzepte von Geoinformationssystemen softwareunabhängig erklärt und mit vielen Beispielen beschrieben. Also ganz ähnlich wie es hier im Kurs auch vermittelt werden soll.\n\nZu dieser Einheit gibt es keine Vorlesung als Input. Stattdessen geht es direkt in eine umfangreichere Übung: Ex02 QGIS und Geodaten.",
+    "crumbs": [
+      "Geographische Daten",
+      "(Q)GIS Projekte"
+    ]
   },
   {
     "objectID": "index.html",
