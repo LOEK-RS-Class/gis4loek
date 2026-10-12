@@ -24,6 +24,8 @@ website:
         contents:
           - href: daten-erheben.qmd
             text: Daten erheben
+          - href: gis-projekte.qmd
+            text: (Q)GIS Projekte
           - href: webservices.qmd
             text: Webdienste
           - href: projectionen.qmd

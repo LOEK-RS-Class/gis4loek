@@ -1,0 +1,32 @@
+---
+title: QGIS
+---
+
+> Wo kann ich mir GIS Grundlagen draufschaffen?
+
+
+Wir wollen uns in dieser Sitzung einmal durch grundlegende GIS Kenntnisse und Organisation von Geodaten arbeiten. Ein großteil des Kurses wird in QGIS stattfinden, ein OpenSource Geoinformationssystem das von einer großen Community weiterentwicklt und genutzt wird: [https://www.qgis.org/](https://www.qgis.org/) 
+
+
+![QGIS](https://www.qgis.org/img/logosign.svg)
+
+
+Für QGIS gibt es eine umfassende Dokumentation die von den Entwicklern und der Community erweitert und auf die jeweilgen Versionen angepasst werden:
+
+[https://docs.qgis.org/3.44/en/docs/index.html](https://docs.qgis.org/3.44/en/docs/index.html)
+
+Für die meisten Hilfeseiten existiert auch eine deutsche Fassung:
+
+[https://docs.qgis.org/3.44/de/docs/index.html](https://docs.qgis.org/3.44/de/docs/index.html)
+
+
+Ein großer Teil der Doku ist das [Benutzerhandbuch](https://docs.qgis.org/3.44/de/docs/user_manual/index.html) zu der Funktionalität und der Desginphilosophie der Software QGIS an sich.
+Aber auch eine ["Sanfte Einführung in GIS](https://docs.qgis.org/3.44/de/docs/gentle_gis_introduction/index.html) ist in der Doku zu finden. Hier werden die wichtigsten Konzepte von Geoinformationssystemen softwareunabhängig erklärt und mit vielen Beispielen beschrieben. Also ganz ähnlich wie es hier im Kurs auch vermittelt werden soll. 
+
+--- 
+
+
+
+Zu dieser Einheit gibt es keine Vorlesung als Input. Stattdessen geht es direkt in eine umfangreichere Übung: [Ex02 QGIS und Geodaten](exercises/ex02-datenformate.qmd). 
+
+

@@ -48,7 +48,7 @@ Welche Probleme erwarten Sie bei der Nutzung dieser Daten?
 
 Das [Bundesamt für Kartographie](https://www.bkg.bund.de/DE/Home/home.html) bietet einige frei verfügbare Datensätze an - unter anderem die Verwaltungsgrenzen mit Einwohnerzahl Deutschlands: 
 
-https://gdz.bkg.bund.de/index.php/default/open-data/verwaltungsgebiete-1-250-000-mit-einwohnerzahlen-stand-31-12-vg250-ew-31-12.html
+[https://gdz.bkg.bund.de/index.php/default/open-data/verwaltungsgebiete-1-250-000-mit-einwohnerzahlen-stand-31-12-vg250-ew-31-12.html](https://gdz.bkg.bund.de/index.php/default/open-data/verwaltungsgebiete-1-250-000-mit-einwohnerzahlen-stand-31-12-vg250-ew-31-12.html)
 
 Zu jedem Datensatz gibt es umfangreiche Dokumentationen zu deren Inhalt und Nutzung. Nutzen Sie diese um folgende Fragen zu klären:
 

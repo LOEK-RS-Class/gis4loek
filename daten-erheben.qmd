@@ -3,21 +3,22 @@ title: "Geographische Daten"
 format: html
 ---
 
+
+> Was macht Daten geographisch?
+
 ## Geographische Daten erheben
 
-Wozu geographische Daten und woher kommen die Überhaupt?
+Geographische Informationssysteme im Kontext der Landschaftsökologie ist unmittelbar mit der Beobachtung, Auswertung und Darstellung von Umweltdaten verbunden. Wie diese Umweltdaten zustandekommen und welche Rolle das GIS dabei spielt wollen wir uns in dieser Einführung überlegen.
+
+
+
 
 <embed src="slides/01_geographische-daten.pdf" type="application/pdf" width="100%" height="500">
 
 
 :::{.callout-tip}
 ## Aufgabe: Räumliche Daten
-Geht um das Geo1 Gebäude und nehmt die Koordinaten von 10 Bäumen auf. Notiert auch die Baumart.
-:::
-
-
-
-::: {.callout-caution}
-## Diskussion
-Wie bekommen wir die Daten jetzt in ein GIS?
+Gehen Sie um das Geo1 Gebäude und erheben Sie Geodaten.
+Dabei sollen Polygone, Linien und Punktgeometrien entstehen die mit Umweltinformationen verkünpft sind.
+Überlegen Sie sich vorher eine geeignete Aufzeichnungsart damit Sie nächste Woche auch noch in Ihren Daten durchsteigen.
 :::

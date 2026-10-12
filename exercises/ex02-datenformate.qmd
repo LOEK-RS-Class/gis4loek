@@ -1,13 +1,70 @@
 ---
-title: Ex02 - Datenformate
+title: Ex02 - QGIS und Geodaten
 format: pdf
 ---
 
 
 
+## Geodaten um das GEO1
+
+- Erstellen Sie ein neues QGIS Projekt.
+- Welche Strategien gibt es, um die aufgenommenen Geodaten aus der Umgebung des GEO1 Gebäudes im Projekt verfügbar zu machen?
+- Laden Sie die selbst aufgenommenen Geodaten ins Projekt.
+
+
+
+## Mehr Daten beschaffen
+
+
+- Überlegen Sie sich eine Struktur zur Ablage von Geodaten in ihrem GIS Projekt.
+- Laden Sie folgende Datensätze herunter:
+
+Das digitale Baumkataster der Stadt Münster im Format `csv`:
+[https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-münster]([https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-münster)
+
+Die Umrisse der städtischen Grünflächen der Stadt Münster im Format `geojson`:
+[https://opendata.stadt-muenster.de/dataset/umrisse-der-städtischen-gr%C3%BCnfl%C3%A4chen](https://opendata.stadt-muenster.de/dataset/umrisse-der-städtischen-gr%C3%BCnfl%C3%A4chen)
+
+Die Gemarkungsgrenzen der Stadt Münster im Format `Shapefile`:
+[https://opendata.stadt-muenster.de/dataset/gemarkungsgrenzen-der-stadt-m%C3%BCnster](https://opendata.stadt-muenster.de/dataset/gemarkungsgrenzen-der-stadt-m%C3%BCnster)
+
+
+Einen Stadtplan der Stadt Münster von 1873 im Format `jpg`: 
+[https://commons.wikimedia.org/wiki/File:Plan_Muenster_1873.jpeg?uselang=de](https://commons.wikimedia.org/wiki/File:Plan_Muenster_1873.jpeg?uselang=de)
+
+
+
+
+## Geodaten in QGIS
+
+- Nutzen Sie den Data Source Manager in QGIS.
+- Laden Sie die heruntergeladenen Daten in QGIS.
+- Notieren Sie sich Fallstricke und Unklarheiten.
+
+
+
 ## Vektor - Datenformate
 
-- Welche Vor- und Nachteile bestehen zwischen Vektordaten im Shapefile Format und im Geopackage Format?
+- Welche Vor- und Nachteile bestehen zwischen Vektordaten im Shapefile Format, Geopackage Format und geojson Format?
 
 
 
+
+## Kartographie
+
+
+- Erstellen Sie eine Karte der Grünflächen und Bäume Münsters.
+- Die Grünflächen sollen je nach Typ unterschiedlich gefärbt sein.
+
+
+
+
+## INSPIRE
+
+
+Lesen Sie die Erklärung zu INSPIRE beim Protal GeobasisNRW: [https://www.bezreg-koeln.nrw.de/geobasis-nrw/produkte-und-dienste/inspire](https://www.bezreg-koeln.nrw.de/geobasis-nrw/produkte-und-dienste/inspire)
+
+- Was ist INSPIRE und was ist der Zweck von INSPIRE?
+- Sehen Sie sich den INSPIRE Datensatz zum Gewässernetz in NRW an: [https://www.bezreg-koeln.nrw.de/geobasis-nrw/produkte-und-dienste/inspire/inspire-nw-gewaessernetz](https://www.bezreg-koeln.nrw.de/geobasis-nrw/produkte-und-dienste/inspire/inspire-nw-gewaessernetz)
+- Was ist in diesem Datensatz enthalten?
+- Wie wird der Datensatz bereitgestellt?

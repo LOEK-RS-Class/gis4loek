@@ -162,11 +162,22 @@
     ]
   },
   {
+    "objectID": "gis-projekte.html",
+    "href": "gis-projekte.html",
+    "title": "QGIS",
+    "section": "",
+    "text": "Wo kann ich mir GIS Grundlagen draufschaffen?\n\nWir wollen uns in dieser Sitzung einmal durch grundlegende GIS Kenntnisse und Organisation von Geodaten arbeiten. Ein großteil des Kurses wird in QGIS stattfinden, ein OpenSource Geoinformationssystem das von einer großen Community weiterentwicklt und genutzt wird: https://www.qgis.org/\n\n\n\nQGIS\n\n\nFür QGIS gibt es eine umfassende Dokumentation die von den Entwicklern und der Community erweitert und auf die jeweilgen Versionen angepasst werden:\nhttps://docs.qgis.org/3.44/en/docs/index.html\nFür die meisten Hilfeseiten existiert auch eine deutsche Fassung:\nhttps://docs.qgis.org/3.44/de/docs/index.html\nEin großer Teil der Doku ist das Benutzerhandbuch zu der Funktionalität und der Desginphilosophie der Software QGIS an sich. Aber auch eine “Sanfte Einführung in GIS ist in der Doku zu finden. Hier werden die wichtigsten Konzepte von Geoinformationssystemen softwareunabhängig erklärt und mit vielen Beispielen beschrieben. Also ganz ähnlich wie es hier im Kurs auch vermittelt werden soll.\n\nZu dieser Einheit gibt es keine Vorlesung als Input. Stattdessen geht es direkt in eine umfangreichere Übung: Ex02 QGIS und Geodaten.",
+    "crumbs": [
+      "Geographische Daten",
+      "(Q)GIS Projekte"
+    ]
+  },
+  {
     "objectID": "daten-erheben.html",
     "href": "daten-erheben.html",
     "title": "Geographische Daten",
     "section": "",
-    "text": "Wozu geographische Daten und woher kommen die Überhaupt?\n\n\n\n\n\n\n\nTipAufgabe: Räumliche Daten\n\n\n\nGeht um das Geo1 Gebäude und nehmt die Koordinaten von 10 Bäumen auf. Notiert auch die Baumart.\n\n\n\n\n\n\n\n\nCautionDiskussion\n\n\n\nWie bekommen wir die Daten jetzt in ein GIS?",
+    "text": "Was macht Daten geographisch?",
     "crumbs": [
       "Geographische Daten",
       "Daten erheben"
@@ -176,8 +187,8 @@
     "objectID": "daten-erheben.html#geographische-daten-erheben",
     "href": "daten-erheben.html#geographische-daten-erheben",
     "title": "Geographische Daten",
-    "section": "",
-    "text": "Wozu geographische Daten und woher kommen die Überhaupt?\n\n\n\n\n\n\n\nTipAufgabe: Räumliche Daten\n\n\n\nGeht um das Geo1 Gebäude und nehmt die Koordinaten von 10 Bäumen auf. Notiert auch die Baumart.\n\n\n\n\n\n\n\n\nCautionDiskussion\n\n\n\nWie bekommen wir die Daten jetzt in ein GIS?",
+    "section": "Geographische Daten erheben",
+    "text": "Geographische Daten erheben\nGeographische Informationssysteme im Kontext der Landschaftsökologie ist unmittelbar mit der Beobachtung, Auswertung und Darstellung von Umweltdaten verbunden. Wie diese Umweltdaten zustandekommen und welche Rolle das GIS dabei spielt wollen wir uns in dieser Einführung überlegen.\n\n\n\n\n\n\n\nTipAufgabe: Räumliche Daten\n\n\n\nGehen Sie um das Geo1 Gebäude und erheben Sie Geodaten. Dabei sollen Polygone, Linien und Punktgeometrien entstehen die mit Umweltinformationen verkünpft sind. Überlegen Sie sich vorher eine geeignete Aufzeichnungsart damit Sie nächste Woche auch noch in Ihren Daten durchsteigen.",
     "crumbs": [
       "Geographische Daten",
       "Daten erheben"
@@ -237,7 +248,7 @@
     "href": "index.html",
     "title": "GIS in der Landschaftsökologie",
     "section": "",
-    "text": "Geographische Informationssysteme sind ein wichtiges Werkzeug zur Verarbeitung räumlicher Daten und damit für die Beantwortung landschaftsökologischer Fragestellungen hochrelevant. Diese Kurseinheit stellt typische Fragen und Problemstellungen der einzelnen Teildisziplinen der Landschaftsökologie vor und vermittelt daran Konzepte und Anwendungen von GIS Systemen. Hier ein Auszug an Fragen und Themen des Kurses:\n\nWo fließt Wasser? Topographie und Hydrologie zur Beschreibung von Landschaften.\nWie Bewegen sich Arten in der Landschaft? Kostenanalysen auf Basis von Geländeinformationen\nWie lassen sich Ergebnisse interaktiv Darstellen und Vermitteln? Nutzung und Bereitstellung von Webdiensten\n\nAber bevor wir dazu kommen, ein kleines Warm Up zu Geographischen Daten",
+    "text": "Geographische Informationssysteme sind ein wichtiges Werkzeug zur Verarbeitung räumlicher Daten und damit für die Beantwortung landschaftsökologischer Fragestellungen hochrelevant. Diese Kurseinheit stellt typische Fragen und Problemstellungen der einzelnen Teildisziplinen der Landschaftsökologie vor und vermittelt daran Konzepte und Anwendungen von GIS Systemen. Hier ein Auszug an Fragen und Themen des Kurses:\n\nWo fließt Wasser? Topographie und Hydrologie zur Beschreibung von Landschaften.\nWie Bewegen sich Arten in der Landschaft? Kostenanalysen auf Basis von Geländeinformationen\nWie lassen sich Ergebnisse interaktiv Darstellen und Vermitteln? Nutzung und Bereitstellung von Webdiensten",
     "crumbs": [
       "Home"
     ]
@@ -247,7 +258,7 @@
     "href": "index.html#willkommen",
     "title": "GIS in der Landschaftsökologie",
     "section": "",
-    "text": "Geographische Informationssysteme sind ein wichtiges Werkzeug zur Verarbeitung räumlicher Daten und damit für die Beantwortung landschaftsökologischer Fragestellungen hochrelevant. Diese Kurseinheit stellt typische Fragen und Problemstellungen der einzelnen Teildisziplinen der Landschaftsökologie vor und vermittelt daran Konzepte und Anwendungen von GIS Systemen. Hier ein Auszug an Fragen und Themen des Kurses:\n\nWo fließt Wasser? Topographie und Hydrologie zur Beschreibung von Landschaften.\nWie Bewegen sich Arten in der Landschaft? Kostenanalysen auf Basis von Geländeinformationen\nWie lassen sich Ergebnisse interaktiv Darstellen und Vermitteln? Nutzung und Bereitstellung von Webdiensten\n\nAber bevor wir dazu kommen, ein kleines Warm Up zu Geographischen Daten",
+    "text": "Geographische Informationssysteme sind ein wichtiges Werkzeug zur Verarbeitung räumlicher Daten und damit für die Beantwortung landschaftsökologischer Fragestellungen hochrelevant. Diese Kurseinheit stellt typische Fragen und Problemstellungen der einzelnen Teildisziplinen der Landschaftsökologie vor und vermittelt daran Konzepte und Anwendungen von GIS Systemen. Hier ein Auszug an Fragen und Themen des Kurses:\n\nWo fließt Wasser? Topographie und Hydrologie zur Beschreibung von Landschaften.\nWie Bewegen sich Arten in der Landschaft? Kostenanalysen auf Basis von Geländeinformationen\nWie lassen sich Ergebnisse interaktiv Darstellen und Vermitteln? Nutzung und Bereitstellung von Webdiensten",
     "crumbs": [
       "Home"
     ]
