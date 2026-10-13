@@ -14,20 +14,22 @@ Nachdem wir uns in der letzten Einheit mit diskreten Objekten beschäftigt haben
 Ein Rastermodell unterteilt den Raum über Zeilen und Spalten in ein gleichmäßiges Gitter aus Zellen (Pixeln). Jede dieser Zellen enthält einen einzigen Wert, der eine bestimmte Eigenschaft dieses Pixels beschreibt. Das Rastermodell ist ideal für Phänomene, die keine scharfen Grenzen haben, sondern fließend ineinander übergehen. Man spricht hier von kontinuierlichen Feldern, auch wenn sowohl kontinuierliche Informationen (z. B. Temperatur oder Geländehöhe) als auch diskrete Informationen (z. B. Landnutzungsklassen) abgespeichert werden können. 
 
 
-
-
 ### Rasterdatenverarbeitung
 
 
 
 ## Übung
 
+Für die Übungen, lade das digitale Geländemodell und das digitale Oberflächenmodell von Münster. Wichtig: Wir werden mit den Ergebnissen nächste Woche weiter arbeiten, deshalb speicher die Ergebnisse unbedingt an einem Ort ab, wo du sie wiederfindest.
+
 :::{.callout-tip}
 ## Aufgabe:
-Lade das digitale Geländemodell und das digitale Oberflächenmodell von Münster.
-Berechnet die Vegetationshöhe.
+
+Rasterberechnungen: Berechnet die Vegetationshöhe.
 :::
 
+Klassifizieren von Daten: niedrigen Geländehöhen <50m vor. speichere den Datensatz ab 
 
+Nachbarschaftsanalysen. Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen.
 
 

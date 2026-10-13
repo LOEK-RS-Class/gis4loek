@@ -7,16 +7,13 @@ format: pdf
 ## Geographische Daten: Anwendungsbeispiele
 
 Am Institut für Landschaftsökolgie der Universität Münster gibt es folgende Arbeitsgruppen:
-
 - Angewandte Landschaftsökologie und Ökologische Planung
 - Biodiversität und Ökosystemforschung
 - Biosphere-Atmosphere Interaction
 - Bodenökologie und Landnutzung
-- Faunistik und Ökologie der Wirbeltiere
 - Fernerkundung und Räumliche Modellierung
 - Ökohydrologie und Stoffkreisläufe 
 - Tierökologie 
-
 Überlegen Sie sich für jede Arbeitsgruppe Forschungsfrage für die geographische Daten und der Einsatz von Geographischen Informationssytemen sinnvoll wäre.
 
 

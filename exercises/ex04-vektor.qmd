@@ -1,5 +1,5 @@
 ---
-title: Ex04 - Vektoren
+title: Ex04 - Vektordaten
 format: pdf
 ---
 
