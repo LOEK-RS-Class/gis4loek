@@ -5,6 +5,19 @@ format: pdf
 
 
 
+## Kartographie 1
+
+Aus der ersten Übungseinheit sollten Sie den Datensatz der Verwaltungsbezirke Deutschlands als `.gpkg` heruntergeladen haben.
+
+- Laden Sie da Geopackage in QGIS.
+- Verschaffen Sie sich einen Überblick der Layer. In der Dokumentation des Datensatzes sind die Abkürzungen erklärt.
+- Laden Sie die Layer `vg250_krs`, `vg250_pk`.
+- Färben Sie die Kreise nach Einwohnerzahl ein.
+- Zeigen Sie die Stadtnamen an die im Punktlayer angegben sind.
+
+
+
+
 ## Geodaten um das GEO1
 
 - Erstellen Sie ein neues QGIS Projekt.
@@ -41,22 +54,17 @@ Einen Stadtplan der Stadt Münster von 1873 im Format `jpg`:
 - Laden Sie die heruntergeladenen Daten in QGIS.
 - Notieren Sie sich Fallstricke und Unklarheiten.
 
-
-
-## Vektor - Datenformate
-
-- Welche Vor- und Nachteile bestehen zwischen Vektordaten im Shapefile Format, Geopackage Format und geojson Format?
-
-
-
-
-## Kartographie
+## Kartographie 2
 
 
 - Erstellen Sie eine Karte der Grünflächen und Bäume Münsters.
 - Die Grünflächen sollen je nach Typ unterschiedlich gefärbt sein.
 
 
+## Vektor - Datenformate
+
+- Welche Vor- und Nachteile bestehen zwischen Vektordaten im Shapefile Format, Geopackage Format und geojson Format?
+- Welche Vor- und Nachteile hat es, die Geoinformation im csv Format abzuspeichern?
 
 
 ## INSPIRE
