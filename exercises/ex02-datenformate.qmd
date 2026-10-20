@@ -33,7 +33,7 @@ Aus der ersten Übungseinheit sollten Sie den Datensatz der Verwaltungsbezirke D
 - Laden Sie folgende Datensätze herunter:
 
 Das digitale Baumkataster der Stadt Münster im Format `csv`:
-[https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-münster]([https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-münster)
+[https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-münster](https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-münster)
 
 Die Umrisse der städtischen Grünflächen der Stadt Münster im Format `geojson`:
 [https://opendata.stadt-muenster.de/dataset/umrisse-der-städtischen-gr%C3%BCnfl%C3%A4chen](https://opendata.stadt-muenster.de/dataset/umrisse-der-städtischen-gr%C3%BCnfl%C3%A4chen)
