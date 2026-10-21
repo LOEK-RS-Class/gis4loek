@@ -15,7 +15,7 @@ Aus der ersten Übungseinheit sollten Sie den Datensatz der Verwaltungsbezirke D
 - Färben Sie die Kreise nach Einwohnerzahl ein.
 - Zeigen Sie die Stadtnamen an die im Punktlayer angegben sind.
 
-
+**Erstellen Sie einen Screenshot der Karte**
 
 
 ## Geodaten um das GEO1
@@ -23,6 +23,9 @@ Aus der ersten Übungseinheit sollten Sie den Datensatz der Verwaltungsbezirke D
 - Erstellen Sie ein neues QGIS Projekt.
 - Welche Strategien gibt es, um die aufgenommenen Geodaten aus der Umgebung des GEO1 Gebäudes im Projekt verfügbar zu machen?
 - Laden Sie die selbst aufgenommenen Geodaten ins Projekt.
+
+
+**Für diese Aufgabe ist keine Abgabe nötig**
 
 
 
@@ -46,7 +49,7 @@ Einen Stadtplan der Stadt Münster von 1873 im Format `jpg`:
 [https://commons.wikimedia.org/wiki/File:Plan_Muenster_1873.jpeg?uselang=de](https://commons.wikimedia.org/wiki/File:Plan_Muenster_1873.jpeg?uselang=de)
 
 
-
+**Für diese Aufgabe ist keine Abgabe nötig**
 
 ## Geodaten in QGIS
 
@@ -60,6 +63,7 @@ Einen Stadtplan der Stadt Münster von 1873 im Format `jpg`:
 - Erstellen Sie eine Karte der Grünflächen und Bäume Münsters.
 - Die Grünflächen sollen je nach Typ unterschiedlich gefärbt sein.
 
+**Erstellen Sie einen Screenshot der Karte**
 
 ## Vektor - Datenformate
 
