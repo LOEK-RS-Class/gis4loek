@@ -346,9 +346,9 @@ background-size: cover;
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Richte den WFS Service https://www.stadt-muenster.de/ows/mapserv706/odgruenserv in QGIS ein.</li>
-<li>Visualisiere die Grünflächen so, dass jeder Flächentyp (obj_art) eine andere Farbe bekommt.</li>
-<li>Wie viele Linden (Baumgruppe Tilia) gibt es in Münster?</li>
+<li>Richte den WFS Service https://www.wfs.nrw.de/geobasis/wfs_nw_inspire-gewaesser-physisch_atkis-basis-dlm in QGIS ein.</li>
+<li>Welche Layer stellt der Dienst bereit?</li>
+<li>Laden Sie die Layer <code>Stehendes Gewässer</code>, <code>Wasserlauf</code> und <code>Feuchtgebiete</code>. Was fällt auf?</li>
 </ul>
 </div>
 </div>
@@ -361,7 +361,7 @@ background-size: cover;
 <li><code>DescribeFeatureType</code> zur Anfrage von Metadaten spezifischer Vektoren</li>
 <li><code>getFeature</code> zur Anfrage der Vektor Objekte, also die tatsächlichen Daten</li>
 </ul>
-<p>Beispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen) aus dem eingebundenen Dienst der Stadt Münster.</p>
+<p>Beispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen) aus dem Dienst der Stadt Münster zu den Städtischen Grünflächen.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>www.stadt<span class="sc">-</span>muenster.de<span class="sc">/</span>ows<span class="sc">/</span>mapserv706<span class="sc">/</span>odgruenserv?REQUEST<span class="ot">=</span>GetFeature<span class="sc">&amp;</span>SERVICE<span class="ot">=</span>WFS<span class="sc">&amp;</span>VERSION<span class="ot">=</span><span class="dv">2</span>.<span class="fl">0.0</span><span class="sc">&amp;</span>TYPENAME<span class="ot">=</span>ms<span class="sc">:</span>Gruenflaechen<span class="sc">&amp;</span>EXCEPTIONS<span class="ot">=</span>XML<span class="sc">&amp;</span>MAXFEATURES<span class="ot">=</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -381,6 +381,22 @@ background-size: cover;
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>sgx.geodatenzentrum.de<span class="sc">/</span>wms_basemapde_schummerung?service<span class="ot">=</span>wms<span class="sc">&amp;</span>version<span class="ot">=</span><span class="dv">1</span>.<span class="fl">3.0</span><span class="sc">&amp;</span>request<span class="ot">=</span>GetMap<span class="sc">&amp;</span>Layers<span class="ot">=</span>de_basemapde_web_raster_combshade<span class="sc">&amp;</span>STYLES<span class="ot">=</span>default<span class="sc">&amp;</span>CRS<span class="ot">=</span>EPSG<span class="sc">:</span><span class="dv">25832</span><span class="sc">&amp;</span>bbox<span class="ot">=</span><span class="dv">500000</span>,<span class="dv">5700000</span>,<span class="dv">500200</span>,<span class="dv">5700200</span><span class="sc">&amp;</span>width<span class="ot">=</span><span class="dv">150</span><span class="sc">&amp;</span>Height<span class="ot">=</span><span class="dv">150</span><span class="sc">&amp;</span>Format<span class="ot">=</span>image<span class="sc">/</span>png</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Aufgabe: Web Map Service
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Modifizieren Sie die <code>getMap</code> request so, dass der Schlossgraben in Münster zu sehen ist.</li>
+<li>Das Schloss hat die UTM Koordinaten 404450, 5757900.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="web-map-tile-service---wmts" class="level2">
 <h2 class="anchored" data-anchor-id="web-map-tile-service---wmts">Web Map Tile Service - WMTS</h2>
@@ -396,30 +412,27 @@ https://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapd
 <li><code>describeCoverage</code> zur Anfrage von Metadaten spezifischer Produkte</li>
 <li><code>getCoverage</code> zur Anfrage der Rasterkachel</li>
 </ul>
+<p>Hier ist z.B. das digitale Geländemodell des BKG:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>gdz.bkg.bund.de<span class="sc">/</span>index.php<span class="sc">/</span>default<span class="sc">/</span>inspire<span class="sc">-</span>wcs<span class="sc">-</span>elevation<span class="sc">-</span>dgm200<span class="sc">-</span>wcs<span class="sc">-</span>dgm200<span class="sc">-</span>inspire.html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="beispiel-und-übung" class="level2">
-<h2 class="anchored" data-anchor-id="beispiel-und-übung">Beispiel und Übung</h2>
-<p>Das <a href="https://www.bkg.bund.de/DE/Home/home.html">Bundesamt für Kartographie</a> bietet eine Vielzahl von Basiskarten via Online Services an. Unter folgendem Link sind WMTS Service für Geländemodelldaten zu finden: <a href="https://gdz.bkg.bund.de/index.php/default/wmts-basemapde-schummerung-wmts-basemapde-schummerung.html">WMTS Geländekarte des BKG</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Aufgabe: Web Services Informationen
+<span class="screen-reader-only">Tip</span>WCS in QGIS
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Schau in die Dokumentation der WMTS Geländedaten des BKG.</li>
-<li>Welche drei Produkte werden von dem Geländedaten-Dienst bereitgestellt?</li>
-<li>Welche Datenbasis nutzt der Geländedaten-Dienst zur Berechnung der Produkte? Wie hoch ist die räumliche Auflösung?</li>
+<li>Binde den Webdienst WCS des Geländemodells in QGIS ein.</li>
+<li>Erstelle eine Schummerung mit den Geländedaten.</li>
 </ul>
 </div>
 </div>
+<p>Das <a href="https://www.bkg.bund.de/DE/Home/home.html">Bundesamt für Kartographie</a> bietet eine Vielzahl von Basiskarten via Online Services an. Unter folgendem Link sind WMTS Service für Geländemodelldaten zu finden: <a href="https://gdz.bkg.bund.de/index.php/default/wmts-basemapde-schummerung-wmts-basemapde-schummerung.html">WMTS Geländekarte des BKG</a></p>
 <p>Hier noch ein Beispiel zu WMS: <a href="https://gdz.bkg.bund.de/index.php/default/wms-basemapde-webraster-wms-basemapde-webraster.html">eine Deutschlandweite Hintergrundkarte des BKG</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -427,13 +440,12 @@ https://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapd
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Aufgabe: Web Service URLs
+<span class="screen-reader-only">Tip</span>WMTS in QGIS
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>In der Dokumentation der Grundkarte ist ein Beispiellink zum Abruf der Dienste angegeben. Öffne die URL zur GetMap (GET) in einem Web Browser.</li>
-<li>Modifiziere die URL so, dass ein Ausschnitt Münsters gezeigt wird. Das Geo1 hat ungefähr die Koordinaten (403500, 5758500 - in UTM32N)</li>
+<li>Binde auch diese Dienste in QGIS ein.</li>
 </ul>
 </div>
 </div>
