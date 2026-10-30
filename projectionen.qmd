@@ -73,15 +73,12 @@ Statt eines Zylinders wird bei der Azimutalen Projektion eine Ebene an die Erdku
 
 
 
-
-
-
 Das LIFECrossBorder Projekt hat das Ziel eine Moorfläche an der Grenze Deutschland-Niederlande zu renaturieren. Dafür wurden deutschen und niederländischen Projektpartnern Brunnen installiert die den Grundwasserstand / Moorwasserstand messen.
 
 ::: {.callout-tip}
 ## Aufgabe: LIFECrossBoderBog
-- Lade die Daten der Province Overijssel (NL) herunter: [Download NL Daten]("download/projection_uebung/nl_data.gpkg")
-- Lade die Daten der Biologischen Station Zwillbrock (DE) herunter: [Download DE Daten]("download/projection_uebung/de_data.gpkg")
+- Lade die Daten der Province Overijssel (NL) herunter: [Download NL Daten](download/projection_uebung/nl_data.gpkg)
+- Lade die Daten der Biologischen Station Zwillbrock (DE) herunter: [Download DE Daten](download/projection_uebung/de_data.gpkg)
 - Binde die Daten in QGIS ein.
 - In welchem Bezugssystem liegen die Daten jeweils vor?
 - Erstelle einen kombinierten Datensatz und exportiere ihn als Geopackage.

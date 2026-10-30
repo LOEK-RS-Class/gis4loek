@@ -328,13 +328,16 @@ background-size: cover;
 
 <section id="webdienste-für-karten-und-geodaten" class="level1">
 <h1>Webdienste für Karten und Geodaten</h1>
-<section id="vorlesung" class="level2">
-<h2 class="anchored" data-anchor-id="vorlesung">Vorlesung</h2>
-<embed src="slides/01b_webservice.pdf" type="application/pdf" width="100%" height="500">
+<section id="lernziele" class="level2">
+<h2 class="anchored" data-anchor-id="lernziele">Lernziele</h2>
+<ul>
+<li>Die Unterschiede verschiedener Webdienste kennen um den Richtigen für ein eigenes Projekt auswählen zu können</li>
+<li>Verstehen wie eine Anfrage eines Webdienstes funktioniert</li>
+</ul>
 </section>
-<section id="reader-und-übung" class="level2">
-<h2 class="anchored" data-anchor-id="reader-und-übung">Reader und Übung</h2>
-<p>Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stellen Sie sich einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / <strong>Server</strong> der die Karten und Daten bereitstellt, und ein <strong>Client</strong> der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als <strong>Standards des OGC (Open Geospatial Consortium)</strong> veröffentlicht. Bevor wir weiter in die Details gehen, richten wir einen Webservice in QGIS ein um zu sehen um was es eigentlich geht.</p>
+<section id="reader" class="level2">
+<h2 class="anchored" data-anchor-id="reader">Reader</h2>
+<p>Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stellen Sie sich einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. Nach dem selben prinzip können auch Geodaten gestreamt werden. In so einem Webdienst gibt es zwei Akteure: ein Provider / <strong>Server</strong> der die Karten und Daten bereitstellt, und ein <strong>Client</strong> der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als <strong>Standards des OGC (Open Geospatial Consortium)</strong> veröffentlicht. Bevor wir weiter in die Details gehen, richten wir einen Webservice in QGIS ein um zu sehen um was es eigentlich geht.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -345,49 +348,79 @@ background-size: cover;
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>www.wfs.nrw.de<span class="sc">/</span>geobasis<span class="sc">/</span>wfs_nw_inspire<span class="sc">-</span>gewaesser<span class="sc">-</span>physisch_atkis<span class="sc">-</span>basis<span class="sc">-</span>dlm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li>Richte den WFS Service https://www.wfs.nrw.de/geobasis/wfs_nw_inspire-gewaesser-physisch_atkis-basis-dlm in QGIS ein.</li>
+<li>Richte Sie den Web Feature Service der physischen Gewässer der Geobasis NRW in QGIS ein.</li>
 <li>Welche Layer stellt der Dienst bereit?</li>
-<li>Laden Sie die Layer <code>Stehendes Gewässer</code>, <code>Wasserlauf</code> und <code>Feuchtgebiete</code>. Was fällt auf?</li>
+<li>Laden Sie die Layer <code>Stehendes Gewässer</code> und <code>Wasserlauf</code>.</li>
 </ul>
 </div>
 </div>
 </section>
 <section id="web-feature-service---wfs" class="level2">
 <h2 class="anchored" data-anchor-id="web-feature-service---wfs">Web Feature Service - WFS</h2>
-<p>Der Eingebundene dienst ist ein sogenannter <a href="https://www.ogc.org/standards/wfs/">Web Feature Service</a>. Über diesen werden Geodaten im Vektorformat übertragen. Die Daten werden nach und nach, je nach Kartenausschnitt und Zoomstufe heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:</p>
+<p>Der Eingebundene dienst ist ein sogenannter <a href="https://www.ogc.org/standards/wfs/">Web Feature Service</a>. Über diesen werden Geodaten im Vektorformat übertragen. Die Daten werden nach und nach, je nach Kartenausschnitt und Zoomstufe heruntergeladen. Im WFS Standard werden drei Anfragen zwingend vorgegeben die der Service leisten muss:</p>
 <ul>
 <li><code>getCapabilities</code> zur Anfrage von allgemeinen Metadaten</li>
 <li><code>DescribeFeatureType</code> zur Anfrage von Metadaten spezifischer Vektoren</li>
 <li><code>getFeature</code> zur Anfrage der Vektor Objekte, also die tatsächlichen Daten</li>
 </ul>
-<p>Beispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen) aus dem Dienst der Stadt Münster zu den Städtischen Grünflächen.</p>
+<p>Diese Anfragen werden dem Serviceaufruf als Argumente mitgegeben. Um z.B. eine <code>getCapabilities</code> Anfrage zu stellen wird der WFS URL einfach der entsprechende Befehl angehängt:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>www.stadt<span class="sc">-</span>muenster.de<span class="sc">/</span>ows<span class="sc">/</span>mapserv706<span class="sc">/</span>odgruenserv?REQUEST<span class="ot">=</span>GetFeature<span class="sc">&amp;</span>SERVICE<span class="ot">=</span>WFS<span class="sc">&amp;</span>VERSION<span class="ot">=</span><span class="dv">2</span>.<span class="fl">0.0</span><span class="sc">&amp;</span>TYPENAME<span class="ot">=</span>ms<span class="sc">:</span>Gruenflaechen<span class="sc">&amp;</span>EXCEPTIONS<span class="ot">=</span>XML<span class="sc">&amp;</span>MAXFEATURES<span class="ot">=</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>www.wfs.nrw.de<span class="sc">/</span>geobasis<span class="sc">/</span>wfs_nw_inspire<span class="sc">-</span>gewaesser<span class="sc">-</span>physisch_atkis<span class="sc">-</span>basis<span class="sc">-</span>dlm?SERVICE<span class="ot">=</span>WFS<span class="sc">&amp;</span>REQUEST<span class="ot">=</span>getCapabilities</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>Dieser Aufruf liefert Metadaten wie den Datenanbieter und die Layernamen:</p>
+<embed src="https://www.wfs.nrw.de/geobasis/wfs_nw_inspire-gewaesser-physisch_atkis-basis-dlm?SERVICE=WFS&amp;REQUEST=getCapabilities" width="100%" height="500">
+
+<p>Bei einer <code>getFeature</code> Anfrage müssen ein paar mehr Argumente angegeben werden. Mindestens mal der Layername den Sie aus der getCapabilities Anfrage entnehmen können. Im nachfolgenden Aufruf ist noch <code>COUNT=1</code> gesetz um nur ein einziges Feature anzufragen.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>http<span class="sc">:</span><span class="er">//</span>www.wfs.nrw.de<span class="sc">/</span>geobasis<span class="sc">/</span>wfs_nw_inspire<span class="sc">-</span>gewaesser<span class="sc">-</span>physisch_atkis<span class="sc">-</span>basis<span class="sc">-</span>dlm?</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>REQUEST<span class="ot">=</span>GetFeature<span class="sc">&amp;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>SERVICE<span class="ot">=</span>WFS<span class="sc">&amp;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>VERSION<span class="ot">=</span><span class="dv">2</span>.<span class="fl">0.0</span><span class="sc">&amp;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>TYPENAMES<span class="ot">=</span>hy<span class="sc">-</span>p<span class="sc">:</span>StandingWater<span class="sc">&amp;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>COUNT<span class="ot">=</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Das Ergebnis der Anfrage ist eine xml Datei, die das Feature beschreibt. In diesem Beispiel der Parallelhafen in Duisburg. In der Datei ist auch die Geometrie des Features definiert, hier die Vertexkoordinaten des Polygons:</p>
+<embed src="assets/getFeature_Example.xml" width="100%" height="500">
+
 </section>
 <section id="web-map-service---wms" class="level2">
 <h2 class="anchored" data-anchor-id="web-map-service---wms">Web Map Service - WMS</h2>
-<p>Beim Web Map Service <a href="https://www.ogc.org/standards/wms/" class="target-blank">(ogc.org/standards/wms/)</a> liefert der Server Bildausschnitte, in der Regel PNG, für die vom Clienten angefragte Koordinaten und Auflösungen. Folgende Anfragen sind das Minimum was ein WMS Standard liefern muss:</p>
+<p>Beim Web Map Service <a href="https://www.ogc.org/standards/wms/" class="target-blank">(ogc.org/standards/wms/)</a> liefert der Server <strong>Bildausschnitte</strong>, in der Regel PNG, für die vom Clienten angefragte Koordinaten und Auflösungen. Dies wir vor allem für Hintergrundkarten und Basisinformationen genutzt. Äquivalent zum Web Feature Service gibt es auch beim Web Map Service</p>
 <ul>
-<li><code>getCapabilities</code> zur Anfrage von Metadaten</li>
+<li><code>getCapabilities</code> zur Anfrage von Metadaten und</li>
 <li><code>getMap</code> zur Anfrage von Karten</li>
 </ul>
-<p>Ein Beispiel für <code>getCapabilities</code>:</p>
+<p>Ein Beispiel für <code>getCapabilities</code> des WMS Dienstes einer <a href="https://gdz.bkg.bund.de/index.php/default/wms-basemapde-webraster-wms-basemapde-webraster.html">Basemap des Bundesamts für Kartographie</a>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>sgx.geodatenzentrum.de<span class="sc">/</span>wms_basemapde_schummerung?request<span class="ot">=</span>GetCapabilities<span class="sc">&amp;</span>service<span class="ot">=</span>WMS</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>sgx.geodatenzentrum.de<span class="sc">/</span>wms_basemapde?request<span class="ot">=</span>GetCapabilities<span class="sc">&amp;</span>service<span class="ot">=</span>WMS</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Die <code>getMap</code> URLs sind etwas Umfangreicher und setzen sich zusammen aus Serveradresse, Koordinaten, Bildgröße und Format:</p>
+<p>Die <code>getMap</code> URLs sind etwas Umfangreicher und setzen sich zusammen aus Serveradresse, Layername, Koordinaten, Bildgröße und Format. Das Ergebnis dieser Anfrage ist der Bildausschnitt unten.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>sgx.geodatenzentrum.de<span class="sc">/</span>wms_basemapde_schummerung?service<span class="ot">=</span>wms<span class="sc">&amp;</span>version<span class="ot">=</span><span class="dv">1</span>.<span class="fl">3.0</span><span class="sc">&amp;</span>request<span class="ot">=</span>GetMap<span class="sc">&amp;</span>Layers<span class="ot">=</span>de_basemapde_web_raster_combshade<span class="sc">&amp;</span>STYLES<span class="ot">=</span>default<span class="sc">&amp;</span>CRS<span class="ot">=</span>EPSG<span class="sc">:</span><span class="dv">25832</span><span class="sc">&amp;</span>bbox<span class="ot">=</span><span class="dv">500000</span>,<span class="dv">5700000</span>,<span class="dv">500200</span>,<span class="dv">5700200</span><span class="sc">&amp;</span>width<span class="ot">=</span><span class="dv">150</span><span class="sc">&amp;</span>Height<span class="ot">=</span><span class="dv">150</span><span class="sc">&amp;</span>Format<span class="ot">=</span>image<span class="sc">/</span>png</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>sgx.geodatenzentrum.de<span class="sc">/</span>wms_basemapde?</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>service<span class="ot">=</span>wms<span class="sc">&amp;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>version<span class="ot">=</span><span class="dv">1</span>.<span class="fl">3.0</span><span class="sc">&amp;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>request<span class="ot">=</span>GetMap<span class="sc">&amp;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Layers<span class="ot">=</span>de_basemapde_web_raster_farbe<span class="sc">&amp;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>STYLES<span class="ot">=</span>default<span class="sc">&amp;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>CRS<span class="ot">=</span>EPSG<span class="sc">:</span><span class="dv">25832</span><span class="sc">&amp;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>bbox<span class="ot">=</span><span class="dv">500000</span>,<span class="dv">5700000</span>,<span class="dv">500200</span>,<span class="dv">5700200</span><span class="sc">&amp;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>width<span class="ot">=</span><span class="dv">150</span><span class="sc">&amp;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>Height<span class="ot">=</span><span class="dv">150</span><span class="sc">&amp;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>Format<span class="ot">=</span>image<span class="sc">/</span>png</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<center>
+<embed src="https://sgx.geodatenzentrum.de/wms_basemapde?service=wms&amp;version=1.3.0&amp;request=GetMap&amp;Layers=de_basemapde_web_raster_farbe&amp;STYLES=default&amp;CRS=EPSG:25832&amp;bbox=500000,5700000,500200,5700200&amp;width=150&amp;Height=150&amp;Format=image/png" width="150" height="150">
+
+</center>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Aufgabe: Web Map Service
+<span class="screen-reader-only">Tip</span>Übung: Web Map Service
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -397,24 +430,19 @@ background-size: cover;
 </ul>
 </div>
 </div>
+<p>Eine Abwandlung des Web Map Service ist der Web Map Tile Service - WMTS bei dem die Daten vorprozessiert gekachelt (<em>tiles</em>) auf dem Server geordnet sind. Dadurch wird die Anfrage performanter, benötigt aber auch mehr Speicherplatz. <a href="https://www.ogc.org/standards/wmts/">https://www.ogc.org/standards/wmts/</a></p>
 </section>
-<section id="web-map-tile-service---wmts" class="level2">
-<h2 class="anchored" data-anchor-id="web-map-tile-service---wmts">Web Map Tile Service - WMTS</h2>
-<p>Der Web Map Tile Service ist eine Variante des WMS bei dem die Daten vorprozessiert gekachelt (<em>tiles</em>) auf dem Server geordnet sind. Dadurch wird die Anfrage performanter, benötigt aber auch mehr Speicherplatz. <a href="https://www.ogc.org/standards/wmts/">https://www.ogc.org/standards/wmts/</a></p>
-<pre><code>#| code-overflow: wrap
-https://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapde_web_raster_combshade/default/DE_EPSG_3857_ADV/06/662/1082.png</code></pre>
-</section>
-<section id="web-coverage-service" class="level2">
-<h2 class="anchored" data-anchor-id="web-coverage-service">Web Coverage Service</h2>
-<p>Der Web Coverage Service dient zur Distribution von Rasterdaten.</p>
+<section id="web-coverage-service---wcs" class="level2">
+<h2 class="anchored" data-anchor-id="web-coverage-service---wcs">Web Coverage Service - WCS</h2>
+<p>Der Web Coverage Service dient zur Distribution von Rasterdaten. Hier werden wie beim WFS tatsächliche Pixelwerte übertragen mit denen weiter gearbeitet werden können.</p>
 <ul>
 <li><code>getCapabilities</code> zur Anfrage von datensatzweiten Metadaten</li>
 <li><code>describeCoverage</code> zur Anfrage von Metadaten spezifischer Produkte</li>
 <li><code>getCoverage</code> zur Anfrage der Rasterkachel</li>
 </ul>
-<p>Hier ist z.B. das digitale Geländemodell des BKG:</p>
+<p>Über folgenden Link können Sie z.B. das digitale Geländemodell von NRW einbinden:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>gdz.bkg.bund.de<span class="sc">/</span>index.php<span class="sc">/</span>default<span class="sc">/</span>inspire<span class="sc">-</span>wcs<span class="sc">-</span>elevation<span class="sc">-</span>dgm200<span class="sc">-</span>wcs<span class="sc">-</span>dgm200<span class="sc">-</span>inspire.html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>www.wcs.nrw.de<span class="sc">/</span>geobasis<span class="sc">/</span>wcs_nw_dgm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -427,25 +455,8 @@ https://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapd
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Binde den Webdienst WCS des Geländemodells in QGIS ein.</li>
-<li>Erstelle eine Schummerung mit den Geländedaten.</li>
-</ul>
-</div>
-</div>
-<p>Das <a href="https://www.bkg.bund.de/DE/Home/home.html">Bundesamt für Kartographie</a> bietet eine Vielzahl von Basiskarten via Online Services an. Unter folgendem Link sind WMTS Service für Geländemodelldaten zu finden: <a href="https://gdz.bkg.bund.de/index.php/default/wmts-basemapde-schummerung-wmts-basemapde-schummerung.html">WMTS Geländekarte des BKG</a></p>
-<p>Hier noch ein Beispiel zu WMS: <a href="https://gdz.bkg.bund.de/index.php/default/wms-basemapde-webraster-wms-basemapde-webraster.html">eine Deutschlandweite Hintergrundkarte des BKG</a></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>WMTS in QGIS
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Binde auch diese Dienste in QGIS ein.</li>
+<li>Binden Sie den Webdienst WCS des Geländemodells in QGIS ein.</li>
+<li>Stellen Sie das Geländemodell für einen kleinen Kartenausschnitt (z.B. Münster) als Schummerung dar.</li>
 </ul>
 </div>
 </div>
@@ -462,6 +473,10 @@ https://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapd
 <p>Welche Vor- und Nachteile bringt der Einsatz von Webdiensten in einem GIS Projekt mit sich?</p>
 </div>
 </div>
+</section>
+<section id="weiterführende-links" class="level2">
+<h2 class="anchored" data-anchor-id="weiterführende-links">Weiterführende Links</h2>
+<p>Übersicht der Webdienste in NRW<br> <a href="https://www.bezreg-koeln.nrw.de/geobasis-nrw/webdienste/geodatendienste">https://www.bezreg-koeln.nrw.de/geobasis-nrw/webdienste/geodatendienste</a></p>
 
 
 </section>

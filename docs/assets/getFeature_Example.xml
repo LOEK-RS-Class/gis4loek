@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wfs:FeatureCollection timeStamp="2026-10-30T08:44:17.718+01:00" numberReturned="1" numberMatched="unknown" xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3" xmlns:gn="http://inspire.ec.europa.eu/schemas/gn/4.0" xmlns="http://inspire.ec.europa.eu/schemas/hy-p/4.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/hy-p/4.0 https://www.wfs.nrw.de/aaa-suite/schema/inspire.ec.europa.eu/schemas/hy-p/4.0/HydroPhysicalWaters.xsd http://www.opengis.net/wfs/2.0 https://www.wfs.nrw.de/aaa-suite/schema/ogc/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 https://www.wfs.nrw.de/aaa-suite/schema/ogc/gml/3.2.1/gml.xsd">
+<wfs:boundedBy>
+<gml:Envelope srsName="http://www.opengis.net/def/crs/epsg/0/25832" srsDimension="2">
+<gml:lowerCorner>341615.603 5699837.709</gml:lowerCorner>
+<gml:upperCorner>342956.508 5700190.388</gml:upperCorner>
+</gml:Envelope>
+</wfs:boundedBy>
+<wfs:member>
+<StandingWater gml:id="StandingWater_DENWAT01D000G8WY">
+<gml:identifier codeSpace="http://inspire.ec.europa.eu/ids">https://registry.gdi-de.org/id/de.nw.inspire.hy.basis-dlm/StandingWater_DENWAT01D000G8WY</gml:identifier>
+<geographicalName>
+<gn:GeographicalName>
+<gn:language>deu</gn:language>
+<gn:nativeness xlink:href="http://inspire.ec.europa.eu/codelist/NativenessValue/endonym"/>
+<gn:nameStatus xlink:href="http://inspire.ec.europa.eu/codelist/NameStatusValue/official"/>
+<gn:sourceOfName>unknown</gn:sourceOfName>
+<gn:pronunciation nilReason="other:unpopulated" xsi:nil="true"/>
+<gn:spelling>
+<gn:SpellingOfName>
+<gn:text>Parallelhafen</gn:text>
+<gn:script>Latn</gn:script>
+</gn:SpellingOfName>
+</gn:spelling>
+</gn:GeographicalName>
+</geographicalName>
+<beginLifespanVersion>2023-01-27T11:18:40Z</beginLifespanVersion>
+<geometry>
+<gml:Polygon gml:id="o44005.id.1483351.ST_UnaryUnion__T_.position_.Geom_0" srsName="http://www.opengis.net/def/crs/epsg/0/25832" srsDimension="2">
+<gml:exterior>
+<gml:LinearRing>
+<gml:posList>341615.603 5700048.110 341653.891 5700000.000 341679.366 5699967.990 341736.329 5699902.393 341905.207 5699837.709 342000.000 5699849.533 342164.057 5699868.824 342487.399 5699908.112 342756.809 5700033.070 342759.861 5700048.957 342953.737 5700149.990 342956.508 5700158.983 342949.490 5700172.067 342942.841 5700184.461 342888.545 5700190.388 342801.435 5700172.142 342324.576 5699969.023 342313.373 5699964.433 342304.855 5699961.525 342297.060 5699959.568 342289.110 5699958.267 341978.346 5699920.665 341959.988 5699922.018 341904.218 5699928.606 341744.931 5699989.925 341743.574 5699991.429 341708.504 5700004.975 341703.352 5700006.349 341697.212 5700008.345 341691.941 5700010.564 341689.415 5700011.394 341688.002 5700011.681 341683.587 5700012.215 341681.874 5700012.585 341679.464 5700013.472 341676.894 5700014.799 341674.479 5700016.317 341663.643 5700023.989 341661.237 5700025.417 341659.452 5700026.123 341654.922 5700027.421 341653.564 5700027.931 341652.181 5700028.603 341648.630 5700030.609 341647.346 5700031.238 341645.463 5700031.921 341644.013 5700032.307 341640.001 5700033.189 341638.572 5700033.569 341637.101 5700034.080 341635.837 5700034.677 341633.538 5700036.267 341628.885 5700040.440 341627.767 5700041.292 341624.874 5700043.213 341621.882 5700044.990 341618.792 5700046.622 341615.603 5700048.110</gml:posList>
+</gml:LinearRing>
+</gml:exterior>
+</gml:Polygon>
+</geometry>
+<inspireId>
+<base:Identifier>
+<base:localId>StandingWater_DENWAT01D000G8WY</base:localId>
+<base:namespace>https://registry.gdi-de.org/id/de.nw.inspire.hy.basis-dlm</base:namespace>
+</base:Identifier>
+</inspireId>
+<origin nilReason="unknown" xsi:nil="true"/>
+<persistence xlink:href="http://inspire.ec.europa.eu/codelist/HydrologicalPersistenceValue/perennial"/>
+<tidal nilReason="other:unpopulated" xsi:nil="true"/>
+<drainsBasin xsi:nil="true" nilReason="other:unpopulated"/>
+<elevation nilReason="other:unpopulated" xsi:nil="true"/>
+<meanDepth nilReason="other:unpopulated" xsi:nil="true"/>
+<surfaceArea uom="m2">119106.09144697213</surfaceArea>
+</StandingWater>
+</wfs:member>
+</wfs:FeatureCollection>

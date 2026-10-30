@@ -4,110 +4,143 @@ title: "GIS Webdienste"
 
 # Webdienste für Karten und Geodaten
 
+## Lernziele
 
-## Vorlesung
-
-
-<embed src="slides/01b_webservice.pdf" type="application/pdf" width="100%" height="500">
-
-## Reader und Übung
+- Die Unterschiede verschiedener Webdienste kennen um den Richtigen für ein eigenes Projekt auswählen zu können
+- Verstehen wie eine Anfrage eines Webdienstes funktioniert
 
 
-Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stellen Sie sich einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. In so einem Webdienst gibt es zwei Akteure: ein Provider / **Server** der die Karten und Daten bereitstellt, und ein **Client** der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als **Standards des OGC (Open Geospatial Consortium)** veröffentlicht.
+## Reader
+
+
+Über Webdienste können Karten und Daten direkt bezogen werden, ohne diese wirklich herunterzuladen. Stellen Sie sich einen Musikstreaming Anbieter vor - auch hier werden die Songs nicht dauerhaft auf dem Endgerät gespeichert, sondern bei Bedarf angefragt und heruntergeladen. Nach dem selben prinzip können auch Geodaten gestreamt werden. In so einem Webdienst gibt es zwei Akteure: ein Provider / **Server** der die Karten und Daten bereitstellt, und ein **Client** der die Karten und Daten anfragt. Damit die Kommunikation zwischen Server und Client funktionert, dass also die gewünschten Daten auch beim Client ankommen müssen sich beide auf eine gemeinsame Sprache einigen. Diese Kommunikation wird in sogenannten Protokollen definiert und als **Standards des OGC (Open Geospatial Consortium)** veröffentlicht.
 Bevor wir weiter in die Details gehen, richten wir einen Webservice in QGIS ein um zu sehen um was es eigentlich geht.
 
 
 ::: {.callout-tip}
 ## Aufgabe: Web Feature Service
 
-- Richte den WFS Service https://www.wfs.nrw.de/geobasis/wfs_nw_inspire-gewaesser-physisch_atkis-basis-dlm in QGIS ein.
+```r
+https://www.wfs.nrw.de/geobasis/wfs_nw_inspire-gewaesser-physisch_atkis-basis-dlm
+```
+- Richte Sie den Web Feature Service der physischen Gewässer der Geobasis NRW in QGIS ein.
 - Welche Layer stellt der Dienst bereit?
-- Laden Sie die Layer `Stehendes Gewässer`, `Wasserlauf` und `Feuchtgebiete`. Was fällt auf?
+- Laden Sie die Layer `Stehendes Gewässer` und `Wasserlauf`.
 
 :::
 
 
 ## Web Feature Service - WFS
 
-Der Eingebundene dienst ist ein sogenannter [Web Feature Service](https://www.ogc.org/standards/wfs/). Über diesen werden Geodaten im Vektorformat übertragen. Die Daten werden nach und nach, je nach Kartenausschnitt und Zoomstufe heruntergeladen. Dabei werden drei Anfragen zwingend vorgegeben:
+Der Eingebundene dienst ist ein sogenannter [Web Feature Service](https://www.ogc.org/standards/wfs/). Über diesen werden Geodaten im Vektorformat übertragen. Die Daten werden nach und nach, je nach Kartenausschnitt und Zoomstufe heruntergeladen. Im WFS Standard werden drei Anfragen zwingend vorgegeben die der Service leisten muss:
 
 - `getCapabilities` zur Anfrage von allgemeinen Metadaten
 - `DescribeFeatureType` zur Anfrage von Metadaten spezifischer Vektoren
 - `getFeature` zur Anfrage der Vektor Objekte, also die tatsächlichen Daten
 
 
-Beispielhaft eine getFeature Anfrage eines Features (also ein Vector Objekt mit entprechenden Attributen) aus dem Dienst der Stadt Münster zu den Städtischen Grünflächen.
+Diese Anfragen werden dem Serviceaufruf als Argumente mitgegeben. Um z.B. eine `getCapabilities` Anfrage zu stellen wird der WFS URL einfach der entsprechende Befehl angehängt: 
 
 ```{r}
 #| code-overflow: wrap
 #| eval: false
 
-https://www.stadt-muenster.de/ows/mapserv706/odgruenserv?REQUEST=GetFeature&SERVICE=WFS&VERSION=2.0.0&TYPENAME=ms:Gruenflaechen&EXCEPTIONS=XML&MAXFEATURES=1
+https://www.wfs.nrw.de/geobasis/wfs_nw_inspire-gewaesser-physisch_atkis-basis-dlm?SERVICE=WFS&REQUEST=getCapabilities
 ```
+
+Dieser Aufruf liefert Metadaten wie den Datenanbieter und die Layernamen:
+
+<embed src = https://www.wfs.nrw.de/geobasis/wfs_nw_inspire-gewaesser-physisch_atkis-basis-dlm?SERVICE=WFS&REQUEST=getCapabilities width="100%" height="500"></embed>
+
+
+Bei einer `getFeature` Anfrage müssen ein paar mehr Argumente angegeben werden. Mindestens mal der Layername den Sie aus der getCapabilities Anfrage entnehmen können. Im nachfolgenden Aufruf ist noch `COUNT=1` gesetz um nur ein einziges Feature anzufragen.
+
+```{r}
+#| code-overflow: wrap
+#| eval: false
+
+http://www.wfs.nrw.de/geobasis/wfs_nw_inspire-gewaesser-physisch_atkis-basis-dlm?
+REQUEST=GetFeature&
+SERVICE=WFS&
+VERSION=2.0.0&
+TYPENAMES=hy-p:StandingWater&
+COUNT=1
+```
+
+Das Ergebnis der Anfrage ist eine xml Datei, die das Feature beschreibt. In diesem Beispiel der Parallelhafen in Duisburg. In der Datei ist auch die Geometrie des Features definiert, hier die Vertexkoordinaten des Polygons:
+
+<embed src = assets/getFeature_Example.xml width="100%" height="500"></embed>
+
+
 
 
 ## Web Map Service - WMS
 
-Beim Web Map Service [(ogc.org/standards/wms/)](https://www.ogc.org/standards/wms/){.target-blank} liefert der Server Bildausschnitte, in der Regel PNG, für die vom Clienten angefragte Koordinaten und Auflösungen. 
-Folgende Anfragen sind das Minimum was ein WMS Standard liefern muss: 
+Beim Web Map Service [(ogc.org/standards/wms/)](https://www.ogc.org/standards/wms/){.target-blank} liefert der Server **Bildausschnitte**, in der Regel PNG, für die vom Clienten angefragte Koordinaten und Auflösungen. Dies wir vor allem für Hintergrundkarten und Basisinformationen genutzt. Äquivalent zum Web Feature Service gibt es auch beim Web Map Service 
 
-- `getCapabilities` zur Anfrage von Metadaten
+- `getCapabilities` zur Anfrage von Metadaten und
 - `getMap` zur Anfrage von Karten
 
-Ein Beispiel für `getCapabilities`: 
+Ein Beispiel für `getCapabilities` des WMS Dienstes einer [Basemap des Bundesamts für Kartographie](https://gdz.bkg.bund.de/index.php/default/wms-basemapde-webraster-wms-basemapde-webraster.html).
 
 ```{r}
 #| code-overflow: wrap
 #| eval: false
 
-https://sgx.geodatenzentrum.de/wms_basemapde_schummerung?request=GetCapabilities&service=WMS
+https://sgx.geodatenzentrum.de/wms_basemapde?request=GetCapabilities&service=WMS
 ```
 
-Die `getMap` URLs sind etwas Umfangreicher und setzen sich zusammen aus Serveradresse, Koordinaten, Bildgröße und Format:
+Die `getMap` URLs sind etwas Umfangreicher und setzen sich zusammen aus Serveradresse, Layername, Koordinaten, Bildgröße und Format. Das Ergebnis dieser Anfrage ist der Bildausschnitt unten.
 
 ```{r}
 #| code-overflow: wrap
 #| eval: false
-https://sgx.geodatenzentrum.de/wms_basemapde_schummerung?service=wms&version=1.3.0&request=GetMap&Layers=de_basemapde_web_raster_combshade&STYLES=default&CRS=EPSG:25832&bbox=500000,5700000,500200,5700200&width=150&Height=150&Format=image/png
+https://sgx.geodatenzentrum.de/wms_basemapde?
+service=wms&
+version=1.3.0&
+request=GetMap&
+Layers=de_basemapde_web_raster_farbe&
+STYLES=default&
+CRS=EPSG:25832&
+bbox=500000,5700000,500200,5700200&
+width=150&
+Height=150&
+Format=image/png
 ```
 
+<center>
+<embed src = https://sgx.geodatenzentrum.de/wms_basemapde?service=wms&version=1.3.0&request=GetMap&Layers=de_basemapde_web_raster_farbe&STYLES=default&CRS=EPSG:25832&bbox=500000,5700000,500200,5700200&width=150&Height=150&Format=image/png width="150" height="150"></embed>
+</center>
 
 ::: {.callout-tip}
-## Aufgabe: Web Map Service
+## Übung: Web Map Service
 
 - Modifizieren Sie die `getMap` request so, dass der Schlossgraben in Münster zu sehen ist. 
 - Das Schloss hat die UTM Koordinaten 404450, 5757900.
 
 :::
 
-
-## Web Map Tile Service - WMTS
-
-Der Web Map Tile Service ist eine Variante des WMS bei dem die Daten vorprozessiert gekachelt (_tiles_) auf dem Server geordnet sind. Dadurch wird die Anfrage performanter, benötigt aber auch mehr Speicherplatz.
+Eine Abwandlung des Web Map Service ist der Web Map Tile Service - WMTS bei dem die Daten vorprozessiert gekachelt (_tiles_) auf dem Server geordnet sind. Dadurch wird die Anfrage performanter, benötigt aber auch mehr Speicherplatz.
 [https://www.ogc.org/standards/wmts/](https://www.ogc.org/standards/wmts/)
 
 
-```
-#| code-overflow: wrap
-https://sgx.geodatenzentrum.de/wmts_basemapde_schummerung/tile/1.0.0/de_basemapde_web_raster_combshade/default/DE_EPSG_3857_ADV/06/662/1082.png
-```
 
-## Web Coverage Service
+## Web Coverage Service - WCS
 
-Der Web Coverage Service dient zur Distribution von Rasterdaten.
+Der Web Coverage Service dient zur Distribution von Rasterdaten. Hier werden wie beim WFS tatsächliche Pixelwerte übertragen mit denen weiter gearbeitet werden können.
 
 
-- `getCapabilities` zur Anfrage von datensatzweiten  Metadaten
+- `getCapabilities` zur Anfrage von datensatzweiten Metadaten
 - `describeCoverage` zur Anfrage von Metadaten spezifischer Produkte
 - `getCoverage` zur Anfrage der Rasterkachel
 
 
-Hier ist z.B. das digitale Geländemodell des BKG:
+Über folgenden Link können Sie z.B. das digitale Geländemodell von NRW einbinden:
 
 ```{r}
 #| code-overflow: wrap
 #| eval: false
-https://gdz.bkg.bund.de/index.php/default/inspire-wcs-elevation-dgm200-wcs-dgm200-inspire.html
+https://www.wcs.nrw.de/geobasis/wcs_nw_dgm
 
 ```
 
@@ -115,25 +148,10 @@ https://gdz.bkg.bund.de/index.php/default/inspire-wcs-elevation-dgm200-wcs-dgm20
 
 :::{.callout-tip}
 ## WCS in QGIS
-- Binde den Webdienst WCS des Geländemodells in QGIS ein.
-- Erstelle eine Schummerung mit den Geländedaten.
+- Binden Sie den Webdienst WCS des Geländemodells in QGIS ein.
+- Stellen Sie das Geländemodell für einen kleinen Kartenausschnitt (z.B. Münster) als Schummerung dar.
 
 :::
-
-
-
-Das [Bundesamt für Kartographie](https://www.bkg.bund.de/DE/Home/home.html) bietet eine Vielzahl von Basiskarten via Online Services an. Unter folgendem Link sind WMTS Service für Geländemodelldaten zu finden: [WMTS Geländekarte des BKG](https://gdz.bkg.bund.de/index.php/default/wmts-basemapde-schummerung-wmts-basemapde-schummerung.html)
-
-
-Hier noch ein Beispiel zu WMS: [eine Deutschlandweite Hintergrundkarte des BKG](https://gdz.bkg.bund.de/index.php/default/wms-basemapde-webraster-wms-basemapde-webraster.html)
-
-
-:::{.callout-tip}
-## WMTS in QGIS
-- Binde auch diese Dienste in QGIS ein.
-:::
-
-
 
 
 
@@ -144,5 +162,11 @@ Welche Vor- und Nachteile bringt der Einsatz von Webdiensten in einem GIS Projek
 
 
 
+
+
+## Weiterführende Links
+
+Übersicht der Webdienste in NRW<br> 
+[https://www.bezreg-koeln.nrw.de/geobasis-nrw/webdienste/geodatendienste](https://www.bezreg-koeln.nrw.de/geobasis-nrw/webdienste/geodatendienste)
 
 
