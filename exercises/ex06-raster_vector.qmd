@@ -1,0 +1,36 @@
+---
+title: Ex06 - Raster-Vektor-Interaktionen
+format: pdf
+---
+
+## Raster-Vektor-Interaktionen
+In der Präsenzübung haben wir bisher noch nicht die Umwandlung zwischen den Datenmodellen behandelt. Da insbesondere die Vektor-Raster-Konversion in den kommenden Wochen eine wichtige Rolle spielen wird, soll sie hier einmal praktisch geübt werden.
+
+Gehe dabei wie folgt vor:
+
+1. Baumkataster laden und projizieren: Nutze den Datensatz „Baumkataster“ und projiziere den Layer in ein metrisches Koordinatensystem – z. B. EPSG:25832 (ETRS89 / UTM Zone 32N).
+
+2. Puffer erzeugen: Erstelle um die Bäume einen Puffer von 10 m.
+
+3. Puffer rasterisieren: Rasterisiere den Puffer mit einer Auflösung von 1 m (horizontal und vertikal). Weise dabei allen Pixeln, die Bestandteil des Puffers sind, den Wert 1 zu (einzubrennender Wert). Gib einen Screenshot von dem Ergebnis ab.
+
+
+## Vorbereitung Habitatanalyse
+In der nächsten Woche verlassen wir die "GIS Basics" und wenden uns konzeptionell anspruchsvolleren Analysen für landschaftsökologische Fragestellungen zu.
+
+Lies dir das Kapitel zur Habitatanalyse durch und wähle eine Tier- oder Pflanzenart deiner Wahl aus. Beantworte anschließend folgende Fragen:
+
+1. Kriterien für die Habitateignung
+Nenne mindestens drei Kriterien, die für die Bewertung geeigneter Habitate deiner gewählten Art relevant sind. Beschreibe in eigenen Worten, wie diese Kriterien in Kombination die Habitateignung bestimmen.
+Hinweis: Entscheidend ist nicht nur das einzelne Kriterium, sondern das Zusammenspiel mehrerer Faktoren.
+
+2. Ausschluss- und Eignungskriterien
+Ordne die von dir gewählten Kriterien ein:
+Welche sind Ausschlusskriterien (harte Kriterien), die ein Gebiet von vornherein ungeeignet machen?
+Welche sind kontinuierliche Eignungskriterien (weiche Kriterien), die eine abgestufte Bewertung erlauben?
+Begründe deine Einordnung kurz.
+
+3. Gewichtung der Kriterien
+Angenommen, du müsstest die von dir gewählten Kriterien für die Habitatanalyse prozentual gewichten. Verteile insgesamt 100 % auf deine Kriterien – je nachdem, wie wichtig sie für die Habitateignung deiner Art sind. Begründe deine Verteilung kurz.
+Hinweis: Die Gewichte sollten sich zu 100 % summieren. Ein Kriterium mit 40 % ist doppelt so wichtig wie eines mit 20 %.
+

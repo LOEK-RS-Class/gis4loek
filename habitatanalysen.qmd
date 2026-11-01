@@ -2,12 +2,66 @@
 title: Habitatanalysen
 ---
 
-
+!TBA!
 
 ## Vorlesung
 
 
 Habitatanalysen als ein praktischer Anwendungsfall von Mulikriterienanalyse.
+
+### Multikriterienanalyse
+Die Multikriterienanalyse (MCA) ist ein methodischer Ansatz, um komplexe Entscheidungen zu unterstützen, bei denen mehrere unterschiedliche Faktoren gleichzeitig berücksichtigt werden müssen. In GIS wird sie häufig als gewichtete Overlay-Analyse umgesetzt, bei der verschiedene Rasterebenen miteinander kombiniert werden. Das Ziel ist es, aus einer Vielzahl von Einzelkriterien eine zusammenfassende Bewertung – z. B. eine Eignungskarte – zu erstellen.
+
+
+### Habitatanalyse als ein Anwendungsfall der Multikriterienanalyse
+Ein klassisches Anwendungsbeispiel ist die Habitatanalyse für eine Tier- oder Pflanzenart. Nehmen wir an, wir wollen herausfinden, welche Flächen in einer Region als Lebensraum für eine bestimmte Vogelart geeignet sind. Dafür müssen verschiedene Umweltfaktoren berücksichtigt werden, die das Vorkommen der Art beeinflussen. Typische Kriterien wären:
+
+- Vegetationshöhe: Die Art bevorzugt hohe Bäume zum Nisten.
+- Distanz zu Wasser: Sie benötigt eine Trinkwasserquelle in der Nähe.
+- Hangneigung: Steile Hänge sind ungeeignet, flache Bereiche bevorzugt.
+- Landnutzung: Offene Wiesen oder Ackerflächen sind eher ungeeignet, Waldgebiete geeignet.
+- Störungsfreiheit: Flächen in der Nähe von Straßen oder Siedlungen sind weniger attraktiv.
+
+Der konzeptionelle Ablauf ist dann folgender:
+
+1. Die Ausgangssituation ist die, dass jedes dieser Kriterien  als eigenes Raster vorliegt. 
+
+2. Definition der Art der Kriterien
+Identifikation von Ausschlusskriterien (harten Kriterien, Constraints) sowie kontinuierlcihen Eignungskriterien (weichen Kriterien). Ausschlusskriterien grenzen den zu analysierenden bereich binär auf bestimmte Kriterien ein: z.B Wasserflächen könnten ein Ausschlusskriterium und werden nicht weiter berücksichtigt. Kontinuierliche Kriterien sind im vergleich nicht binär (geeignet/ungeeignet) sondern stellen Eignung kontinuierlich von kaum geeignet bis gut geeignet dar.
+
+3. Bewertung der kontinuierlichen Kriterien und Standardisierung
+Das ist einer der anspruchsvollsten Schritte. Nicht technisch sodnern Konzeptionekll. Hier gilt es zu überlegen, wie die einzlnen Kriterien zu bewerten sind. Z.B. sinkt die Eignung proportional zur Geländehöhe? Oder basierned auf einem Datensatz zur Landbedeckung: Wie bewerte ich Laubwald, Nadelwald, Msichwald,... im Hinblick auf die Habitateignung?
+ Damit die kontinuierlcihen Werte vergleichbar werden, müssen sie alle zunächst standardisiert werden – z. B. von 0 (ungeeignet) bis 100 (sehr gut geeignet). 
+
+4. Anschließend werden den Kriterien Gewichte zugewiesen, die ihre relative Bedeutung für die Art widerspiegeln. Überlegung wären, ob für die Art Distanz zu Geäwsser wichtiger ist als geländehöhe oder die Exposition. Die Summe der Gewichte sollte dabei 1 (oder 100 %) ergeben. 
+
+5. Im nächsten Schritt werden die gewichteten Kriterien überlagert und addiert, sodass für jedes Pixel ein Gesamteignungswert entsteht. Das Ergebnis ist eine Karte, die zeigt, welche Flächen insgesamt am besten als Habitat geeignet sind.
+
+Die Stärke der Multikriterienanalyse liegt darin, dass sie subjektive Einschätzungen (z. B. die Wahl der Gewichte) transparent macht und in einem nachvollziehbaren Prozess zusammenführt. Gleichzeitig können Unsicherheiten berücksichtigt werden, indem z. B. alternative Gewichtungen durchgespielt werden (Sensitivitätsanalyse). Die Multikriterienanalyse ist damit ein wertvolles Werkzeug für die räumliche Planung, den Naturschutz und die Landschaftsbewertung – überall dort, wo mehrere konkurrierende Faktoren gegeneinander abgewogen werden müssen.
+
+### Multikriterienanalyse in der Praxis
+
+Entsprechend des Vorgehens wie oben beschreiben sind folgende Schritte durchzuführen:
+
+1. Parameter erstellen: Aus Ausgangsratsern (z.B. Geländehöhe, Straßenlayer,...) die für die Art relevanten Parameter berechnen. Typische Werkzeuge dafür, die häufig in Kombination zu nutzen sind:
+
+- Rasterisieren (Vektor nach Raster), z.B um Gewässerflächen von Polygonen in Raster umzuwandeln
+- Werkzeuge die aus Geländemodellen abgeleitete topographische Merkmale (z.B Exposition oder Hangneigung) berechnen (lernt ihr in der nächsten Woche genauer kennen); Distanzen,... 
+- Häufig wird auch der Rasterrechner und Reklassifizierungswerkzeuge (z.B. zur Reklassifikation der Exposition in Nord, Ost, Süd, West) genutzt um aus den Ausgangsdaten die relevanten informationen zu extrahieren. 
+- Abschließend bietet es sich an, alle Raster in die gleiche Geometrie zu transferieren (gleiche projektionm, gleiche zellgröße, Ausdehnung etc). Das geht über das Werkzeug "Raster Anpassen" (https://docs.qgis.org/3.34/de/docs/user_manual/processing_algs/qgis/rastertools.html#qgisalignrasters)
+
+
+2. Definition der Art der Kriterien
+Erstelle Ausschlusskriterien am besten über reklassifikation in "no data"(Leerwert)/1 
+
+
+3. Standardisierung der kontinuierlcihen Kriterien
+Erstmal Tabelle anlegen außerhalb GIS
+
+
+
+Hinweis: Es soll abschließend erwähnt werden, dass es Plugins gibt, die die umfangreichen Schritte kombinieren. Hier ist das dahinterliegende Vorgehen jedoch i.d.R das gleiche.
+
 
 
 ## Übung
@@ -16,7 +70,17 @@ Habitatanalysen als ein praktischer Anwendungsfall von Mulikriterienanalyse.
 
 :::{.callout-tip}
 ## Aufgabe:
-Wo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt ausschließlich in sehr niedrigen Geländehöhen <50m vor und in Bereichen die kleinräumig sowohl hohe als auch niedrige Vegetation aufweisen.
+Wo befinden sich potenziell geeignete Lebensräume für eine fiktive Tierart? Diese hochspezialisierte Art kommt NUR auf Flächen mit Vegetation vor. je näher an Gewässern desto besser ist das Habitat und je höher die Heterogenität der Vegetationshöhe (d.h. es kommt sowohl hohe als auch niedrige Vegetation vor).
+
+Daten (Die Distanz zu Gewässern sowie die Heteorgenität der Vegetation habt ihr schon selbst berechnet. Zur Sicherheit sind die Ergebniss aber aber nochmal verlinkt):  
+
+- Flächen mit Vegetation (Quelle: https://www.opengeodata.nrw.de/produkte/geobasis/lusat/akt/lb_nrw/): https://uni-muenster.sciebo.de/s/7GcSrsRcCHFxKKA
+
+- Distanz zu Gewässern: https://uni-muenster.sciebo.de/s/EXy72biKfSErK3i
+
+- Heterogenität der Vegetationshöhen (Berechnet als Standardabweichung auf einer 5x5 Umgebung): https://uni-muenster.sciebo.de/s/dxWdwJjqCs4nNw5
+
+
 :::
 
 
