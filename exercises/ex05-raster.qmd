@@ -1,0 +1,21 @@
+---
+title: Ex05 - Rasterdaten
+format: pdf
+---
+
+## Rasterdaten
+
+Eine häufig verwendete und sehr nützliche Funktion haben wir uns in der Übung zu den Rasterdaten noch nicht angeschaut: Die Distanzberechnung.
+Lade Wasserflächen von Münster herunter (https://uni-muenster.sciebo.de/s/SiDATJCC4LQDQ4E) und berechne für jedes Pixel die Distanz zu Gewässern. Gebe einen Screenshot von deinem Ergebnis ab. Tipp: Verwende das Werkzeug "Nähe (Rasterabstand)"
+
+
+## Vorbereitung Raster-Vektor-Analysen
+In der nächsten Woche beschäftigen wir uns mit Raster-Vektor-Analysen. Lese dir hierfür das Kapitel durch und beantworte die folgende Fragen.
+Stell dir vor, du möchtest herausfinden, wie sich die Vegetationshöhe in den einzelnen Stadtgebieten Münsters unterscheidet. Dafür hast du zwei Datensätze: ein Raster mit der Vegetationshöhe (z. B. aus DOM – DGM berechnet) und einen Vektordatensatz mit den Stadtgebieten als Polygone. Mit einer Zonalen Statistik fasst du nun die Rasterwerte für jedes Stadtgebiet zusammen. Dazu nutzt du den Mittelwert als Maß.
+
+a) Beschreibe, was das Ergebnis dieser Analyse ist und wie es räumlich dargestellt werden kann.
+
+b) Erläutere, welche Information verloren geht, wenn du nur den Mittelwert pro Stadtgebiet betrachtest.
+
+c) Nenne mindestens zwei weitere zusammenfassende Statistiken, die du zusätzlich zum Mittelwert ausgeben lassen könntest, um die Vegetationshöhe in den Stadtgebieten besser zu beschreiben. Begründe deine Auswahl.
+
