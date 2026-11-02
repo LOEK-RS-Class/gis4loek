@@ -1,5 +1,5 @@
 ---
-title: Ex03 - Projektionen
+title: Ex04 - Projektionen
 format: pdf
 ---
 
@@ -8,26 +8,28 @@ format: pdf
 ## Arktische Fauna
 
 
-Auf `naturalearthdata.com` gibt es grundlegende Vektordaten für karthographische Zwecke. Laden Sie die Küstenlinien über folgenen Link herunter: [https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_coastline.zip](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_coastline.zip).
-Und über folgenden Link die Ozeane mit Label: [https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geography_marine_polys.zip](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geography_marine_polys.zip)
-Und über folgenden Link [https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geographic_lines.zip](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geographic_lines.zip) geographische Linien zur besseren Orientierung.
+Auf `naturalearthdata.com` gibt es grundlegende Vektordaten für karthographische Zwecke. Die Umrisse der Staaten sollten Sie schon haben. Ansonsten gibts die nochmal [hier](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_countries.zip). 
+Hier sind noch die Ozeane mit Label: [ne_50m_geography_marine_polys.zip](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geography_marine_polys.zip)
+Und hier die geographische Linien zur besseren Orientierung [ne_50m_geographic_lines.zip](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geographic_lines.zip) .
 
 
 - In welchem Koordinatensystem liegen die Daten vor?
-- Visualisiere die Küstenlinien und die Ozeane sinnvoll.
+- Visualisieren Sie die Staaten, Ozeane und geographischen Linien so, dass Ozeanien im Fokus der Karte steht.
 - Für die Ozeane sollen nur die Label sichtbar sein (Spalte 'name' der Attributtabelle).
+
+**Erstellen Sie einen Screenshot der Karte**
 
 
 Papageientaucher (*Fratercula arctica*) und Krabbentaucher (*Alle Alle*) haben ihr Hauptverbreitungsgebiet in der Arktis.
 Auf der Kollaborative Plattform [gbif.org](https://www.gbif.org/) werden Artbeobachtungen gesammelt und können dort heruntergeladen werden.
-Hier ist ein Datensatz, mit den Beobachtungen der beiden Arten in den Jahren 2024 und 2025: XXX
+Hier ist ein Datensatz, mit den Beobachtungen der beiden Arten in den Jahren 2024 und 2025: [Download](download/projektion_arktis/GBIF_Fratercula_Alle_24_25.zip)
 
 - Visualisieren Sie den Datensatz. 
 - Nutzen Sie dafür ein Koordinatenbezugssytem, welches auf die Arktis angepasst ist.
 - Wie unterscheidet sich das Verbreitungsgebiet der beiden Arten?
 - Gibt es einen Unterschied zwischen 2024 und 2025?
 
-
+**Erstellen Sie einen Screenshot der Karte**
 
 
 ## Vorbereitung Vektordaten
