@@ -8,9 +8,9 @@ format: pdf
 ## Arktische Fauna
 
 
-Auf `naturalearthdata.com` gibt es grundlegende Vektordaten für karthographische Zwecke. Die Umrisse der Staaten sollten Sie schon haben. Ansonsten gibts die nochmal [hier](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_countries.zip). 
-Hier sind noch die Ozeane mit Label: [ne_50m_geography_marine_polys.zip](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geography_marine_polys.zip)
-Und hier die geographische Linien zur besseren Orientierung [ne_50m_geographic_lines.zip](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_geographic_lines.zip) .
+Auf `naturalearthdata.com` gibt es grundlegende Vektordaten für karthographische Zwecke. Die Umrisse der Staaten sollten Sie schon haben. Ansonsten gibts die nochmal [hier](https://www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_countries.zip). 
+Hier sind noch die Ozeane mit Label: [Download Marine Areas](https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/)
+Und hier die geographische Linien zur besseren Orientierung [ne_50m_geographic_lines.zip](https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-geographic-lines/).
 
 
 - In welchem Koordinatensystem liegen die Daten vor?
@@ -22,7 +22,7 @@ Und hier die geographische Linien zur besseren Orientierung [ne_50m_geographic_l
 
 Papageientaucher (*Fratercula arctica*) und Krabbentaucher (*Alle Alle*) haben ihr Hauptverbreitungsgebiet in der Arktis.
 Auf der Kollaborative Plattform [gbif.org](https://www.gbif.org/) werden Artbeobachtungen gesammelt und können dort heruntergeladen werden.
-Hier ist ein Datensatz, mit den Beobachtungen der beiden Arten in den Jahren 2024 und 2025: [Download](download/projektion_arktis/GBIF_Fratercula_Alle_24_25.zip)
+Hier ist ein Datensatz, mit den Beobachtungen der beiden Arten in den Jahren 2024 und 2025: [Download](https://github.com/LOEK-RS-Class/gis4loek/raw/refs/heads/main/download/projektion_arktis/GBIF_Fratercula_Alle_24_25.zip)
 
 - Visualisieren Sie den Datensatz. 
 - Nutzen Sie dafür ein Koordinatenbezugssytem, welches auf die Arktis angepasst ist.
