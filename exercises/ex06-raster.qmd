@@ -6,7 +6,7 @@ format: pdf
 ## Rasterdaten
 
 Eine häufig verwendete und sehr nützliche Funktion haben wir uns in der Übung zu den Rasterdaten noch nicht angeschaut: Die Distanzberechnung.
-Lade Wasserflächen von Münster herunter (https://uni-muenster.sciebo.de/s/SiDATJCC4LQDQ4E) und berechne für jedes Pixel die Distanz zu Gewässern. Gebe einen Screenshot von deinem Ergebnis ab. Tipp: Verwende das Werkzeug "Nähe (Rasterabstand)"
+Lade Wasserflächen von Münster herunter (https://uni-muenster.sciebo.de/s/B8pf5jN2MSmJK7F) und berechne für jedes Pixel die Distanz zu Gewässern. Gebe einen Screenshot von deinem Ergebnis ab. Tipp: Verwende das Werkzeug "Nähe (Rasterabstand)"
 
 
 ## Vorbereitung Raster-Vektor-Analysen
