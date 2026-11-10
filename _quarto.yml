@@ -46,6 +46,8 @@ website:
             text: Digitale Geländemodelle
          # - href: hydrology.qmd
          #   text: Hydrologische Analysen
+      - text: Thematische Karten
+        href: visualisierung.qmd
       - text: Kostenanalyse
         href: kostenanalyse.qmd
       - section: Übungen als PDF
