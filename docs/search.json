@@ -430,7 +430,7 @@
     "href": "vector-basics.html#übung",
     "title": "Vektor-Basics",
     "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nAufgabe\n\n\n\nLade das Baumkataster, das Geo1 (Passwort im Learnweb)und die Stadtgrenzen von Münster herunter. Beantworte folgende Fragen:\n\nWieviele Eichen stehen im Münster Mitte? (Tip: Hier brauchst du eine räumliche Verschneidung sowie eine thematische Abfrage)\nWo steht die nächstgelegende Birke vom Geo1 (Tip: Verwende das Werkzeug “Distance Matrix”: Dieses Werkzeug berechnet die Distanz zwischen allen Punkten eines Start-Layers (z. B. Geo1) und allen Punkten eines Ziel-Layers (z. B. Birken). Das Ergebnis ist eine neue Tabelle, aus der du den kürzesten Abstand (Minimum) einfach herausfiltern kannst.)",
+    "text": "Übung\n\n\n\n\n\n\nAufgabe\n\n\n\nLade das Baumkataster, das Geo1 (Passwort im Learnweb)und die Stadtgrenzen von Münster herunter. Beantworte folgende Fragen:\n\nWieviele Eichen stehen im Münster Mitte? (Tip: Hier brauchst du eine räumliche Verschneidung sowie eine thematische Abfrage)\nErstelle einen Puffer von 10m um die Eichen (z. B. als Grundlage, um den Kronenbereich für weitere Analysen zu berücksichtigen, wie Beschattungseffekte oder Gefahr durch herabfallende Äste).\nWo steht die nächstgelegende Birke vom Geo1 (Tip: Verwende das Werkzeug “Distance Matrix”: Dieses Werkzeug berechnet die Distanz zwischen allen Punkten eines Start-Layers (z. B. Geo1) und allen Punkten eines Ziel-Layers (z. B. Birken). Das Ergebnis ist eine neue Tabelle, aus der du den kürzesten Abstand (Minimum) einfach herausfiltern kannst.)",
     "crumbs": [
       "GIS Grundlagen",
       "Vektor Basics"
