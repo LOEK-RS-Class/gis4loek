@@ -350,6 +350,7 @@ Aufgabe:
 <ol type="1">
 <li><p>Binäre Klassifikation der Geländehöhe: Erstelle ein binäres Raster, das Geländehöhen unter 50 m als „niedrig“ und alle Werte ab 50 m als „hoch“ klassifiziert. Da das Rastermodell nur numerische Werte speichern kann, kodiere die Klassen wie folgt: niedrig = 1; hoch = 2. Speichere den resultierenden Datensatz als neues Raster ab.</p></li>
 <li><p>Berechnung der Vegetationshöhe: Berechne die Vegetationshöhe aus der Differenz zwischen Oberflächenhöhe und Geländehöhe.</p></li>
+<li><p>Um Rechenzeit im nächsten Schritt zu minimieren: Resampled das Ergebnis, indem ihr die 1m Pixel auf 10m aggregiert (Mittelwert). Tipp: Das Werkzeug Transformieren (Reprojizieren) ermöglicht das unter Verwendung einer Zielauflösung.</p></li>
 <li><p>Heterogenität der Vegetationshöhe: Erstelle einen Layer, der die kleinräumige Heterogenität der Vegetationshöhe beschreibt. Dieser soll Bereiche hervorheben, in denen auf kurzer Distanz sowohl hohe als auch niedrige Vegetation vorkommt. Verwende dazu einen 3x3-Filter und ein Heterogenitätsmaß deiner Wahl (z. B. Standardabweichung oder Varianz). Tipp: Das Werkzeug ist in GrassGIS implementiert und über GIS verfügbar. Es heißt “r.neighbors”</p></li>
 </ol>
 </div>
