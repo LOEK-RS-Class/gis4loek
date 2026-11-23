@@ -45,7 +45,7 @@ TBD!
 ## Übung
 Für die Übung nutze folgende Daten: 
 
-- Vegetationshöhe (in der letzten Woche berechnet. Hier zur Sicherheit noch einmal): https://uni-muenster.sciebo.de/s/aYexkeCfAzXN5cS
+- Vegetationshöhe in 10m Auflösunng (in der letzten Woche berechnet. Hier zur Sicherheit noch einmal): https://uni-muenster.sciebo.de/s/kEooi3ynaKCf4JA
 
 - Baumkataster: https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-m%C3%BCnster/resource/096c4fc2-cfdb-4b9b-840f-da9e638e65ec
 
