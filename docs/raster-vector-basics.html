@@ -324,8 +324,8 @@ background-size: cover;
 <li>Extraktion und Zonale Statistik Hier werden Rasterwerte mit Vektorobjekten verschnitten:</li>
 </ol>
 <ul>
-<li><p>Extract: Rasterwerte werden an bestimmten Vektorpunkten abgefragt (z. B. Höhenwerte an Messpunkten) oder für Vektorflächen extrahiert (z. B. alle Pixel innerhalb eines Landkreises).</p></li>
-<li><p>Zonale Statistik: Für jede Vektorfläche (Zone) wird eine zusammenfassende Statistik der Rasterwerte berechnet – etwa Mittelwert, Maximum, Minimum oder Standardabweichung (s. Abbildung).</p></li>
+<li><p>Extract (Werkzeug: “Rasterwerte abtasten): Rasterwerte werden an bestimmten Vektorpunkten abgefragt (z. B. Höhenwerte an Messpunkten) oder für Vektorflächen extrahiert (z. B. alle Pixel innerhalb eines Landkreises).</p></li>
+<li><p>Zonale Statistik (Werkzeig: “Zonenstatistik”): Für jede Vektorfläche (Zone) wird eine zusammenfassende Statistik der Rasterwerte berechnet – etwa Mittelwert, Maximum, Minimum oder Standardabweichung (s. Abbildung).</p></li>
 </ul>
 <div id="fig-intersections" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -345,9 +345,18 @@ Figure&nbsp;1: Zonal Statistics
 <li><p>Raster → Vektor: Rasterdaten werden in Vektordaten überführt. Kontinuierliche Raster werden in Flächen (Polygone) umgewandelt – etwa Höhenstufen oder Klassifikationsergebnisse; oder Rastermittelpunkte werden mit ihren Werten in Punkte umgewandelt.</p></li>
 </ul>
 </section>
+<section id="räumliche-interpolationen" class="level3">
+<h3 class="anchored" data-anchor-id="räumliche-interpolationen">Räumliche Interpolationen</h3>
+<p>TBD!</p>
+</section>
 </section>
 <section id="übung" class="level2">
 <h2 class="anchored" data-anchor-id="übung">Übung</h2>
+<p>Für die Übung nutze folgende Daten:</p>
+<ul>
+<li><p>Vegetationshöhe (in der letzten Woche berechnet. Hier zur Sicherheit noch einmal): https://uni-muenster.sciebo.de/s/aYexkeCfAzXN5cS</p></li>
+<li><p>Baumkataster: https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-m%C3%BCnster/resource/096c4fc2-cfdb-4b9b-840f-da9e638e65ec</p></li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -358,12 +367,12 @@ Aufgabe:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Wie hoch sind die Bäume im Baumkataster? Beachtet, dass die Bäume einen gewissen Kronendurchmesser haben (sagen wir mal 10m), der zunächst z.B. über einen Puffer berechnet werden muss.</p>
-<p>Daten:</p>
-<ul>
-<li>Vegetationshöhe (in der letzten Woche berechnet): https://uni-muenster.sciebo.de/s/aYexkeCfAzXN5cS</li>
-<li>Baumkataster: https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-m%C3%BCnster/resource/096c4fc2-cfdb-4b9b-840f-da9e638e65ec</li>
-</ul>
+<ol type="1">
+<li><p>Reprojiziere die Bäume in das Koordinatensystem der Vegetationshöhe (EPSG:25832 - ETRS89 / UTM zone 32N)</p></li>
+<li><p>Wie hoch sind die Bäume im Baumkataster? Extrahiere die Rasterwerte für jeden Baum.</p></li>
+<li><p>Schneide das Ergebnis auf den Innenstadtbereich von Münster zu (z.B über “Vektor auf Ausdehnung zuschneiden”) und nutze Inverse Distance Weighting (“IDW Interpolation”) um einen flächendeckenden Datensatz der Baumhöhen als Raster zu erstellen.</p></li>
+<li><p>Diskutiere das Ergebnis. Wann ist eine räumliche Interpolation über geostatistische Methoden sinnvoll?</p></li>
+</ol>
 </div>
 </div>
 

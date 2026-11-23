@@ -24,9 +24,9 @@ Clip/Crop: Das Raster wird auf die Ausdehnung eines Vektorpolygons zugeschnitten
 2. Extraktion und Zonale Statistik
 Hier werden Rasterwerte mit Vektorobjekten verschnitten:
 
-- Extract: Rasterwerte werden an bestimmten Vektorpunkten abgefragt (z. B. Höhenwerte an Messpunkten) oder für Vektorflächen extrahiert (z. B. alle Pixel innerhalb eines Landkreises).
+- Extract (Werkzeug: "Rasterwerte abtasten): Rasterwerte werden an bestimmten Vektorpunkten abgefragt (z. B. Höhenwerte an Messpunkten) oder für Vektorflächen extrahiert (z. B. alle Pixel innerhalb eines Landkreises).
 
-- Zonale Statistik: Für jede Vektorfläche (Zone) wird eine zusammenfassende Statistik der Rasterwerte berechnet – etwa Mittelwert, Maximum, Minimum oder Standardabweichung (s. Abbildung). 
+- Zonale Statistik (Werkzeig: "Zonenstatistik"): Für jede Vektorfläche (Zone) wird eine zusammenfassende Statistik der Rasterwerte berechnet – etwa Mittelwert, Maximum, Minimum oder Standardabweichung (s. Abbildung). 
 
 
 ![Zonal Statistics](images/raster_vector_Zonalstats.png){#fig-intersections width="80%"}
@@ -38,15 +38,28 @@ Hier werden Rasterwerte mit Vektorobjekten verschnitten:
 - Raster → Vektor: Rasterdaten werden in Vektordaten überführt. Kontinuierliche Raster werden in Flächen (Polygone) umgewandelt – etwa Höhenstufen oder Klassifikationsergebnisse; oder Rastermittelpunkte werden mit ihren Werten in Punkte umgewandelt.
 
 
+### Räumliche Interpolationen
+TBD!
+
+
 ## Übung
+Für die Übung nutze folgende Daten: 
+
+- Vegetationshöhe (in der letzten Woche berechnet. Hier zur Sicherheit noch einmal): https://uni-muenster.sciebo.de/s/aYexkeCfAzXN5cS
+
+- Baumkataster: https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-m%C3%BCnster/resource/096c4fc2-cfdb-4b9b-840f-da9e638e65ec
 
 :::{.callout-tip}
 ## Aufgabe:
-Wie hoch sind die Bäume im Baumkataster? Beachtet, dass die Bäume einen gewissen Kronendurchmesser haben (sagen wir mal 10m), der zunächst z.B. über einen Puffer berechnet werden muss.
 
-Daten: 
+1. Reprojiziere die Bäume in das Koordinatensystem der Vegetationshöhe (EPSG:25832 - ETRS89 / UTM zone 32N)
 
-- Vegetationshöhe (in der letzten Woche berechnet): https://uni-muenster.sciebo.de/s/aYexkeCfAzXN5cS
-- Baumkataster: https://opendata.stadt-muenster.de/dataset/digitales-baumkataster-m%C3%BCnster/resource/096c4fc2-cfdb-4b9b-840f-da9e638e65ec
+1. Wie hoch sind die Bäume im Baumkataster? Extrahiere die Rasterwerte für jeden Baum.
+
+2. Schneide das Ergebnis auf den Innenstadtbereich von Münster zu (z.B über "Vektor auf Ausdehnung zuschneiden") und nutze Inverse Distance Weighting ("IDW Interpolation") um einen flächendeckenden Datensatz der Baumhöhen als Raster zu erstellen. 
+
+3. Diskutiere das Ergebnis. Wann ist eine räumliche Interpolation über geostatistische Methoden sinnvoll?
+
+
 
 :::
