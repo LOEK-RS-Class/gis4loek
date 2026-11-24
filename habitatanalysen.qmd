@@ -46,20 +46,26 @@ Entsprechend des Vorgehens wie oben beschreiben sind folgende Schritte durchzuf�
 - Rasterisieren (Vektor nach Raster), z.B um Gewässerflächen von Polygonen in Raster umzuwandeln
 - Werkzeuge die aus Geländemodellen abgeleitete topographische Merkmale (z.B Exposition oder Hangneigung) berechnen (lernt ihr in diesem Kurs noch genauer kennen); Distanzen,... 
 - Häufig wird auch der Rasterrechner und Reklassifizierungswerkzeuge (z.B. zur Reklassifikation der Exposition in Nord, Ost, Süd, West) genutzt um aus den Ausgangsdaten die relevanten Informationen zu extrahieren. 
-- Abschließend bietet es sich an, alle Raster in die gleiche Geometrie zu transferieren (gleiche Projektionn, gleiche Zellgröße, Ausdehnung etc). Das geht über das Werkzeug "Raster Anpassen" (https://docs.qgis.org/3.34/de/docs/user_manual/processing_algs/qgis/rastertools.html#qgisalignrasters)
+- Abschließend bietet es sich an, alle Raster in die gleiche Geometrie zu transferieren (gleiche Projektionn, gleiche Zellgröße, Ausdehnung etc). Das geht über das Werkzeug "Raster Anpassen" (https://docs.qgis.org/3.34/de/docs/user_manual/processing_algs/qgis/rastertools.html#qgisalignrasters). Das ist wichtig, damit der Rasterrechner die Zellen korrekt miteinander verrechnen kann.“
 
 
 2. Definition der Art der Kriterien
-Erstelle Ausschlusskriterien am besten über Reklassifikation in "no data"(Leerwert)/1 
+Was sind kontinuierliche Kriterien, was sind Ausschlusskriterien?
+Für die Ausschlusskriterien: Reklassifiziere die Flächen, die für die Art nicht geeignet sind, auf NoData. Alle geeigneten Flächen bekommen den Wert 1. Später multiplizierst du die Eignungskarte mit diesem Ausschluss-Raster: Eignung * Ausschluss. Dadurch werden ungeeignete Flächen automatisch zu NoData und fallen aus der Karte heraus.
 
-
-3. Standardisierung der kontinuierlichen Kriterien
-"Raster Skalieren" können die Werte auf einen neuen Wertebereich skaliert werden (z.B 0-100).
+3. Bewertung der kontinuierlichen Kriterien und Standardisierung
+Falls erforderlich, nutze Reklassifizierungstool (z.B "nach Tabelle neu klassifizieren") sowie den Rasterrechner um deine Rasterdaten im Hinblick auf die Eignung zu bewerten.
+Wichtig: Alle Kriterien müssen im Anschluss den gleichen Wertebereich erhalten (z.B. 0–100), sonst ist die anschließende Gewichtung nicht sinnvoll. Ein Kriterium mit Werten von 0–100 würde sonst ein Kriterium mit Werten von 0–1 komplett dominieren
+Über das Werkzeug "Raster Skalieren" kannst du die Werte auf einen neuen gemeinsamen Wertebereich skalieren (z.B 0-100) umd die einzelnen Kriterien vergleichbar zu machen.
 
 4. Weighted Overlay
-Über des Rasterrechner kannst du jetzt die einzelnen Kriterien gewichten und verrechnen. Zb. Geländehöhex20 + Distanz_zu_Wasser x 80
+Über des Rasterrechner kannst du jetzt die einzelnen Kriterien gewichten und verrechnen. Zb. Geländehöhe x 0.2 + Distanz_zu_Wasser x 0.8.
+Achte darauf, dass die Gewichte in Dezimalzahlen angegeben werden (0,2 und 0,8). Alternativ kannst du mit Prozentwerten rechnen, solange die Summe 100 ergibt.
 
-Hinweis: Es soll abschließend erwähnt werden, dass es Plugins gibt, die die umfangreichen Schritte kombinieren. Hier ist das dahinterliegende Vorgehen jedoch i.d.R das gleiche.
+Tipp: Führe die Berechnung mit unterschiedlichen Gewichtungen durch und vergleiche die Ergebnisse. So siehst du, ob deine Habitatkarte stark von der gewählten Gewichtung abhängt.
+
+
+Hinweis: Es soll abschließend erwähnt werden, dass es Plugins gibt, die die umfangreichen Schritte kombinieren. Die konzeptionellen Überlegungen (Was sind Kriterien, wie bewerte und gewichte ich sie) werden hier allerdings nicht abgenommen und das dahinterliegende Vorgehen ist i.d.R das gleiche.
 
 
 
@@ -78,6 +84,25 @@ Daten (Die Distanz zu Gewässern sowie die Heteorgenität der Vegetation habt ih
 - Distanz zu Gewässern: https://uni-muenster.sciebo.de/s/EXy72biKfSErK3i
 
 - Heterogenität der Vegetationshöhen (Berechnet als Standardabweichung auf einer 5x5 Umgebung): https://uni-muenster.sciebo.de/s/dxWdwJjqCs4nNw5
+
+Die Daten liegen bereits in einheitlicher Geometrie vor.
+
+Geht folgendermaßen vor:
+
+1. Kriterien definieren: Überlegt, welches der Kriterien ein Ausschlusskriterium (harte Grenze) ist und welche kontinuierliche Eignungskriterien sind. Begründet eure Entscheidung.
+
+2. Vorbereitung der Ausschlusskriterien: schon erledigt :) Das Raster zu den Flächen mit Vegetation hat ebreits andere Flächen als No data klassifiziert.
+
+3. Bewertung der Kriterien: Überlegt, wie ihr die Kriterien fachlich begründet in Eignung übersetzt: Was bedeutet z. B. „geringe Distanz zu Gewässern“ für die Eignung? Was bedeutet „hohe Heterogenität der Vegetationshöhe“ für die Eignung? Um "geringe Distanz zu Gewässern" in Habitateignung zu übersetzen, muss der Werteberich invertiert werden (multipliziere das Raster mit -1), sodass geringe Werte eine geringe Eignung anzeigen. Das Ergebnis von Schritt 3 ist für jedes Kriterium ein Raster  in dem niedrige Werte geringe Eignung und hohe Werte eine hohe Eignung anzeigen.
+
+4. Skalierung: Bewertet die kontinuierlichen Kriterien so, dass sie auf einen gemeinsamen Wertebereich standardisiert werden (z. B. 0–100).
+
+5. Gewichtung: Legt Gewichte für die kontinuierlichen Kriterien fest. Die Summe der Gewichte muss 1 bzw. 100 % ergeben.
+
+6. Overlay / Verrechnung: Verrechnet die gewichteten Kriterien im Rasterrechner. Wendet das Ausschlusskriterium an, sodass ungeeignete Flächen aus dem Ergebnis fallen (Multiplikation).
+
+
+
 
 
 :::

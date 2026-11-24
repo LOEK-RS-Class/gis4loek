@@ -1,0 +1,12 @@
+---
+title: Ex08 - Multikriterienanalyse
+format: pdf
+---
+
+## Habitatanalyse
+Analysiere potenzielle Habitate für eine von dir gewählte Art in einer von dir gewählten Region. Definiere und begründe die Habitatansprüche und setze das ganze im GIS um. Dokumentiere dein Vorgehen und visualisiere das Ergebnis.
+Zum Bestehen der Aufgabe ist es in Ordnung wenn du dich auf wenige Kriterien konzentrierst oder du nah an dem Beispiel der Übung bleibst.
+
+
+## Vorbereitung Geländeanalysen
+
