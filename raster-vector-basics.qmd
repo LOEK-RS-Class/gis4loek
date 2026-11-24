@@ -56,7 +56,7 @@ Für die Übung nutze folgende Daten:
 
 1. Wie hoch sind die Bäume im Baumkataster? Extrahiere die Rasterwerte für jeden Baum.
 
-2. Schneide das Ergebnis auf den Innenstadtbereich von Münster zu (z.B über "Vektor auf Ausdehnung zuschneiden") und nutze Inverse Distance Weighting ("IDW Interpolation") um einen flächendeckenden Datensatz der Baumhöhen als Raster zu erstellen. 
+2. Schneide das Ergebnis auf den Innenstadtbereich von Münster zu (z.B über "Vektor auf Ausdehnung zuschneiden") und nutze einmal Voronoi-Polygone und einmal Inverse Distance Weighting ("IDW Interpolation") um einen flächendeckenden Datensatz der Baumhöhen als Raster zu erstellen. 
 
 3. Diskutiere das Ergebnis. Wann ist eine räumliche Interpolation über geostatistische Methoden sinnvoll?
 
